@@ -1,0 +1,130 @@
+page-signin {
+
+.text-input::-moz-placeholder {
+  color: #fff !important;
+  font-family: futuraheavy;
+  font-size: 12px;
+}
+.text-input::-webkit-input-placeholder {
+    color: #fff !important;
+    font-family: futuraheavy;
+  font-size: 12px;
+}
+
+.text-input:-ms-input-placeholder {
+    color: #fff !important;
+    font-family: futuraheavy;
+  font-size: 12px;
+}
+
+.text-input::-moz-placeholder {
+    color: #fff !important;
+    font-family: futuraheavy;
+  font-size: 12px;
+}
+
+.text-input{
+    color: #fff !important;
+}
+
+}
+.form_outer {
+  margin: 0 auto;
+  padding: 0;
+  width: 247px;
+}
+    .logo {
+    padding: 85px 0 33px;
+    text-align: center;
+    }
+    .fbbtn {
+        text-align: center;
+        padding: 0;
+    }
+    
+.or {
+  color: #fff;
+  font-size: 12px;
+  margin: 44px auto;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  width: 175px;
+  font-family: futuraheavy;
+}
+.or::before {
+    background: #fff;
+    bottom: 11px;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 58px;
+    top: 7px;
+}
+.or::after {
+    background: #fff;
+    bottom: 11px;
+    content: "";
+    height: 2px;
+    right: 0;
+    position: absolute;
+    width: 58px;
+    top: 7px;
+}
+.input_outer .item {
+  padding: 0 10px;
+  border: 2px solid #fff !important;
+  background: none !important;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  width: 247px;
+  height: 42px;
+}
+.input_outer .item input {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+}
+.input_outer .item .item-inner {
+    padding-right: 0;
+    border: none;
+}
+.forgot_pass {
+  text-align: center;
+}
+.forgot_pass > span {
+    font-size: 9px;
+    text-decoration: underline;
+    color: #fff;
+    font-family: futuramedium;
+    padding-top: 2px;
+    display: inline-block;
+}
+.forgot_pass {
+    color: #fff;
+    font-size: 9px;
+    text-align: center;
+    font-family: futuramedium;
+}
+
+.bgnone{background: none;}
+.border_radius{border-radius: 8px;}
+.toast-wrapper.toast-middle{
+  padding:0 !important;
+
+}
+.toast-wrapper.toast-middle{
+
+border-radius: 6px !important;
+
+}
+
+
+.label-ios{
+    padding: 0;
+    margin: 0;
+}
+.alert {
+    padding-bottom: 0;
+}

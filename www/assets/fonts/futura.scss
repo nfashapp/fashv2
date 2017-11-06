@@ -1,0 +1,39 @@
+// Roboto Font
+// Google
+// Apache License, version 2.0
+// http://www.apache.org/licenses/LICENSE-2.0.html
+
+$futura-font-path: $font-path !default;
+
+@font-face {
+  font-family: "Futura";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Futura Light"), local("Futura-Light"), url("#{$futura-font-path}/futura-light.woff2") format("woff2"), url("#{$futura-font-path}/futura-light.woff") format("woff"), url("#{$futura-font-path}/futura-light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Futura";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Futura Regular"), local("Futura-regular"), url("#{$futura-font-path}/futura-regular.woff2") format("woff2"), url("#{$futura-font-path}/futura-regular.woff") format("woff"), url("#{$futura-font-path}/futura-regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Futura";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Futura"), local("Futura-Bold"), url("#{$futura-font-path}/futura-bold.woff2") format("woff2"), url("#{$futura-font-path}/futura-bold.woff") format("woff"), url("#{$futura-font-path}/futura-bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Futura";
+  font-style: normal;
+  src: local("Futura"), local("Futura-medium"), url("#{$futura-font-path}/futura_medium_bt.woff2") format("woff2"), url("#{$futura-font-path}/futura_medium_bt.woff") format("woff"), url("#{$futura-font-path}/futura_medium_bt.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Futura";
+  font-style: normal;
+  src: local("Futura"), local("Futura-heavy"), url("#{$futura-font-path}/futura_heavy_font.woff2") format("woff2"), url("#{$futura-font-path}/futura_heavy_font.woff") format("woff"), url("#{$futura-font-path}/futura_heavy_font.ttf") format("truetype");
+}

@@ -1,0 +1,56 @@
+<ion-header hidden>
+  <ion-navbar color="header-color">
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding style="background:#ffc3b2; background-size:cover;">
+
+<div class="form_outer">
+   <div class="logo"><div class="logoin"><img width="96px" src="assets/images/logo.png"></div></div>
+  <div class="fbbtn">
+    <button class="border_radius" (click)="facebookLogin()"  icon-left style="background:#507cc0; width:247px; height:52px; color:#fff; font-size:14px; font-family: futuraheavy;">
+      <ion-icon style="padding-right:15px;" name=""><i class="fa fa-facebook" aria-hidden="true"></i></ion-icon>
+      Continue with Facebook
+    </button>
+  </div>
+    <div class="or">or</div>
+  <div class="skipbtn" (click)='skip()'><ion-icon ios="ios-close" md="md-close"></ion-icon></div>
+
+<form  #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+<ion-list class="input_outer">
+  <ion-item>
+    <ion-input type="email" [(ngModel)]="data.email" name='email' #email="ngModel" placeholder="E-mail" required pattern='^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$' ></ion-input>
+  </ion-item>
+<ion-label class="alert alert-danger" color="danger">
+     <div *ngIf="email.errors && (email.dirty || email.touched)" >
+       <div [hidden]="!email.errors.required" >
+         Email is required
+        </div>
+        <div [hidden]="!email.errors.pattern" >
+         Invalid email
+        </div>
+     </div>
+    </ion-label>
+  <ion-item>
+    <ion-input type="password" [(ngModel)]="data.password" name="password" #password="ngModel" placeholder="Password" required></ion-input>
+  </ion-item>
+   <ion-label class="alert alert-danger" color="danger">
+    <div *ngIf="password.errors && (password.dirty || password.touched)">
+       <div [hidden]="!password.errors.required" >
+         Password is required
+        </div>
+       
+    </div>
+     
+    </ion-label>
+<button class="border_radius fonthavy" type="submit"  [disabled]="!loginForm.valid" ion-button style="background:rgba(155,155,155,0.7); color:#fff; width: 247px; height:42px; margin:0; font-family: futuraheavy; font-size: 14px;">
+     SIGN IN
+</button>
+<div class="forgot_pass" (click)="forgetpaswordPage()"><span>Forgot password</span></div> 
+<div class="forgot_pass"  (click)="signupPage()">I do not have an account. <span>Sign up</span></div> 
+</ion-list>
+</form>
+</div>
+
+</ion-content>

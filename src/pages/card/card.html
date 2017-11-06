@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar color="header-color">
+    <ion-title class="title1">YOU DON'T KNOW ME<p>Jax Jones feat. RAYE</p></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+
+  <ion-list style="margin-bottom:0px;" class="list_cnt">
+    <ion-item>
+      <span class="addresstitle">MY PAYMENT</span>
+    </ion-item>
+  </ion-list>
+  <div padding style="padding-top:0;">
+    <div class="addresscard" *ngFor="let cardlist of cards">
+      <div class="titleaddress">Payment Method    <a item-end class="link" (click)='editPayment(cardlist.Card.id)'>Change</a></div>
+         <p>{{cardlist.Card.cardnumber}}<br>
+     Card Holder: {{cardlist.Card.name}}
+    </p>
+    </div>
+  
+
+
+<a item-end class="addlink" (click)="addpaymentPage()" > <ion-icon name="add"></ion-icon> Add payment method</a>
+
+  </div>
+
+
+
+
+<!-- 
+  <ion-list style="margin-bottom:0px;" class="list_cnt">
+    <ion-item>
+      <span class="addresstitle">MY PAYMENT</span>
+    </ion-item>
+  </ion-list>
+  <div padding style="padding-top:0;">
+
+<ion-list class="address">
+  <ion-item>
+      Payment Method
+ 
+  </ion-item>
+  <ion-item *ngFor="let cardlist of cards">
+       <a item-end class="link" (click)='editPayment(cardlist.Card.id)'>Change</a>
+    <ion-thumbnail item-start *ngIf="cardlist.Card.cardnumber.length == 14">
+      <img src="assets/img/visa-large.gif">
+    </ion-thumbnail>
+    <ion-thumbnail item-start *ngIf="cardlist.Card.cardnumber.length == 16">
+      <img src="assets/img/maestro.jpg">
+    </ion-thumbnail>
+    <p>{{cardlist.Card.cardnumber}}</p>
+     <p>Card Holder : {{cardlist.Card.name}}</p>
+  </ion-item>
+</ion-list>
+
+<a item-end class="link" (click)="addpaymentPage()" > <ion-icon name="add"></ion-icon>Add payment method</a> 
+
+  </div>-->
+
+</ion-content>

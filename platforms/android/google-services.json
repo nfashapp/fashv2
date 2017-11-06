@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "112979251493",
+    "firebase_url": "https://fash-1586d.firebaseio.com",
+    "project_id": "fash-1586d",
+    "storage_bucket": "fash-1586d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112979251493:android:bd5e18fad49b2cd3",
+        "android_client_info": {
+          "package_name": "io.fwrk.fash1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "112979251493-j9ne4121o7umh071elp4e6i9tfjn0u0m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDty-tp9xYIiR8Jnv_CKAWfj8aqqq1_nzw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

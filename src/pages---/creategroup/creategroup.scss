@@ -1,0 +1,177 @@
+
+page-creategroup {
+
+.toolbar-title{
+  text-transform: uppercase;
+  color: #878787 !important;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-family: futuraheavy !important;
+}
+
+
+.toolbar-title > p {
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin: 0;
+    text-transform: none;
+    color: #878787 !important;
+    font-family: futuraheavy !important;
+}
+
+.add{
+    text-align:center;
+    color: #878787;
+    width: 100%;
+    float: left;
+    font-size: 12px;
+    font-family: futuraheavy;
+    text-transform: uppercase;
+}
+.finish_btn {
+    position: absolute;
+    right: 9px;
+    color: #878787;
+    font-size: 12px;
+    font-family: futuraheavy;
+    margin: 0 !important;
+    letter-spacing: 1px;
+    top: 14px;
+}
+
+.searchbar-md {
+    min-height: 44px;
+    padding: 0px 8px;
+    border-top: 0.55px solid transparent;
+    border-bottom: 0.55px solid rgba(0, 0, 0, 0.05);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.searchbar-md .searchbar-input {
+    padding:0px 28px;
+    border-radius: 5px;
+}
+
+.searchbar-md .searchbar-search-icon {
+    left: 7px;
+    top: 7px;
+    margin-left: 0px;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-repeat: no-repeat;
+    background-size: 18px;
+}
+
+
+
+ion-note.note.note-ios,ion-note.note.note-md{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    font-size: 14px;
+}
+
+.label-md,.label-ios {
+    white-space: normal;
+}
+
+.invite .button-inner{text-transform: capitalize;}
+
+.acpt{float:right;}
+
+.acpt .button-md{box-shadow: none;
+    border: 1px solid #ccc;
+    }
+
+.add{
+    width: 100%;
+    float: left;
+}
+
+.send{
+    width:100%;
+    float:left;
+    text-align: center;
+    color:#9f9fa3;
+    background: #fff;
+    position: fixed;
+    bottom: 53px;
+    padding: 11px;
+}
+
+.send button{
+    background: #9f9fa3;
+    color: #fff;
+    box-shadow: none;
+    font-weight: normal;
+    height: 44px;
+    font-size: 15px;
+}
+
+.send p {
+    margin-bottom: 0px;
+}
+
+.camera_box {
+    padding: 4px 17px 20px 96px;
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid rgba(155,155,155,0.2);
+    position: relative;
+}
+.camera_outer{
+        background: #dbdbdb;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 0 0;
+    font-size: 37px;
+    color: #fff;
+    float: left;
+    position: absolute;
+    left: 15px;
+    top:-8px;
+    
+}
+.camera_box input {
+    width: 85%;
+    float: left;
+    border: 1px solid rgba(151,151,151,0.4);
+    height: 31px;
+    margin-top: 3%;
+    border-radius: 2px;
+    padding:0 10px;
+    font-family: futuraheavy;
+    color: #9b9b9b;
+    font-size: 12px;
+}
+.participants{
+       font-family: futuraheavy;
+    color: #878787;
+    font-size: 12px;
+    letter-spacing: 1px;
+
+}
+.participants h3{
+    font-family: futuraheavy;
+    color: #878787;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+.username_txt{
+    font-family: futuraheavy;
+    color: #8e8e93;
+    font-size: 13px;
+    letter-spacing: 0.14px;
+}
+.addbtns {
+    font-size: 20px !important;
+    color:  rgba(155,155,155,0.7) !important;
+}
+.removbtns {
+    font-size: 20px !important;
+    color:  rgba(155,155,155,0.7) !important;
+}
+}

@@ -1,0 +1,125 @@
+page-productdetails {
+   .toolbar-title{
+  text-transform: uppercase;
+  color: #878787 !important;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-family: futuraheavy !important;
+}
+
+
+.toolbar-title > p {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #878787 !important;
+    margin: 0;
+    text-transform: none;
+    font-family: futuraheavy !important;
+}
+
+.product_title > h4 {
+    color: #878787;
+    font-size: 13px !important;
+    margin: 0 !important;
+  //  text-transform: uppercase;
+    font-family: futuraheavy !important;
+    text-align: left;
+}
+.product_subtitle{
+    color: #878787;
+    font-size: 10px !important;
+    margin: 0;
+    font-family: futuraheavy !important;
+    text-align: left;
+    letter-spacing: 0.14px;
+}
+
+.custom_accordion .item {
+    padding-left: 0;
+    transition: 0.09s all linear;
+}
+.custom_accordion .label {
+    left: 0;
+    margin: 0;
+    padding: 10px 18px;
+    width: 100%;
+}
+.custom_accordion .label h3 {
+   color: #878787;
+    font-size: 13px;
+    font-family: futuraheavy !important;
+    letter-spacing: 0.16px;
+}
+.custom_accordion .item p{
+  font-size: 13px;
+   color: #878787;
+}
+
+.procard_view {
+    position: relative;
+}
+.arrow_left {
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    left: 5px;
+    top: 0;
+    font-size: 20px;
+    z-index: 999;
+}
+.arrow_right {
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    right: 5px;
+    top: 0;
+    font-size: 20px;
+    z-index: 999;
+}
+
+.acco_sec{
+  transition: all 0.5s ease;
+}
+
+.swiper-slide {
+    line-height: 0;
+}
+
+.heart {
+    color:red;
+}
+.selected {
+        border-color: #b10505;
+    background: #e40505;
+    color: #fff;
+}
+.button-outline-md-dark:hover:not(.disable-hover) {
+  background: #b70e0e;
+    color: #fff;
+}
+// ion-slide{
+//     box-shadow:0 4px 4px rgba(0,0,0,0.2);
+// }
+
+.select_btn {
+    width: auto;
+    float: left;
+    border: 1px solid #878787;
+    color: #878787;
+    padding: 5px 14px;
+    margin-right: 11px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-family: futuraheavy !important;
+}
+.select_btn .select-text{
+    color: #878787;
+    font-size: 13px;
+    font-family: futuraheavy !important;
+    font-weight: inherit !important;
+}
+.select_item .item-inner{
+    border: none !important;
+}
+
+}

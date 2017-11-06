@@ -1,0 +1,32 @@
+<ion-header hidden>
+  <ion-navbar color="header-color">
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content  padding style="background:rgba(0,0,0,0.5);" class="animated bounce">
+
+<div class="cart_modelsec">
+  <div class="roundtic" (click)="dismiss()"><img src="assets/images/tic.png"></div>
+  <h3>Added to Cart</h3>
+  <ion-grid>
+  <ion-row *ngIf='this?.image' (click)="dismiss()">
+    <ion-col col-5>
+      <div class="cart_pro"><img [src]="image"></div>
+    </ion-col>
+    <ion-col col-7>
+      <div class="cart_txt">
+        <h4>{{name}}</h4>
+          <p> {{color}}<span *ngIf="size">-{{size}}</span></p>
+          <p><span> Fulfilled by:</span> {{retailer}}</p>
+      </div>
+    </ion-col>
+  </ion-row>
+  <div class="button_outersec">
+  <button class="button-block" ion-button style="background:#9b9b9b; font-weight:600; margin-bottom:10px;" (click)="cartPage()">View cart ({{count}} item)</button>
+  <button class="button-block" ion-button style="background:#9b9b9b; font-weight:600; margin-bottom:10px;" (click)="dismiss()">Keep shopping</button>
+  </div>
+</ion-grid>
+</div>
+
+</ion-content>

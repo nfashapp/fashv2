@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar color="header-color">
+    <ion-title class="title1">YOU DON'T KNOW ME<p>Jax Jones feat. RAYE</p></ion-title>
+    <ion-buttons end>
+<button ion-button color="light" clear>
+<img width="18px" src="assets/images/fast-forward.png">
+</button>
+<button ion-button color="light" clear>
+<img width="12px" src="assets/images/pause.png">
+</button>
+<button ion-button color="light" clear>
+<img width="18px" src="assets/images/fast-forwardr.png">
+</button>
+</ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<!--
+<ion-content>
+  <div id="card-stack">
+    
+    <ion-card (click)="swipepage()">
+      <ion-item style="padding:0;">
+         
+        <img  [src]="res">
+
+        <div style="position: absolute; z-index: 999; bottom: 0px; background:rgba(0,0,0,0); padding: 13px; width: 100%;">
+        
+              <div class="product_title">
+                <h4 >{{name}}</h4>
+            
+
+                <h5 class="product_subtitle">{{brand}}</h5>
+                <p>{{text}}</p>
+              </div>
+           
+        </div>
+      </ion-item>
+    </ion-card>
+  </div>
+
+</ion-content>-->
+<ion-content padding>
+  <div class="procard_box">
+    <div class="procard"></div>
+    <div class="procard_inn"></div>
+    <div (click)="swipepage()" class="procard_img">
+      <div class="overlay"></div>
+          <img [src]="res">
+      </div>
+      
+      <div class="content_pro">
+        <h4>{{name}}</h4>
+        <h5>{{brand}}</h5>
+        <p>{{text}}</p>
+      </div>
+
+  </div>
+  
+  
+</ion-content>

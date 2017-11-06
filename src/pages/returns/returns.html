@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar color="header-color" *ngIf="!currentTrack">
+    <ion-title class="title">FASH</ion-title>
+  </ion-navbar>
+
+<ion-navbar color="header-color" *ngIf="currentTrack">
+ <ion-title class="title1">{{currentTrack?.musicname}}<p *ngIf="currentTrack.artist">{{currentTrack?.artist}}</p></ion-title>
+<ion-buttons end>
+  <button ion-button color="light" clear (click)="prevTrack()">
+  <img width="18px" src="assets/images/fast-forward.png">
+  </button>
+  <button *ngIf="bit == false" ion-button color="light" clear (click)="playTrack(currentTrack)">
+  <img width="18px" src="assets/images/play.png">
+  </button> 
+  <button *ngIf="bit == true" ion-button color="light" clear (click)="pausetyTrack(currentTrack)">
+  <img width="12px" src="assets/images/pause.png">
+  </button>
+  <button ion-button color="light" clear (click)="nextTrack()">
+  <img width="18px" src="assets/images/fast-forwardr.png">
+  </button>
+</ion-buttons>   
+</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list style="margin-bottom:0px;" class="list_cnt">
+    <ion-item>
+      <span class="carttitle">returns and refunds policies</span>
+    </ion-item>
+  </ion-list>
+<div class="main_txt" [innerHtml]="content?.description"></div>
+</ion-content>
+

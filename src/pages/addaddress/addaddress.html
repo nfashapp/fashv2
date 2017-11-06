@@ -1,0 +1,164 @@
+<ion-header>
+  <ion-navbar color="header-color">
+    <ion-title class="title1">YOU DON'T KNOW ME
+      <p>Jax Jones feat. RAYE</p>
+    </ion-title>
+
+    <ion-buttons end>
+<button ion-button color="light" clear>
+<img width="18px" src="assets/images/fast-forward.png">
+</button>
+<button ion-button color="light" clear>
+<img width="12px" src="assets/images/pause.png">
+</button>
+<button ion-button color="light" clear>
+<img width="18px" src="assets/images/fast-forwardr.png">
+</button>
+</ion-buttons>
+  </ion-navbar>
+  
+</ion-header>
+
+<ion-content>
+  <ion-list style="margin-bottom:0px;" class="list_cnt">
+    <ion-item>
+      <span class="addresstitle">ADD ADDRESS</span>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-list class="custom_accordion" style="margin-bottom:5px;">
+    <ion-grid>
+      <form #addressForm="ngForm">
+        <ion-row class="process">
+          <ion-col col-12>
+            <ion-item>
+              <ion-input type="text" placeholder="Name" [(ngModel)]='data.name' pattern="[a-zA-Z][a-zA-Z ]+" required name="name" #name='ngModel'></ion-input>
+            </ion-item>
+          
+          <div *ngIf="name.errors && (name.dirty || name.touched)" class="alert alert-danger leftpadding">
+            <div [hidden]="!name.errors.required" class="alert alert-danger">
+              Name is required
+            </div>
+            <div [hidden]="!name.errors.pattern" class="alert alert-danger">
+              Invalid name
+            </div>
+          </div>
+          </ion-col>
+          <ion-col col-12>
+            <ion-item>
+              <ion-input type="text" placeholder="Address" [(ngModel)]='data.address' required name="address" #address='ngModel'></ion-input>
+            </ion-item>
+          
+          <div *ngIf="address.errors && (address.dirty || address.touched)" class="alert alert-danger leftpadding">
+            <div [hidden]="!address.errors.required" class="alert alert-danger">
+              Address is required
+            </div>
+          </div>
+          </ion-col>
+          <ion-col col-12>
+            <ion-item>
+              <ion-input type="text" placeholder="Apt #" [(ngModel)]='data.apt' name="apt" #apt='ngModel'></ion-input>
+            </ion-item>
+          
+          <!-- <div *ngIf="apt.errors && (apt.dirty || apt.touched)" class="alert alert-danger leftpadding">
+            <div [hidden]="!apt.errors.required" class="alert alert-danger">
+             Apt/Unit number is required
+            </div>
+          </div> -->
+          </ion-col>
+          <ion-col col-6 style="padding-right:0px;">
+            <ion-item>
+              <ion-select [(ngModel)]='data.country' name="country" required #country='ngModel'>
+                <!--[compareWith]="compareFn" // check this-->
+                <ion-option *ngFor="let count of countries" [value]="count.Country.code">{{count.Country.name}}</ion-option>
+              </ion-select>
+              <!--<ion-input type="text" placeholder="Country" [(ngModel)]='data.country' name="country" #country='ngModel'></ion-input>-->
+            </ion-item>
+          
+          <div *ngIf="country.errors && (country.dirty || country.touched)" class="alert alert-danger leftpadding">
+            <div [hidden]="!country.errors.required" class="alert alert-danger">
+              Country is required
+            </div>
+          </div>
+          </ion-col>
+
+          <ion-col col-6 style="padding-left:0px;">
+            <ion-item style="padding-left:0px;">
+              <ion-input type="text" placeholder="City" [(ngModel)]='data.city' required name="city" #city='ngModel'></ion-input>
+            </ion-item>
+          
+          <div *ngIf="city.errors && (city.dirty || city.touched)" class="alert alert-danger">
+            <div [hidden]="!city.errors.required" class="alert alert-danger">
+              City is required
+            </div>
+          </div>
+          </ion-col>
+
+          <ion-col col-6 style="padding-right:0px;">
+            <ion-item>
+              <ion-input type="text" placeholder="State" [(ngModel)]='data.state' required name="state" #state='ngModel'></ion-input>
+            </ion-item>
+          
+          <div *ngIf="state.errors && (state.dirty || state.touched)" class="alert alert-danger leftpadding">
+            <div [hidden]="!state.errors.required" class="alert alert-danger">
+              State is required
+            </div>
+          </div>
+          </ion-col>
+
+          <ion-col col-6 style="padding-left:0px;">
+            <ion-item style="padding-left:0px;">
+              <ion-input type="tel" placeholder="Zip Code" [(ngModel)]='data.zip' maxlength="6" required pattern='[0-9]+' name="zip" #zip='ngModel'></ion-input>
+            </ion-item>
+          
+          <div *ngIf="zip.errors && (zip.dirty || zip.touched)" class="alert alert-danger">
+            <div [hidden]="!zip.errors.required" class="alert alert-danger">
+              Zipcode is required
+            </div>
+            <div [hidden]="!zip.errors.pattern" class="alert alert-danger">
+              Invalid zipcode
+            </div>
+          </div>
+          </ion-col>
+
+          <ion-col col-12>
+            <ion-item>
+              <ion-input type="text" placeholder="Contact Number ( xxx-xxx-xxxx )"  [(ngModel)]='data.contact' maxlength='12' minlength='12' (ngModelChange)='contactFormat($event)' pattern='([0-9]{3})+([-]{1})+([0-9]{3})+([-]{1})+([0-9]{4})+' required name="contact" #contact='ngModel'></ion-input>
+            </ion-item>
+            <!-- <ion-item>
+              <ion-input type="text" placeholder="Contact Number ( xxx-xxx-xxxx )" name="contact" #contact='ngModel'  [(ngModel)]='data.contact' maxlength='12' minlength='12' (ngModelChange)='contactFormat($event)'  pattern='([0-9]{3})+([-]{1})+([0-9]{3})+([-]{1})+([0-9]{4})+' required></ion-input>
+              
+            </ion-item> -->
+          
+           <div *ngIf="contact.errors && submitted" class="alert alert-danger leftpadding">
+            <div [hidden]="!contact.errors.minlength" class="alert alert-danger">
+               Please enter a valid number
+            </div>
+            </div>
+          <div *ngIf="contact.errors && (contact.dirty || contact.touched)" class="alert alert-danger leftpadding">
+            <div [hidden]="!contact.errors.pattern" class="alert alert-danger">
+              Please enter a valid format ( xxx-xxx-xxxx )
+            </div>
+          </div>
+          </ion-col>
+        </ion-row>
+          <ion-item class="radio_item">
+    <ion-label class="set">Set as default delivery address</ion-label>
+    <ion-checkbox color="dark"  [(ngModel)]="default" [ngModelOptions]="{standalone: true}" value='default' default (ionChange)="setDefault(default)"></ion-checkbox>
+  </ion-item>
+         <ion-item>
+              <button class="btn_globle" style="height: 49px; width: 100%; margin: 0px auto; float:none;" type="submit" [disabled]='!addressForm.valid' (click)="add_address(addressForm);submitted=true">SAVE</button>
+                </ion-item>
+      </form>
+    </ion-grid>
+  </ion-list>
+
+ 
+
+
+</ion-content>
+
+<!-- <ion-footer class="send">
+    <button class="btn_globle" style="height: 49px; width: 90%; margin: 0px auto; float:none;"  ion-button full (click)="addressPage();">SAVE</button>
+</ion-footer> -->

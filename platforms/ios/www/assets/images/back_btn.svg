@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="11px" height="16px" viewBox="0 0 11 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>back_btn</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="back_btn" fill="#878787">
+            <g id="Shape">
+                <polygon points="10.5714286 1.86666667 8.57142857 0 -8.8817842e-16 8 8.57142857 16 10.5714286 14.1333333 4 8"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

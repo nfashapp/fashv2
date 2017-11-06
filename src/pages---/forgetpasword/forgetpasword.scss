@@ -1,0 +1,124 @@
+page-forgetpasword {
+    .back-button-icon {
+    color: #fff !important;
+}
+.toolbar-ios-primary .toolbar-background-ios{
+    background: transparent !important;
+    border: none !important;
+}
+text-input::-moz-placeholder {
+  color: #fff !important;
+  font-family: futuraheavy;
+  font-size: 12px;
+}
+.text-input::-webkit-input-placeholder {
+    color: #fff !important;
+    font-family: futuraheavy;
+  font-size: 12px;
+}
+
+.text-input:-ms-input-placeholder {
+    color: #fff !important;
+    font-family: futuraheavy;
+  font-size: 12px;
+}
+
+.text-input::-moz-placeholder {
+    color: #fff !important;
+    font-family: futuraheavy;
+  font-size: 12px;
+}
+
+.text-input{
+    color: #fff !important;
+}
+}
+  .form_outer{
+    padding: 8%;
+    font-family: "futura-regular" !important;
+  }
+    .logo {
+    padding: 5vh 0;
+    text-align: center;
+    }
+    .fbbtn {
+        text-align: center;
+        padding: 0;
+    }
+    
+.or {
+  color: #fff;
+  font-size: 18px;
+  margin: 5vh auto;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  width: 60%;
+}
+.or::before {
+    background: #fff;
+    bottom: 11px;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 37%;
+}
+
+.input_outer .item {
+    padding: 0 8px;
+}
+.or::after {
+    background: #fff;
+    bottom: 11px;
+    content: "";
+    height: 2px;
+    right: 0;
+    position: absolute;
+    width: 37%;
+}
+.input_outer .item {
+  padding: 0 10px;
+  border: 2px solid #fff !important;
+  background: none !important;
+  margin-bottom: 8px;
+  border-radius: 10px;
+}
+.input_outer .item input {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+}
+.input_outer .item .item-inner {
+    padding-right: 0;
+    border: none;
+}
+.forgot_pass {
+  text-align: center;
+}
+.forgot_pass > span {
+    font-size: 11px;
+    text-decoration: underline;
+    color: #fff;
+}
+.forgot_pass {
+    color: #fff;
+    font-size: 11px;
+    text-align: center;
+}
+
+.bgnone{background: none;}
+.border_radius{border-radius: 8px;}
+.text-input::-moz-placeholder {
+  color: #fff;
+  opacity: 1;
+}
+.forgot_outer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    height: 425px;
+}

@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-navbar color="header-color">
+    <ion-title class="title1">YOU DON'T KNOW ME<p>Jax Jones feat. RAYE</p></ion-title>
+  
+  <ion-buttons end>
+<button ion-button color="light" clear>
+<img width="18px" src="assets/images/fast-forward.png">
+</button>
+<button ion-button color="light" clear>
+<img width="12px" src="assets/images/pause.png">
+</button>
+<button ion-button color="light" clear>
+<img width="18px" src="assets/images/fast-forwardr.png">
+</button>
+</ion-buttons>
+</ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+<ion-list style="margin-bottom:0px;" class="list_cnt">
+  <ion-item>
+      <span class="carttitle">SECURE CHECKOUT</span>
+    <a item-end (click)="cancelCheckout()">  Cancel</a>
+  </ion-item>
+</ion-list>
+
+
+<ion-grid>
+  <ion-row class="process">
+    <ion-col col-4>
+      <div class="icn"><ion-icon name="radio-button-on" ></ion-icon></div>Shipping
+    </ion-col>
+    <ion-col col-4>
+      <div class="icn effect"><ion-icon name="radio-button-on"></ion-icon></div>Payment
+    </ion-col>
+    <ion-col col-4>
+      <div class="icn"><ion-icon name="radio-button-on"></ion-icon></div>Review Order
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<div padding>
+  <div class="cartlist">
+<ion-grid no-padding>
+  
+    <h2 class="items">Item(s)</h2>
+    <ion-row class="itm" *ngFor="let item of cartItems; let i = index" [attr.data-index]="i">
+      <ion-col col-5>
+        <div class="cart">
+           <img  [src]="item.Product.image"/>
+        </div>
+      </ion-col>
+      <ion-col col-7>
+      <div class="carttxt_right">
+        <h2> {{item.Product.name}} </h2>
+        <h3><span>Size :</span> {{item[0].procolor}} - {{item[0].prosize}} </h3>
+        <h3><span>Fulfilled by:</span> {{item.Product.retailer}}</h3>
+        <!-- <h3><span>Est. delivery:</span> jun 13-14</h3> -->
+      </div>
+      </ion-col>
+    </ion-row>
+  
+</ion-grid>
+</div>
+
+
+
+<div class="subtotal">
+
+ <ion-item class="totalamount">
+      <h2 class="items"> Total Amount </h2>
+  </ion-item>
+
+<ion-list no-padding class="sub">
+  <ion-item>
+      Subtotal:
+    <ion-note item-end="" class="note note-ios">
+      ${{subtotal}}
+    </ion-note>
+  </ion-item>
+   <ion-item>
+      Estimated tax (8.9%):
+    <ion-note item-end="" class="note note-ios">
+      ${{tax | number : '1.2-2'}}
+    </ion-note>
+  </ion-item>
+   <ion-item>
+      Shipping & returns:
+    <ion-note item-end="" class="note note-ios">
+      FREE
+    </ion-note>
+  </ion-item>
+</ion-list>
+
+  <ion-item class="total totalborder">
+     <span class="totalb"> Total: </span>
+    <ion-note item-end="" class="note note-ios">
+      ${{total | number : '1.2-2'}}
+    </ion-note>
+  </ion-item>
+</div>
+</div>
+</ion-content>
+
+<ion-footer class="send" >
+  <button class="btn_globle" style="height: 49px; width: 90%; margin: 0px auto; float:none;"  (click)="payment();">PAY</button>
+</ion-footer>

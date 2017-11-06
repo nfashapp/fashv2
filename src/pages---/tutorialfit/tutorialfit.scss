@@ -1,0 +1,46 @@
+page-tutorialfit {
+  .tuto_out{
+    color: #fff;
+  }
+
+.bottomfav_icon {
+    position: absolute;
+    bottom: 16vh;
+    width: 100%;
+    left: 0;
+}
+
+.hangerright {
+    width: 60px;
+    margin: 10px 0 10px 32.5vh;
+    float: left;
+}
+
+.hangerright2 {
+    width: 45px;
+    margin: 0 1.6vh 10px 0;
+    float: right;
+}
+
+.hangerright img {
+    float: left;
+}
+
+.txtfavs {
+    font-family: Knewave;
+    font-size: 32px;
+    width: 72%;
+    margin: 0px auto;
+    -webkit-transform: rotate(-6deg);
+    transform: rotate(-6deg);
+    color: #fff;
+    padding-bottom: 0;
+    text-align: center;
+}
+.txtfavs span {
+    font-family: Knewave;
+    font-size: 38px;
+}
+
+  
+}

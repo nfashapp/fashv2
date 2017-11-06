@@ -1,0 +1,97 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-camera": {
+            "CAMERA_USAGE_DESCRIPTION": " ",
+            "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "io.fash"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "io.fash"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "io.fash"
+        },
+        "cordova-plugin-facebook4": {
+            "APP_ID": "1888286521447064",
+            "APP_NAME": "“FASH”",
+            "PACKAGE_NAME": "io.fash"
+        },
+        "cordova-plugin-firebase": {
+            "PACKAGE_NAME": "io.fash"
+        },
+        "cordova-plugin-geolocation": {
+            "GEOLOCATION_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "io.fash"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "io.fash"
+        },
+        "cordova-plugin-media": {
+            "MICROPHONE_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "io.fash"
+        },
+        "cordova-plugin-nativeaudio": {
+            "PACKAGE_NAME": "io.fash"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "io.fash"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "io.fash"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "io.fash"
+        },
+        "cordova-plugin-stripe": {
+            "PACKAGE_NAME": "io.fash"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "io.fash"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "io.fash"
+        },
+        "cordova.plugins.diagnostic": {
+            "PACKAGE_NAME": "io.fash"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "io.fash"
+        },
+        "nl.x-services.plugins.backgroundaudio": {
+            "PACKAGE_NAME": "io.fash"
+        },
+        "cordova-plugin-code-push": {
+            "PACKAGE_NAME": "io.fash"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "io.fash"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "io.fash"
+        },
+        "es6-promise-plugin": {
+            "PACKAGE_NAME": "io.fash"
+        },
+        "code-push": {
+            "PACKAGE_NAME": "io.fash"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "io.fash"
+        },
+        "cordova-plugin-zip": {
+            "PACKAGE_NAME": "io.fash"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "io.fash"
+        }
+    }
+}

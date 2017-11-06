@@ -1,0 +1,32 @@
+page-signup {
+  .text-input::-moz-placeholder {
+  color: #fff !important;
+  font-family: futuraheavy;
+  font-size: 12px;
+}
+.text-input::-webkit-input-placeholder {
+    color: #fff !important;
+    font-family: futuraheavy;
+  font-size: 12px;
+}
+
+.text-input:-ms-input-placeholder {
+    color: #fff !important;
+    font-family: futuraheavy;
+  font-size: 12px;
+}
+
+.text-input::-moz-placeholder {
+    color: #fff !important;
+    font-family: futuraheavy;
+  font-size: 12px;
+}
+
+.text-input{
+    color: #fff !important;
+}
+
+}
+.scroll-content{
+  -webkit-overflow-scrolling: inherit !important;
+}

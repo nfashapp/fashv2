@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-navbar color="header-color" *ngIf="!currentTrack">
+    <ion-title class="title">FASH</ion-title>
+  </ion-navbar>
+
+<ion-navbar color="header-color" *ngIf="currentTrack">
+ <ion-title class="title1">{{currentTrack?.musicname}}<p *ngIf="currentTrack.artist">{{currentTrack?.artist}}</p></ion-title>
+<ion-buttons end>
+  <button ion-button color="light" clear (click)="prevTrack()">
+  <img width="18px" src="assets/images/fast-forward.png">
+  </button>
+  <button *ngIf="bit == false" ion-button color="light" clear (click)="playTrack(currentTrack)">
+  <img width="18px" src="assets/images/play.png">
+  </button> 
+  <button *ngIf="bit == true" ion-button color="light" clear (click)="pausetyTrack(currentTrack)">
+  <img width="12px" src="assets/images/pause.png">
+  </button>
+  <button ion-button color="light" clear (click)="nextTrack()">
+  <img width="18px" src="assets/images/fast-forwardr.png">
+  </button>
+</ion-buttons>   
+</ion-navbar>
+</ion-header>
+<!-- *ngIf="sharebit == 1" -->
+<ion-content>
+   <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content style="color:#878787;" pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing..."></ion-refresher-content>
+  </ion-refresher>
+  <div *ngIf="sharebit == 1" style="padding: 20px;text-align: center;font-size: 14x;font-family: futuraheavy !important; font-weight: 600; color: #8e8e93;letter-spacing: 0.9px;">
+    <span>Choose a chat below to share your item!</span></div>
+<ion-searchbar [(ngModel)]="data" [showCancelButton]="shouldShowCancel" (ionInput)="setFilteredItems()" (ionCancel)="onCancel()"></ion-searchbar>
+<!--<ion-searchbar [(ngModel)]="data" (ngModelChange)="SearchPage($event, points)"></ion-searchbar>-->
+<ion-list style="margin-bottom: 1px;border-bottom: 1px solid #ccc!important;" class="list_cnt">
+  <ion-item>
+      <!-- <a (click)="editPage()">Edit</a> -->
+    <a class="group_txt" (click)="creategroupPage()" item-end><ion-icon name="add"><span>Group</span></ion-icon></a>
+     <a class="group_txt" (click)="searchPage()" item-end><ion-icon name="add"><span>Friends</span></ion-icon></a>
+  </ion-item>
+</ion-list>
+
+<ion-list class="invite" style="border:none;">
+
+  <ion-item *ngFor="let userlist of accepteduser" style="padding-top:2px; padding-bottom:2px;">
+        <ion-avatar item-start>
+          <img *ngIf="userlist[0].userimage != null" [src]="userlist[0].userimage">
+          <img *ngIf="userlist[0].userimage == null" src="assets/images/user1.png">
+        </ion-avatar>
+     <a>
+        <h3 class="inv_title">{{userlist[0].username}}</h3>
+        <p class="loc_title">Sent you a fitting room invitation</p>
+        <ion-note style="margin-top:2px;" item-end="" class="note note-ios">{{userlist.Accept.time}}</ion-note>
+      </a>
+      <div class="acpt">
+        <button ion-button color="light" class="accept_btn" (click)="accpet(userlist.Accept.userid)" >Accept</button>
+        <button ion-button color="light" class="accept_btn" style="color:#fff; background:rgba(155,155,155,0.7); border-color:rgba(155,155,155,0.4);" small (click)="decline(userlist.Accept.userid)">Decline</button>
+      </div>
+  </ion-item>
+<div *ngIf='errorValue == 2'>
+  <ion-item *ngFor="let userlist of userimage">
+        <ion-avatar item-start>
+          <img *ngIf="userlist.image != null" [src]="userlist.image">
+          <img *ngIf="userlist.image == null" src="assets/images/noimage.jpg">
+        </ion-avatar>
+     <a (click)="chatPage(userlist.id,userlist.complete_name);">
+        <h3 class="inv_title">{{userlist.complete_name}}</h3>
+        
+        <p class="loc_title" *ngIf="userlist.lastmessage == null">Start a conversation with <span style="text-transform: capitalize;font-size: 11px;font-family: futuramedium;color: #8e8e93;letter-spacing: 0.14px;">{{userlist.complete_name}}</span></p>
+        <p class="loc_title" *ngIf="userlist.lastmessage != null">{{userlist.lastmessage}}</p>
+        <ion-note style="margin-top:2px;" item-end="" class="note note-ios" *ngIf="userlist.time">{{userlist.time}}</ion-note>
+      </a>
+      <!-- <div class="acpt">
+        <button ion-button color="header-color" small (click)="accpet(userlist.User.id)" >Accept</button>
+        <button ion-button color="light" small (click)="decline(userlist.User.id)">Decline</button>
+      </div> -->
+  </ion-item>
+</div>
+<div *ngIf='errorValue == 0'>
+    <ion-item *ngFor="let userlist of searchArray">
+        <ion-avatar item-start>
+          <img src="{{userlist.image}}">
+        </ion-avatar>
+     <a (click)="chatPage(userlist.id);">
+        <h3 class="inv_title">{{userlist.complete_name}}</h3>
+        <p class="loc_title">Send a fitting room invitation</p>
+        <ion-note style="margin-top:2px;" item-end="" class="note note-ios" *ngIf="userlist.time">{{userlist.time}}</ion-note>
+      </a>
+      <!--<div class="acpt">
+        <button ion-button color="header-color" small (click)="accpet(userlist.User.id)" >Accept</button>
+        <button ion-button color="light" small (click)="decline(userlist.User.id)">Decline</button>
+      </div>-->
+  </ion-item>
+
+</div>
+  <ion-item *ngFor="let groupinfo of groupdata">
+        <ion-avatar item-start>
+          <img src="{{groupinfo.Fitting.image}}">
+        </ion-avatar>
+     <a (click)="groupchatPage(groupinfo.Fitting.id)">
+        <h3 class="inv_title">{{groupinfo.Fitting.name}}</h3>
+        <p class="loc_title" *ngIf="groupinfo[0].groupmessage == null">Start a conversation in <span style="text-transform: capitalize;font-size: 11px;font-family: futuramedium;color: #8e8e93;letter-spacing: 0.14px;">{{groupinfo.Fitting.name}}</span></p>
+        <p class="loc_title" *ngIf="groupinfo[0].groupmessage != null">{{groupinfo[0].groupmessage}}</p>
+        <ion-note *ngIf="groupinfo.Accept.time != null" item-end="" class="note note-ios">{{groupinfo.Accept.time}}</ion-note>
+      </a>
+      <!--<div class="acpt">
+        <button ion-button color="header-color" small (click)="accpet(userlist.User.id)" >Accept</button>
+        <button ion-button color="light" small (click)="decline(userlist.User.id)">Decline</button>
+      </div>-->
+  </ion-item>
+</ion-list>
+
+<!--<ion-list *ngFor="let groupinfo of groupdata" style="border:none;"> 
+   
+</ion-list>-->
+
+
+</ion-content>

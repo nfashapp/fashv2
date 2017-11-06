@@ -1,0 +1,273 @@
+page-confirmation {
+a{
+    color:#9f9fa3;
+    cursor: pointer;
+    }
+
+
+.toolbar-title{
+  text-transform: uppercase;
+  color: #878787 !important;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-family: futuraheavy !important;
+}
+
+
+.toolbar-title > p {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #878787 !important;
+    margin: 0;
+    text-transform: none;
+    font-family: futuraheavy !important;
+}
+
+.carttitle{
+    text-align:center;
+    color: #878787;
+    width: 100%;
+    float: left;
+    font-size: 13px;
+    font-family: futuraheavy;
+    text-transform: uppercase;
+    letter-spacing: 0.76px;
+}
+
+
+.cart{
+    position: relative;
+    height:115px;
+    width:115px;
+    overflow: hidden;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
+}
+
+.cart img{
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    height:auto;
+    width:100%;
+    margin:auto;
+}
+
+
+.carttxt_right h2 {
+    font-size: 12px;
+    margin: 0 0 10px 0;
+    color: #878787;
+    letter-spacing: 0.5px;
+    font-family: futuraheavy;
+}
+.carttxt_right h3 {
+    font-size: 12px;
+    margin: 0;
+    color: #878787;
+    letter-spacing: 0.5px;
+    font-family: futuraheavy;
+}
+.carttxt_right h3 span {
+    font-family: futuramedium;
+}
+.confirmation {
+    font-size: 12px;
+    width: 100%;
+    float: left;
+    color: #878787;
+    letter-spacing: 0.5px;
+    font-family: futuraheavy;
+ 
+}
+
+.orderno{
+    font-size: 12px;
+    width: 100%;
+    float: left;
+    color: #878787;
+    letter-spacing: 0.5px;
+    font-family: futuramedium;
+    padding-left: 4px;
+}
+
+
+.top .label-md,.top .label-ios {
+    margin: 0px;
+}
+
+.item-md.item-block .item-inner,.item-ios.item-block .item-inner {
+    padding-right: 0px;
+    color: #919191;
+    border: 0;
+}
+
+.name {
+    margin-bottom: 8px;
+}
+
+.quantity {
+    float: left;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.quantity .add {
+    float: left;
+    color: #878787;
+    letter-spacing: 0.5px;
+    font-family: futuraheavy;
+    font-size: 12px;
+}
+.quantity span {
+    color: #878787;
+    letter-spacing: 0.5px;
+    font-family: futuraheavy;
+    font-size: 12px;
+}
+
+.quantity .price {
+    float: right;
+    color: #878787;
+    letter-spacing: 0.5px;
+    font-family: futuraheavy;
+    font-size: 12px;
+}
+
+.add > span {
+    padding: 0 5px;
+}
+
+
+.carttotal .item{
+    height: 23px;
+    min-height: 23px;
+    font-size: 12px;
+    color: #878787;
+}
+.carttotal .item label{
+    font-size: 12px;
+    font-family: futuramedium;
+}
+
+.totlebold{
+    font-size: 12px;
+    font-family: futuraheavy;
+}
+.priceremove {
+    position: absolute;
+    right: 0;
+    background: #fae4de;
+    color: #878787;
+    padding: 2px 10px;
+    text-transform: uppercase;
+    font-size: 11px;
+    margin: 2px;
+    border-radius: 2px;
+    font-family: futuraheavy !important;
+}
+
+
+.note-md,.note-ios {
+    color: #919191;
+}
+
+.text-input::-moz-placeholder {
+    color: #999;
+}
+
+.promo{
+    border-bottom: 1px solid rgba(151,151,151,0.17);
+    border-top: 1px solid rgba(151,151,151,0.17);
+    float: left;
+    margin: 8px 11px 11px;
+    padding: 17px 2px;
+    text-align: center;
+    width: 93%;
+}
+
+.promo .promo_a{
+    border: 1px solid rgba(151,151,151,0.4);
+    border-radius: 5px;
+    float: left;
+    width: 60%;
+    height: 31px;
+}
+
+.promo_a input {
+    margin: 7px;
+    letter-spacing: 0.5px;
+    font-family: futuraheavy;
+    font-size: 12px;
+}
+
+
+
+.list-md,.list-ios {
+    float: left;
+    width: 100%;
+}
+
+.list-ios {
+    margin: -1px 0 11px;
+}
+
+.list-ios > .item-block:first-child {
+    border-top: 0px;
+}
+
+.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+    border-bottom: 0px;
+}
+
+.total {
+    border-top: 1px solid rgba(151,151,151,0.17);
+    height: 39px;
+    min-height: 0;
+    font-size: 14px;
+    float: left;
+    width: 100%;
+    border: inherit;
+}
+
+.item:last-child.total{
+     border: inherit;
+     margin-top: 10px;
+}
+.item:last-child.total .item-inner{
+     border-top: 1px solid rgba(151,151,151,0.17) !important;
+     border: inherit;
+}
+.item:last-child label{
+    font-family: futuraheavy !important;
+}
+
+.send{
+    width:100%;
+    float:left;
+    text-align: center;
+    color:#9f9fa3;
+    background: #fff;
+    position: fixed;
+    bottom: 50px;
+    padding: 24px 11px;
+}
+
+
+.send a{
+    background: #9f9fa3;
+    color: #fff;
+    box-shadow: none;
+    font-weight: normal;
+    height: 44px;
+    font-size: 15px;
+}
+
+.send p {
+    margin-bottom: 0px;
+}
+
+.send .button-md.activated,.send .button-ios.activated{background: #9f9fa3;}
+
+}

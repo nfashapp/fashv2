@@ -1,0 +1,406 @@
+page-review {
+
+a{
+    color:#9f9fa3;
+    cursor: pointer;
+    }
+.toolbar-title{
+  text-transform: uppercase;
+  color: #878787 !important;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-family: futuraheavy !important;
+}
+
+
+.toolbar-title > p {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #878787 !important;
+    margin: 0;
+    text-transform: none;
+    font-family: futuraheavy !important;
+}
+
+    
+.address_sec h5 {
+    font-size: 12px;
+    color: #878787;
+    letter-spacing: 0.5px;
+    font-family: futuraheavy;
+}
+.address_sec .item-inner {
+    background: #f1f1f1;
+    padding: 10px;
+    color: #878787 !important;
+    font-size: 12px;
+    border-radius: 3px;
+    margin-right: 12px;
+}
+
+
+.quantity {
+    float: left;
+    padding-top: 10px;
+    width: 100%;
+}
+
+.add {
+    float: left;
+    text-align: center;
+    width: 100%;
+}
+
+ .add > span { 
+    padding: 0 5px;
+}
+
+.quantity .price {
+    float: right;
+}
+
+.process ion-col{text-align: center;}
+
+.list_cnt .item-inner {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+.list_cnt.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+    border-bottom: 0px;
+}
+.list_cnt a {
+    position: absolute;
+    right: 9px;
+    color: #878787;
+    font-size: 12px;
+    font-family: futuraheavy;
+    margin: 0 !important;
+    top: 14px;
+}
+.carttitle{
+    text-align:center;
+    color: #878787;
+    width: 100%;
+    float: left;
+    font-size: 13px;
+    font-family: futuraheavy;
+    text-transform: uppercase;
+    letter-spacing: 0.76px;
+}
+.carttxt_right{
+    padding-top: 3px;
+    padding-left: 5px;
+}
+
+.cart{
+    position: relative;
+    height:100px;
+    width:100px;
+    overflow: hidden;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
+}
+
+.cart img{
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    height:auto;
+    width:100%;
+    margin:auto;
+}
+
+
+.carttxt_right h2 {
+    font-size: 12px;
+    margin: 0 0 10px 0;
+    color: #878787;
+    letter-spacing: 0.5px;
+    font-family: futuraheavy;
+}
+.carttxt_right h3 {
+    font-size: 12px;
+    margin: 0;
+    color: #878787;
+    letter-spacing: 0.5px;
+    font-family: futuraheavy;
+}
+.carttxt_right h3 span {
+    font-family: futuramedium;
+}
+
+
+.icn {
+    color: #9f9fa3;
+    text-align: center;
+    font-size: 12px;
+}
+
+.process ion-col{text-align: center;}
+
+.effect::before {
+    background: #9f9fa3;
+    content: "";
+    float: left;
+    height: 1px;
+    left: -47px;
+    position: absolute;
+    top: 6px;
+    width: 88%;
+}
+
+.effect::after {
+    background: #9f9fa3;
+    content: "";
+    float: left;
+    height: 1px;
+    right: -47px;
+    position: absolute;
+    top: 6px;
+    width: 88%;
+}
+
+.effect {
+    position: relative;
+}
+.cartlist {
+    padding: 10px;
+    background: #f1f1f1;
+}
+
+
+.toolbar-title{
+  text-transform: uppercase;
+  color: #6c6c6c !important;
+  letter-spacing: 2px;
+  font-weight: 600 !important;
+  font-size: 11px;
+}
+
+
+.toolbar-title > p {
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin: 0;
+    text-transform: none;
+}
+
+.cartlist {
+    padding: 10px;
+    background: #f1f1f1;
+}
+
+
+.top .label-md,.top .label-ios {
+    margin: 0px;
+}
+
+.item-md.item-block .item-inner,.item-ios.item-block .item-inner {
+    padding-right: 0px;
+    color: #919191;
+    border: 0;
+}
+
+.name {
+    margin-bottom: 14px;
+}
+
+.quantity {
+    float: left;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.quantity .add {
+    float: left;
+}
+
+.quantity .price {
+    float: right;
+}
+
+.add > span {
+    padding: 0 5px;
+}
+
+.sub .item-md.item-block .item-inner, page-cart .item-ios.item-block .item-inner{height: 23px;}
+
+.sub .label-md,.sub .label-ios {margin:0px;}
+
+.sub .item-block{
+    font-size: 14px;
+    font-weight: 500;
+    min-height: 0;
+    background: transparent;
+}
+
+.sub .item-block.item-ios {
+    height: 25px;
+    min-height: 0;
+    font-size: 14px;
+    font-weight: 500;
+    background: transparent;
+}
+
+.note-md,.note-ios {
+      color: #9a9a9a;
+}
+
+.text-input::-moz-placeholder {
+    color: #999;
+}
+
+.promo{
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    float: left;
+    margin: 8px 11px 11px;
+    padding: 17px 2px;
+    text-align: center;
+    width: 93%;
+}
+
+.promo .promo_a{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    float: left;
+    width: 65%;
+}
+
+.promo_a input {
+    margin: 7px;
+}
+
+.promo .promo_b{
+    float: right;
+    margin: 0;
+    width: auto;
+    background: #9f9fa3;
+    color: #fff;
+    box-shadow: none;
+    font-weight: normal;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+.list-md,.list-ios {
+    float: left;
+    width: 100%;
+}
+
+.list-ios {
+    margin: -1px 0 11px;
+}
+
+.list-ios > .item-block:first-child {
+    border-top: 0px;
+}
+
+.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+    border-bottom: 0px;
+}
+
+.total {
+    height: 39px;
+    min-height: 0;
+    font-size: 12px;
+    color: #878787;
+    letter-spacing: 0.5px;
+    font-family: futuraheavy;
+    background: transparent;
+}
+
+.totalamount{
+    border-bottom: 1px solid rgba(151,151,151,0.17);
+    height: 39px;
+    min-height: 0;
+    font-size: 14px;
+    background: transparent;
+    font-weight: 500;
+}
+
+.send{
+    width:100%;
+    float:left;
+    text-align: center;
+    color:#9f9fa3;
+    background: #fff;
+    position: fixed;
+    bottom: 50px;
+    padding: 11px;
+}
+
+
+.send a{
+    background: #9f9fa3;
+    color: #fff;
+    box-shadow: none;
+    font-weight: normal;
+    height: 44px;
+    font-size: 15px;
+}
+
+.send p {
+    margin-bottom: 0px;
+}
+
+.send .button-md.activated,.send .button-ios.activated{background: #9f9fa3;}
+
+.top{
+    background: transparent;
+}
+
+.itm {
+    margin-bottom: 10px;
+}
+
+.subtotal {
+    background: #f1f1f1;
+    float: left;
+    margin: 12px 0 0;
+    width: 100%;
+}
+
+.subtotal .item{
+    padding-left: 10px;
+}
+
+.total {
+    border-top: 1px solid rgba(151,151,151,0.17) !important;
+}
+
+.items {
+    float: left;
+    font-size: 12px;
+    margin: 8px 0 8px;
+    padding-left: 0;
+    width: 100%;
+    color:#878787;
+     font-family: futuramedium;
+}
+.sub label{
+    font-size: 12px;
+    color:#878787;
+    font-family: futuramedium;
+}
+.note, .totalb{
+    color: #878787;
+    font-size: 12px;
+    font-family: futuraheavy;
+}
+
+.process, .process .col {
+    padding: 0;
+    font-size: 12px;
+    color: #878787;
+    letter-spacing: 0.5px;
+    font-family: futuramedium;
+}
+
+}
+.totalborder:last-child {
+    border-top: 1px solid rgba(151,151,151,0.17) !important;
+}

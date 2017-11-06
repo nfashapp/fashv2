@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar color="header-color">
+    <ion-title class="title1">BAD LIAR<p>Selena Gomez</p></ion-title>
+    <ion-buttons end>
+  <button ion-button color="light" clear>
+  <img width="18px" src="assets/images/fast-forward.png">
+  </button>
+  <button ion-button color="light" clear>
+  <img width="12px" src="assets/images/pause.png">
+  </button>
+  <button ion-button color="light" clear>
+  <img width="18px" src="assets/images/fast-forwardr.png">
+  </button>
+  </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<ion-list style="margin-bottom:0px;" class="list_cnt">
+    <ion-item>
+      <span class="carttitle">Order History</span>
+    </ion-item>
+  </ion-list>
+
+  <div class="order_history">
+<ion-list *ngIf="Historydetail">
+  <ion-item style="padding: 0;" text-wrap *ngFor="let hist_detail of Historydetail">
+    <p>Order item number: #{{hist_detail.OrderItem.id}}</p>
+    <ion-grid style="padding:0;">
+      <ion-row>
+         <ion-col col-5 style="padding: 10px 0 10px 4px;">
+        <div class="cart">
+          <img [src]="hist_detail.Product.image">
+           <div *ngIf="hist_detail.OrderItem.soldout == 1 && hist_detail.OrderItem.trackingid == null" class="priceremove"> SOLD OUT </div>
+          <div *ngIf="hist_detail.OrderItem.soldout == 0 && hist_detail.OrderItem.trackingid != null" class="priceremove"> CONFIRMED </div>
+      
+        </div>
+        </ion-col>
+        <ion-col col-7 style="padding: 10px;">
+          <div class="carttxt_right">
+            <h2 style="text-transform:uppercase;">{{hist_detail.Product.brand}}</h2>
+            <h3 style="margin-bottom:15px;">{{hist_detail.Product.name}}</h3>
+            <h3 *ngIf="hist_detail.Product.productsize"><span> Size: </span> {{hist_detail.Product.productsize}}</h3>
+            <h3 *ngIf="hist_detail.Product.retailer"><span>Fulfilled by:</span> {{hist_detail.Product.retailer}}</h3>
+            <h3 *ngIf="hist_detail.Product.price"><span>Price:</span> ${{hist_detail.Product.price | number : '1.2-2'}}</h3>
+            <!-- <p>Est. delivery: Jun 13 - 14</p> -->
+          </div>
+        </ion-col>
+      </ion-row>
+      
+    </ion-grid>
+    <!-- <p style="margin-top:0;"><span style="float: left; text-decoration:underline; font-size:11px;">Return this order</span> </p> -->
+  </ion-item>
+
+ 
+</ion-list>
+  </div>
+</ion-content>
+
+<ion-footer class="send" style="height:97px;">
+  <button class="btn_globle" style="height: 49px; width: 90%; margin: 0px auto; float:none;" ion-button full (click)="chatPage()">CUSTOMER SUPPORT</button>
+</ion-footer>
+

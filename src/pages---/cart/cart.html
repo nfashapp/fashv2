@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-navbar color="header-color">
+    <ion-title class="title1">YOU DON'T KNOW ME<p>Jax Jones feat. RAYE</p></ion-title>
+  
+  <ion-buttons end>
+  <button ion-button color="light" clear>
+  <img width="18px" src="assets/images/fast-forward.png">
+  </button>
+  <button ion-button color="light" clear>
+  <img width="12px" src="assets/images/pause.png">
+  </button>
+  <button ion-button color="light" clear>
+  <img width="18px" src="assets/images/fast-forwardr.png">
+  </button>
+  </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<span style="padding:0;text-align:center;position:absolute;height:20px;left:0;right:0;bottom:0;top:0;margin:auto;
+color:#878787;" class="emptycart" *ngIf='this?.cartItems?.length == 0'>
+      Your cart is empty.
+     </span>
+<ion-list style="margin-bottom:0px;" class="list_cnt">
+    <ion-item>
+      <span class="carttitle">Shopping cart</span>
+    </ion-item>
+  </ion-list>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)"> 
+    <ion-refresher-content pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing..."></ion-refresher-content>
+  </ion-refresher>
+ <ion-grid>
+   
+    <ion-row *ngFor="let item of cartItems; let i = index" [attr.data-index]="i">
+       <ion-col col-5 style="padding: 10px 0 10px 10px;">
+        <div class="cart">
+           <img [src]="item.Product.image"/>
+           <div class="priceremove" (click)="removeItem(item.Cart.id)">  Remove </div>
+        </div>
+      </ion-col>
+      
+      <ion-col col-7 style="padding: 10px;">
+        <div class="carttxt_right">
+          <h2> {{item.Product.name}} </h2>
+          <h3><span>Size:</span> {{item[0].procolor}} - {{item[0].prosize}} </h3>
+          <h3><span>Fulfilled by:</span> {{item.Product.retailer}}</h3>
+          <div class="quantity">
+              <div class="add">
+                <ion-icon name="remove" (click)='Decrease(item.Cart.quantity,item.Cart.id)'></ion-icon>
+                  <span>{{item.Cart.quantity}}</span>
+                <ion-icon name="add" (click)='Increase(item.Cart.quantity,item.Cart.id)'></ion-icon>
+              </div>
+              <div class="price"> ${{item.Cart.price * item.Cart.quantity | number : '1.2-2'}}  </div>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+</ion-grid>
+<div  *ngIf='this?.cartItems?.length > 0'>
+ <div class="promo">
+    <ion-input type="text" placeholder="Enter Promo Code" class="promo_a"></ion-input>
+    <button small ion-button color="light" style="width: 81px; float: right;" class="btn_globle">Apply</button>
+  </div>
+
+<ion-list class="carttotal">
+  <ion-item>
+      Subtotal:
+    <ion-note item-end="" class="note note-ios totlebold">
+      ${{subtotal | number : '1.2-2'}}
+    </ion-note>
+  </ion-item>
+   <ion-item>
+      Estimated tax (8.9%):
+    <ion-note item-end="" class="note note-ios totlebold">
+      ${{tax | number : '1.2-2'}}
+    </ion-note>
+  </ion-item>
+   <ion-item>
+      Shipping & returns:
+    <ion-note item-end="" class="note note-ios totlebold">
+      FREE
+    </ion-note>
+  </ion-item>
+
+
+  <ion-item class="total" style="height:35px;">
+     <div style="font-family: futuraheavy;"> Total:</div>
+    <ion-note item-end="" class="note note-ios totlebold">
+       ${{total | number : '1.2-2'}}
+    </ion-note>
+  </ion-item>
+
+</ion-list>
+</div>
+</ion-content>
+
+<ion-footer class="send" style="height:97px;">
+  <button class="btn_globle" style="height: 49px; width: 90%; margin: 0px auto; float:none;" ion-button full (click)="shippingPage();" [disabled]='subtotal == 0'>CHECKOUT</button>
+</ion-footer>

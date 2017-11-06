@@ -1,0 +1,136 @@
+<!--<ion-header>
+  <ion-navbar color="header-color">
+    <ion-title class="title1">YOU DON'T KNOW ME<p>Jax Jones feat. RAYE</p></ion-title>
+  </ion-navbar>
+</ion-header>-->
+
+<ion-header class="">
+  <ion-navbar color="header-color"> 
+    <ion-buttons start left>
+     <button ion-button menuToggle left color="">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    </ion-buttons>
+    <!--<ion-buttons right>
+      <button ion-button>
+        <ion-icon ios="ios-rewind" md="md-rewind"></ion-icon>
+      </button>
+    </ion-buttons>
+     <ion-buttons right>
+      <button ion-button>
+
+       <ion-icon ios="ios-pause" md="md-pause"></ion-icon>
+      </button>
+    </ion-buttons>
+     <ion-buttons end right>
+      <button ion-button>
+        <ion-icon ios="ios-fastforward" md="md-fastforward"></ion-icon>
+      </button>
+    </ion-buttons>-->
+
+    <ion-title class="title1">YOU DON'T KNOW ME<p>Jax Jones feat. RAYE</p></ion-title>
+    <ion-buttons end>
+<button ion-button color="light" clear>
+<img width="18px" src="assets/images/fast-forward.png">
+</button>
+<button ion-button color="light" clear>
+<img width="12px" src="assets/images/pause.png">
+</button>
+<button ion-button color="light" clear>
+<img width="18px" src="assets/images/fast-forwardr.png">
+</button>
+</ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+
+
+<ion-content padding>
+  <div class="procard_box" *ngIf="allcards">
+    <div class="procard"></div>
+    <div class="procard_inn"></div>
+    <div class="procard_img slider">
+      <!--<div class="overlay"></div>-->
+          <ion-slides  (ionSlideDidChange)="ondrag()">
+      <ion-slide *ngFor="let res of allcards" style="background-color:#fff;" >
+        <div class="slide_box">
+        <img *ngIf='res?.Product?.image' [src]="res?.Product?.image" (click)="productDetails(res?.Product?.id)">
+         <img *ngIf='res?.Lookbook?.image' [src]="res?.Lookbook?.image">
+        </div>
+        <ion-grid *ngIf='res?.Product?.image' style="position: absolute; z-index: 999; bottom: 0px; background:#fff; padding: 5px;">
+          <ion-row>
+            <ion-col col-6>
+              <div class="product_title">
+                <h4 >{{ res?.Product?.name}}</h4>
+                <h5 class="product_subtitle">Who Needs Friends?</h5>
+              </div>
+            </ion-col>
+            <ion-col col-6>
+
+              <button style="margin-top:0; float:right;" ion-button color="dark" small clear icon-only  (click)="share(res?.Product?.id)">
+                <ion-icon style="padding:0;"><img style="width:18px !important; height: auto;" src="assets/images/hanger.png"></ion-icon>
+              </button>
+              <button style="margin-top:0; float:right; color: #878787;" ion-button color="dark" small clear icon-only (click)="myFavs(res.Product.id,res[0].favs )">
+                <ion-icon style="padding: 4px;" name="md-heart-outline"></ion-icon>
+              </button>
+              <button style="margin-top:0;float:right; font-family: futuraheavy; border-color: #979797;color:#878787; padding: 5px; font-size: 13px;" color="" ion-button outline small><span style="font-family: futuraheavy;">${{ res?.Product?.price | number:'1.2-2'}} </span></button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-grid *ngIf='res?.Lookbook?.image'>  
+          <div class="content_pro" >
+            <h4>{{res?.Lookbook?.name}}</h4>
+            <h5>{{res?.Lookbook?.brand}}</h5>
+            <p>{{res?.Lookbook?.text}}</p>
+          </div>
+        </ion-grid>
+      </ion-slide> 
+    </ion-slides>
+      </div>
+  </div>
+  
+
+
+
+
+<!--slkndfdajf;as dfd saljfbalskdjbf
+   <div class="slider">
+    
+  </div>-->
+
+  
+
+  <!--<div swing-stack #myswing1 [stackConfig]="stackConfig" (throwoutleft)="voteUp(false,index)"  (throwoutright)="voteUp(true,index)" id="card-stack">
+    <ion-card #mycards1 swing-card *ngFor="let res of allcards">
+      <ion-item *ngIf="res?.Product?.image" style="padding:0;">
+        <img *ngIf="res?.Product?.image" [src]="res?.Product?.image" (click)="productDetails(res?.Product?.id)">
+        <ion-grid style="position: absolute; z-index: 999; bottom: 0px; background:#fff; padding: 13px;">
+          <ion-row>
+            <ion-col col-6>
+              <div class="product_title">
+                <h4 >{{ res?.Product?.name}}</h4>
+                <h5 class="product_subtitle">Who Needs Friends?</h5>
+              </div>
+            </ion-col>
+            <ion-col col-6>
+              <button style="margin-top:0;" color="dark" ion-button outline small>{{ res?.Product?.price }} </button>
+              <button style="margin-top:0;" ion-button color="dark" small clear icon-only (click)="myFavs(res.Product.id,res[0].favs )">
+                <ion-icon style="padding-right: 2px;" name="md-heart-outline"></ion-icon>
+              </button>
+              <button style="margin-top:0;" ion-button color="dark" small clear icon-only  (click)="share(res?.Product?.id)">
+                <ion-icon style="padding:0;"><img style="width:20px !important; height: auto;" width="20px" src="assets/images/hanger.png"></ion-icon>
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-card>
+  </div>-->
+</ion-content>
+
+
+
+<!--<ion-content padding>
+  <div (click)="tutorialModal()">View Model</div>
+</ion-content>-->

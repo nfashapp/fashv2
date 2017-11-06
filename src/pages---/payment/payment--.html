@@ -1,0 +1,300 @@
+<ion-header>
+  <ion-navbar color="header-color">
+    <ion-title class="title1">YOU DON'T KNOW ME
+      <p>Jax Jones feat. RAYE</p>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-list style="margin-bottom:0px;" class="list_cnt">
+    <ion-item>
+      <span class="carttitle">SECURE CHECKOUT</span>
+      <a item-end>Cancel</a>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-grid>
+    <ion-row class="process">
+      <ion-col col-4>
+        <div class="icn">
+          <ion-icon name="radio-button-on"></ion-icon>
+        </div>Shipping
+      </ion-col>
+      <ion-col col-4>
+        <div class="icn effect">
+          <ion-icon name="radio-button-on"></ion-icon>
+        </div>Payment
+      </ion-col>
+      <ion-col col-4>
+        <div class="icn">
+          <ion-icon name="radio-button-off"></ion-icon>
+        </div>Review Order
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list radio-group class="address_sec" [(ngModel)]='selected'>
+
+    <h5 padding>Payment Method</h5>
+
+    <ion-item *ngFor="let cardlist of card; let i = index" [attr.data-index]="i">
+      <ion-label>
+        <p>{{cardlist.Card.cardnumber}}</p>
+        <p>Card Holder : {{cardlist.Card.name}}</p>
+          
+        <!--<ion-thumbnail item-start *ngIf="cardlist.Card.cardnumber.length == 14">
+          <img src="assets/img/visa-large.gif">
+        </ion-thumbnail>-->
+        <!--<ion-thumbnail item-start *ngIf="cardlist.Card.cardnumber.length == 16">
+          <img src="assets/img/maestro.jpg">
+        </ion-thumbnail>-->
+      </ion-label>
+      <ion-radio item-left [value]="cardlist.Card.id" (click)='myCard(cardlist.Card.id)' name='selected' ngDefaultControl></ion-radio>
+     
+      <!--<div *ngIf="cvc.errors && (cvc.dirty || cvc.touched)" class="alert alert-danger">
+        <div [hidden]="!cvc.errors.required" class="alert alert-danger">
+          CVC is required
+        </div>
+      </div>-->
+      </ion-item>
+        <ion-item>
+        <ion-label>
+          CVC
+        </ion-label>
+      <ion-input type="tel" style='z-index:99999;' [(ngModel)]='cvc' (ionChange)='isnumber(value)' value='cvc' minlength="3" maxlength="4" placeholder="CVC"></ion-input>
+     </ion-item>
+  </ion-list>
+
+
+  <ion-list class="custom_accordion">
+    <ion-item text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
+      <h3 class="adddelivery">
+        Add new Card
+        <ion-icon style="float:left; margin: 0 5px 0 0;" color="success" item-left [name]="isGroupShown(i) ? 'remove' : 'add'"></ion-icon>
+      </h3>
+    </ion-item>
+    <div class="acco_sec" *ngIf="isGroupShown(i)">
+      <ion-list class="fields">
+        <ion-grid>
+          <form #cardForm="ngForm">
+            <ion-row class="process">
+
+              <ion-col col-12>
+                <ion-item>
+                  <ion-input type="tel" [(ngModel)]='card.cardnumber' name='cardnumber' minlength='14' maxlength='16' pattern="[0-9]+" required
+                    #cardnumber='ngModel' placeholder="Enter card number"></ion-input>
+                </ion-item>
+              </ion-col>
+              <div *ngIf="cardnumber.errors && (cardnumber.dirty || cardnumber.touched)" class="alert alert-danger">
+                <div [hidden]="!cardnumber.errors.required" class="alert alert-danger">
+                  Card number is required
+                </div>
+                <div [hidden]="!cardnumber.errors.pattern" class="alert alert-danger">
+                  Invalid Card Number
+                </div>
+              </div>
+
+              <ion-col col-6 style="padding-right:0px;">
+                <ion-item>
+                  <!--<ion-label>Date</ion-label>-->
+                  <ion-input type="text" [(ngModel)]='card.mmyy' placeholder="MM/YY" required name='mmyy' pattern="(0[1-9]|1[012])+([/]{1})+([0-9]{2})"
+                    #mmyy='ngModel'></ion-input>
+                </ion-item>
+              </ion-col>
+              <div *ngIf="mmyy.errors && (mmyy.dirty || mmyy.touched)" class="alert alert-danger">
+                <div [hidden]="!mmyy.errors.required" class="alert alert-danger">
+                  This field is required
+                </div>
+                <div [hidden]="!mmyy.errors.pattern" class="alert alert-danger">
+                  Invalid Date
+                </div>
+              </div>
+
+              <!--<ion-col col-6 style="padding-left:0px;">
+                <ion-item style="padding-left:0px;">
+                  <ion-input type="tel" [(ngModel)]='card.cvc' minlength="3" maxlength="3" placeholder="CVC" pattern='[(0-9)]+' required name='cvc'
+                    #cvc='ngModel'></ion-input>
+                </ion-item>
+              </ion-col>
+              <div *ngIf="cvc.errors && (cvc.dirty || cvc.touched)" class="alert alert-danger">
+                <div [hidden]="!cvc.errors.required" class="alert alert-danger">
+                  CVC is required
+                </div>
+                <div [hidden]="!cvc.errors.pattern" class="alert alert-danger">
+                  Invalid CVC
+                </div>
+              </div>-->
+
+
+              <ion-col col-12>
+                <ion-item>
+                  <ion-input type="text" [(ngModel)]='card.name' pattern="[a-zA-Z][a-zA-Z ]+" required placeholder="Full name" name='name'
+                    #name='ngModel'></ion-input>
+                </ion-item>
+              </ion-col>
+              <div *ngIf="name.errors && (name.dirty || name.touched)" class="alert alert-danger">
+
+                <div [hidden]="!name.errors.pattern" class="alert alert-danger">
+                  Invalid name
+                </div>
+              </div>
+            </ion-row>
+            <h5 padding class="paymethod">Payment Method</h5>
+            <ion-item class="tog">
+
+              <ion-label> Same as shipping address</ion-label>
+              <ion-toggle [(ngModel)]="setDefaultAddress" value='setDefaultAddress' setDefaultAddress [ngModelOptions]="{standalone: true}"
+                (ionChange)="setDefault(setDefaultAddress)"></ion-toggle>
+            </ion-item>
+
+            <ion-row *ngIf="setDefaultAddress == false">
+              <ion-col col-12>
+                <ion-item>
+                  <h2>Billing Address:</h2>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row class="process" *ngIf="setDefaultAddress == false">
+
+              <ion-col col-12>
+                <ion-item>
+                  <ion-input type="text" placeholder="Name" [(ngModel)]='card.username' pattern="[a-zA-Z][a-zA-Z ]+" required name="username"
+                    #username='ngModel'></ion-input>
+                </ion-item>
+              </ion-col>
+              <div *ngIf="username.errors && (username.dirty || username.touched)" class="alert alert-danger">
+                <div [hidden]="!username.errors.required" class="alert alert-danger">
+                  Name is required
+                </div>
+                <div [hidden]="!username.errors.pattern" class="alert alert-danger">
+                  Invalid name
+                </div>
+              </div>
+
+              <ion-col col-12>
+                <ion-item>
+                  <ion-input type="text" placeholder="Address" [(ngModel)]='card.address' required name="address" #address='ngModel'></ion-input>
+                </ion-item>
+              </ion-col>
+              <div *ngIf="address.errors && (address.dirty || address.touched)" class="alert alert-danger">
+                <div [hidden]="!address.errors.required" class="alert alert-danger">
+                  Address is required
+                </div>
+              </div>
+
+              <ion-col col-12>
+                <ion-item>
+                  <ion-input type="text" placeholder="Apt #" [(ngModel)]='card.apt' required name="apt" #apt='ngModel'></ion-input>
+                </ion-item>
+              </ion-col>
+              <div *ngIf="apt.errors && (apt.dirty || apt.touched)" class="alert alert-danger">
+                <div [hidden]="!apt.errors.required" class="alert alert-danger">
+                  Apartment number is required
+                </div>
+              </div>
+
+
+              <ion-col col-6 style="padding-right:0px;">
+                <ion-item>
+                  <ion-label>Country</ion-label>
+                  <ion-select [(ngModel)]='card.country' name="country" required #country='ngModel'>
+                    <!--[compareWith]="compareFn" // check this-->
+                    <ion-option *ngFor="let count of countries" [value]="count.Country.name">{{count.Country.name}}</ion-option>
+                  </ion-select>
+                  <!--<ion-input type="text" placeholder="Country" [(ngModel)]='data.country' name="country" #country='ngModel'></ion-input>-->
+                </ion-item>
+              </ion-col>
+              <div *ngIf="country.errors && (country.dirty || country.touched)" class="alert alert-danger">
+                <div [hidden]="!country.errors.required" class="alert alert-danger">
+                  Country is required
+                </div>
+              </div>
+
+              <ion-col col-6 style="padding-left:0px;">
+                <ion-item style="padding-left:0px;">
+                  <ion-input type="text" placeholder="City" [(ngModel)]='card.city' required name="city" #city='ngModel'></ion-input>
+                </ion-item>
+              </ion-col>
+              <div *ngIf="city.errors && (city.dirty || city.touched)" class="alert alert-danger">
+                <div [hidden]="!city.errors.required" class="alert alert-danger">
+                  City is required
+                </div>
+              </div>
+
+              <ion-col col-6 style="padding-right:0px;">
+                <ion-item>
+                  <ion-input type="text" placeholder="State" [(ngModel)]='card.state' required name="state" #state='ngModel'></ion-input>
+                </ion-item>
+              </ion-col>
+              <div *ngIf="state.errors && (state.dirty || state.touched)" class="alert alert-danger">
+                <div [hidden]="!state.errors.required" class="alert alert-danger">
+                  State is required
+                </div>
+              </div>
+
+              <ion-col col-6 style="padding-left:0px;">
+                <ion-item style="padding-left:0px;">
+                  <ion-input type="tel" placeholder="Zip Code" [(ngModel)]='card.zip' maxlength="6" required pattern='[0-9]+' name="zip" #zip='ngModel'></ion-input>
+                </ion-item>
+              </ion-col>
+              <div *ngIf="zip.errors && (zip.dirty || zip.touched)" class="alert alert-danger">
+                <div [hidden]="!zip.errors.required" class="alert alert-danger">
+                  Zip is required
+                </div>
+                <div [hidden]="!zip.errors.pattern" class="alert alert-danger">
+                  Invalid Zipcode
+                </div>
+              </div>
+
+              <ion-col col-12>
+                <ion-item>
+                  <ion-input type="tel" placeholder="Contact Number ( xxx-xxx-xxxx )" [(ngModel)]='card.contact' maxlength='12' minlength='12'
+                    pattern='([0-9]{3})+([-]{1})+([0-9]{3})+([-]{1})+([0-9]{4})+' required name="contact" #contact='ngModel'></ion-input>
+                  <!--pattern='(\d+|\d+\.\d+|\.\d+)'-->
+                </ion-item>
+              </ion-col>
+              <div *ngIf="contact.errors && submitted" class="alert alert-danger">
+                <div [hidden]="!contact.errors.minlength" class="alert alert-danger">
+                  Please enter a valid number
+                </div>
+              </div>
+              <div *ngIf="contact.errors && (contact.dirty || contact.touched)" class="alert alert-danger">
+                <div [hidden]="!contact.errors.pattern" class="alert alert-danger">
+                  Please enter a valid format ( 999-999-9999 )
+                </div>
+              </div>
+
+            </ion-row>
+            <!-- <div class="send" *ngIf="showbutton == true || setDefaultAddress == true">  -->
+              <button ion-button full type="submit" [disabled]='!cardForm.valid' (click)="add_card(cardForm);">REVIEW2 ORDER</button>
+             <!-- </div>   -->
+          </form>
+        </ion-grid>
+      </ion-list>
+      <ion-list class="address" *ngIf="setDefaultAddress == true">
+        <ion-item>
+          Shipping Address
+        </ion-item>
+        <ion-item>
+          <p>
+            {{ ShippingAddr.address }}, {{ShippingAddr.apt}}<br> {{ ShippingAddr.city }}, {{ ShippingAddr.address }} {{ ShippingAddr.zipcode
+            }}
+          </p>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-list>
+
+
+</ion-content>
+
+<ion-footer class="send" *ngIf="showbutton == false && setDefaultAddress == false">
+  <button ion-button full [disabled]="cvc.length < 3" (click)="getToken();">REVIEW ORDER</button>
+</ion-footer>
+<!-- <ion-footer class="send" *ngIf="showbutton == true || setDefaultAddress == true">
+  <button ion-button full type="submit" [disabled]='!cardForm.valid' (click)="add_card(cardForm);">REVIEW2 ORDER</button>
+</ion-footer> -->

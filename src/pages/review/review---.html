@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-navbar color="header-color">
+    <ion-title class="title1">YOU DON'T KNOW ME<p>Jax Jones feat. RAYE</p></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+<ion-list style="margin-bottom:0px;" class="list_cnt">
+  <ion-item>
+      <span class="add">SECURE CHECKOUT</span>
+    <a item-end>Cancel</a>
+  </ion-item>
+</ion-list>
+
+
+<ion-grid>
+  <ion-row class="process">
+    <ion-col col-4>
+      <div class="icn"><ion-icon name="radio-button-on" ></ion-icon></div>Shipping
+    </ion-col>
+    <ion-col col-4>
+      <div class="icn effect"><ion-icon name="radio-button-on"></ion-icon></div>Payment
+    </ion-col>
+    <ion-col col-4>
+      <div class="icn"><ion-icon name="radio-button-on"></ion-icon></div>Review Order
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-grid>
+    <h2 class="items">Items</h2>
+    <ion-row class="itm" *ngFor="let item of cartItems; let i = index" [attr.data-index]="i">
+      <ion-col col-5 style="padding: 10px 0 10px 10px;">
+        <div class="cart">
+           <img  [src]="item.Product.image"/>
+        </div>
+      </ion-col>
+      <ion-col col-7 style="padding: 10px;">
+        <ion-item no-padding class="top">
+          <div class="name">
+            <h2> {{item.Product.name}} </h2>
+          </div>
+          <h3>Size : {{item[0].procolor}} - {{item[0].prosize}}</h3>
+          <h3>Fulfilled by: Revolve</h3>
+          <h3>Est. delivery: jun 13-14</h3>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+</ion-grid>
+
+
+<div class="subtotal">
+
+ <ion-item class="totalamount">
+      Total Amount
+  </ion-item>
+
+<ion-list class="sub">
+  <ion-item>
+      Subtotal:
+    <ion-note item-end="" class="note note-ios">
+      ${{subtotal}}
+    </ion-note>
+  </ion-item>
+   <ion-item>
+      Estimated tax:
+    <ion-note item-end="" class="note note-ios">
+      $0
+    </ion-note>
+  </ion-item>
+   <ion-item>
+      Shipping & returns:
+    <ion-note item-end="" class="note note-ios">
+      FREE
+    </ion-note>
+  </ion-item>
+</ion-list>
+
+  <ion-item class="total">
+      Total:
+    <ion-note item-end="" class="note note-ios">
+      ${{subtotal}}
+    </ion-note>
+  </ion-item>
+</div>
+
+</ion-content>
+
+<ion-footer class="send" >
+  <button ion-button full (click)="payment();">PAY</button>
+</ion-footer>

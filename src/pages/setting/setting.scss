@@ -1,0 +1,92 @@
+page-setting {
+    .setting{
+        padding:0;
+        float: left;
+        width:100%;
+    }
+    // .toolbar-title.toolbar-title-ios {
+    //     font-size: 17px;
+    //     color: #878787;
+    // }
+    .title > .toolbar-title{
+        text-transform: uppercase;
+        color: #6c6c6c !important;
+        letter-spacing: 8px !important;
+        font-family: futuraheavy !important;
+        font-size: 17px !important;
+        font-weight: bold;
+        }
+      
+      .title1 > .toolbar-title{
+        text-transform: uppercase;
+        color: #6c6c6c !important;
+        letter-spacing: 1px !important;
+        font-weight: 600 !important;
+        font-size: 12px !important;
+        font-family: futuraheavy;
+        }
+        
+      .title1 > .toolbar-title > p {
+         font-size: 10px;
+        letter-spacing: 1px;
+        margin: 0;
+        text-transform: none;
+        font-family: futuraheavy;
+      }
+
+.setting h4 {
+    color: #878787;
+    font-size: 13px;
+    margin: 7px 0;
+    text-align: center;
+}
+
+
+.setting .item ion-item {
+    padding: 0;
+}
+.setting .item {
+    color: #878787;
+    font-size: 14px;
+    padding: 0;
+}
+.setting .item-inner {
+    padding: 0;
+}
+.setting .item:first-child {
+    border: none;
+}
+.setting .label {
+    font-size: 13px;
+    letter-spacing: 0.76px;
+    color: #878787;
+    font-family: futuraheavy !important;
+}
+
+.version {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: #878787;
+    font-family: futuraheavy !important;
+    text-align: center;
+    margin-top: 32px;
+}
+
+.setting .icon {
+    font-size: 1.3em;
+    margin-top: 12px !important;
+    line-height: 24px;
+    
+}
+.carttitle{
+    text-align:center;
+    color: #878787;
+    width: 100%;
+    float: left;
+    font-size: 13px;
+    font-family: futuraheavy;
+    text-transform: uppercase;
+    letter-spacing: 0.76px;
+}
+}
+  

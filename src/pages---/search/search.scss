@@ -1,0 +1,169 @@
+page-search {
+
+
+
+.toolbar-title{
+  text-transform: uppercase;
+  color: #878787 !important;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-family: futuraheavy !important;
+}
+
+
+.toolbar-title > p {
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin: 0;
+    text-transform: none;
+    color: #878787 !important;
+    font-family: futuraheavy !important;
+}
+
+
+.searchbar-md {
+    min-height: 44px;
+    padding: 0px 8px;
+    border-top: 0.55px solid transparent;
+    border-bottom: 0.55px solid rgba(0, 0, 0, 0.05);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.searchbar-md .searchbar-input {
+    padding:0px 28px;
+    border-radius: 5px;
+}
+
+.searchbar-md .searchbar-search-icon {
+    left: 7px;
+    top: 7px;
+    margin-left: 0px;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-repeat: no-repeat;
+    background-size: 18px;
+}
+
+.list_cnt .item-md {
+    border-bottom: 2px solid #ccc;
+}
+
+ion-note.note.note-ios,ion-note.note.note-md{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    font-size: 14px;
+}
+
+.label-md,.label-ios {
+    white-space: normal;
+}
+
+.invite .button-inner{text-transform: capitalize;}
+
+.acpt{float:right;}
+
+.acpt .button-md{box-shadow: none;
+    border: 1px solid #ccc;
+    }
+
+.add{
+    text-align:center;
+    color: #878787;
+    width: 100%;
+    float: left;
+    font-size: 12px;
+    font-family: futuraheavy;
+    text-transform: uppercase;
+}
+.chat_ico {
+    position: absolute;
+    left: 9px;
+    color: #878787;
+    font-size: 12px;
+    font-family: futuraheavy;
+}
+
+.list_cnt a {
+    position: absolute;
+    right: 9px;
+    color: #878787;
+    font-size: 12px;
+    font-family: futuraheavy;
+    margin: 0 !important;
+    top: 14px;
+}
+
+.send{
+    width:100%;
+    float:left;
+    text-align: center;
+    color:#9f9fa3;
+    background: #fff;
+    position: fixed;
+    bottom: 53px;
+    padding: 11px;
+}
+
+.send button{
+    background: #9f9fa3;
+    color: #fff;
+    box-shadow: none;
+    font-weight: normal;
+    height: 44px;
+    font-size: 15px;
+}
+
+.send p {
+    margin: 0px;
+    font-size: 12px;
+    font-family: futuraheavy;
+    color: #878787;
+    letter-spacing: 1px;
+}
+
+// .chatbubble {
+//     padding: 16vw 0 4vw;
+//     text-align: center;
+// }
+
+.chatbubble {
+
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 185px;
+    z-index: 99999;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+.chatbubble_txt{
+    font-size:14px; 
+    font-family: futuraheavy;
+    color: #878787;
+    width: 65%;
+    margin: 20px auto 0;
+    text-align: center;
+}
+.inv_title{
+    margin: 0px;
+    font-size: 13px;
+    font-family: futuramedium;
+    color: #8e8e93;
+    letter-spacing: 0.14px;
+    text-transform: capitalize;
+}
+.loc_title{
+    margin: 0px;
+    font-size: 11px;
+    font-family: futuramedium;
+    color: #8e8e93;
+    letter-spacing: 0.14px;
+}
+
+}

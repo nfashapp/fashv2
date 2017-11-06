@@ -1,0 +1,55 @@
+page-gender {
+    .gender_outer {
+        padding-top: 35vh;
+        text-align: center;
+    }
+    .malefe .item {
+        background: none;
+        width: auto;
+        float: left;
+        margin: 0;
+        padding: 6px;
+         font-family: futuraheavy;
+        font-size: 100px;
+        color: #fff;
+        text-shadow: 0 3px 5px rgba(0,0,0,0.3);
+        font-weight: 600;
+    }
+    .malefe .item-inner{
+        border: none !important;
+    }
+    .center_sec {
+    width: auto;
+    margin: 0px auto;
+    display: inline-block;
+}
+    .gender_outer h5{
+        font-family: futuraheavy;
+        font-size: 15px;
+        color: #fff;
+        text-shadow:0 2px 2px #ccc;
+        text-transform: uppercase;
+        letter-spacing: 3.6px;
+    }
+    .malefe .radio-icon {
+    position: relative;
+    display: block;
+    width: 16px;
+    height: 21px;
+    opacity:0;
+}
+.malefe .radio {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.item-radio-checked.item ion-label{
+    color: #878787;
+}
+
+}

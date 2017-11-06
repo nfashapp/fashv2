@@ -1,0 +1,249 @@
+page-addaddress {
+
+a{
+    color:#9f9fa3;
+    cursor: pointer;
+    }
+
+.toolbar-title{
+  text-transform: uppercase;
+  color: #878787 !important;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-family: futuraheavy !important;
+}
+
+
+.toolbar-title > p {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #878787 !important;
+    margin: 0;
+    text-transform: none;
+    font-family: futuraheavy !important;
+}
+
+.carttitle{
+    text-align:center;
+    color: #878787;
+    width: 100%;
+    float: left;
+    font-size: 13px;
+    font-family: futuraheavy;
+    text-transform: uppercase;
+    letter-spacing: 0.76px;
+}
+
+.list_cnt a {
+    position: absolute;
+    right: 9px;
+    color: #878787;
+    font-size: 12px;
+    font-family: futuraheavy;
+    margin: 0 !important;
+    top: 14px;
+}
+
+.list_cnt .item-inner {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+.list_cnt.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+    border-bottom: 0px;
+}
+
+.add{
+    text-align: center;
+    color: #9f9fa3;
+    width: 100%;
+    float: left;
+}
+
+
+.address_sec h5 {
+    font-size: 12px;
+    color: #878787;
+    letter-spacing: 0.5px;
+    font-family: futuraheavy;
+}
+.address_sec .item {
+    margin-bottom: 10px;
+    box-shadow: none;
+    border: none;
+}
+.address_sec .item-inner {
+    background: #f1f1f1;
+    padding: 10px;
+    color: #878787 !important;
+    font-size: 12px;
+    border-radius: 3px;
+    margin-right: 12px;
+}
+.address_sec .item-inner {
+    border: none !important;
+    box-shadow: none !important;
+}
+.address_sec .item-inner .input-wrapper ion-label{
+    color: #878787 !important;
+    font-size: 12px;
+    font-family: futuramedium;
+}
+.address_sec .radio-inner{
+    border-color: #878787 !important;
+}
+.adddelivery{
+    font-size: 12px;
+    color: #878787;
+    letter-spacing: 0.5px;
+    font-family: futuraheavy;
+    text-decoration: underline;
+}
+
+.send{
+    width:100%;
+    float:left;
+    text-align: center;
+    color:#9f9fa3;
+    background: #fff;
+    position: fixed;
+    bottom: 50px;
+    padding: 24px 11px;
+}
+
+.send a{
+    background: #9f9fa3;
+    color: #fff;
+    box-shadow: none;
+    font-weight: normal;
+    height: 44px;
+    font-size: 15px;
+}
+
+.titleaddress {
+    padding: 10px;
+    border-bottom: 1px solid rgba(151,151,151,0.17);
+    position: relative;
+    font-family: futuramedium;
+}
+
+.titleaddress a {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.send .button-md.activated,.send .button-ios.activated{background: #9f9fa3;}
+
+
+
+.icn {
+    color: #9f9fa3;
+    text-align: center;
+    font-size: 12px;
+}
+
+.process ion-col{text-align: center;}
+
+.effect::before {
+    background: #9f9fa3;
+    content: "";
+    float: left;
+    height: 1px;
+    left: -45px;
+    position: absolute;
+    top: 6px;
+    width: 88%;
+}
+
+.effect::after {
+    background: #9f9fa3;
+    content: "";
+    float: left;
+    height: 1px;
+    right: -45px;
+    position: absolute;
+    top: 6px;
+    width: 88%;
+}
+
+.effect {
+    position: relative;
+}
+
+.text-input::-moz-placeholder {
+    color: #999;
+}
+
+
+.process input, .process .select {
+    height: 31px !important;
+    margin: 0;
+    min-height: 31px !important;
+    font-size: 12px !important;
+    padding: 5px 10px !important;
+    line-height: 16px;
+    border: 1px solid rgba(151,151,151,0.4);
+    border-radius: 2px;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+.process .item{
+    height: 31px;
+}
+.process .item-inner{
+    border: none !important;
+    height: 31px;
+}
+.process .item-block{
+    height: 31px;
+    min-height: 31px;
+    margin-bottom: 8px;
+}
+.custom_accordion .item {
+    border: none !important;
+}
+.custom_accordion .item-inner {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.addresstitle{
+    text-align:center;
+    color: #878787;
+    width: 100%;
+    float: left;
+    font-size: 13px;
+    font-family: futuraheavy;
+    text-transform: uppercase;
+    letter-spacing: 0.76px;
+}
+.radio_item .label {
+    font-size: 12px;
+    color: #979797;
+    letter-spacing: 0.5px;
+    font-family: futuramedium;
+}
+.radio_item{
+    width: 100%;
+    float: left;
+}
+.radio_item .item-inner {
+    border: none !important;
+}
+.radio_item .checkbox-ios .checkbox-icon {
+    width: 12px;
+    height: 12px;
+    border-radius: 0;
+}
+.radio_item .checkbox-ios .checkbox-checked .checkbox-inner {
+    left: 3px;
+    top: 0px;
+}
+.item.item-ios .checkbox-ios {
+    margin: 8px 8px 8px 2px !important;
+}
+
+}
+

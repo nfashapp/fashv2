@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-navbar color="header-color">
+    <ion-title class="title1">YOU DON'T KNOW ME<p>Jax Jones feat. RAYE</p></ion-title>
+
+    <ion-buttons end>
+  <button ion-button color="light" clear>
+  <img width="18px" src="assets/images/fast-forward.png">
+  </button>
+  <button ion-button color="light" clear>
+  <img width="12px" src="assets/images/pause.png">
+  </button>
+  <button ion-button color="light" clear>
+  <img width="18px" src="assets/images/fast-forwardr.png">
+  </button>
+  </ion-buttons>
+  </ion-navbar>
+   
+</ion-header>
+
+<!-- REMOVE BACK BUTTON  -->
+<ion-content padding>
+
+<ion-list style="margin-bottom:0px;" class="list_cnt">
+    <ion-item>
+      <span class="carttitle">PAYMENT CONFIRMATION</span>
+    </ion-item>
+    <ion-item text-wrap>
+      <span class="confirmation"> Thanks for shopping with us! Our dedicated white-glove shopper will place the order for you now. You will receive the order confirmation and a tracking number shortly.</span>
+    </ion-item>
+    
+  </ion-list>
+
+ <ion-grid>
+   <!-- <ion-row>
+     <ion-col col-12>
+      <div class="orderno">Order number: </div>
+     </ion-col>
+   </ion-row> -->
+    <ion-row *ngFor='let item of cartItems'>
+      <ion-col col-6 style="padding: 10px 0 10px 10px;">
+        <div class="cart">
+           <img [src]="item.Product.image"/>
+        </div>
+      </ion-col>
+      <ion-col col-6 style="padding: 10px;">
+        <ion-item text-wrap no-padding class="top">
+          <div class="carttxt_right">
+            <h2> {{item.Product.name}}  </h2>
+            <!-- <h3>by Montce Swim</h3> -->
+        
+          <h3><span> Size: </span> {{item[0].procolor}} - {{item[0].prosize}}</h3>
+          <h3><span>Fulfilled by: </span> {{item.Product.retailer}}</h3>
+          <!-- <h3><span>Est. delivery: </span> jun 13-14</h3> -->
+          <!-- <p>Thanks for shopping with us ! Our dedicated white-glove shopper will place the order for you now. You will receive the order confirmation and a tracking number shortly</p> -->
+          </div>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+</ion-grid>
+
+
+<ion-list class="carttotal">
+  <ion-item>
+      Subtotal:
+    <ion-note item-end="" class="note note-ios totlebold">
+      ${{subtotal | number : '1.2-2'}}
+    </ion-note>
+  </ion-item>
+   <ion-item>
+      Estimated tax (8.9%):
+    <ion-note item-end="" class="note note-ios totlebold">
+      ${{ tax | number : '1.2-2'}}
+    </ion-note>
+  </ion-item>
+   <ion-item>
+      Shipping & returns:
+    <ion-note item-end="" class="note note-ios totlebold">
+      FREE
+    </ion-note>
+  </ion-item>
+</ion-list>
+
+
+  <ion-item class="total" style="height:35px;">
+     <div style="font-family: futuraheavy;"> Total:</div>
+    <ion-note item-end="" class="note note-ios totlebold">
+       ${{total | number : '1.2-2'}}
+    </ion-note>
+  </ion-item>
+
+
+</ion-content>
+
+
+<ion-footer class="send" style="height:97px;">
+  <button class="btn_globle" style="height: 49px; width: 90%; margin: 0px auto; float:none;" ion-button full (click)="homePage();">CONTINUE SHOPPING</button>
+</ion-footer>

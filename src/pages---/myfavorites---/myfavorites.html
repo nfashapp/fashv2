@@ -1,0 +1,79 @@
+<ion-header>
+ 
+  <ion-navbar color="header-color">
+    <ion-title class="title1">YOU DON'T KNOW ME
+      <p>Jax Jones feat. RAYE</p>
+    </ion-title>
+    <ion-buttons left>
+      <button (click)="logSpotify(i)">Spotify login </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button color="light" clear (click)="prevTrack()">
+<img width="18px" src="assets/images/fast-forward.png">
+</button>
+<button ion-button color="light" clear (click)="pauseTrack(currentTrack)">
+<img width="18px" src="assets/images/fast-forward.png">
+</button>
+      <button ion-button color="light" clear (click)="currentTrack.playing ? pauseTrack(currentTrack) : playTrack(currentTrack)">
+<img width="12px" src="assets/images/pause.png">
+</button>
+      <button ion-button color="light" clear (click)="nextTrack()">
+<img width="18px" src="assets/images/fast-forwardr.png">
+</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing..."></ion-refresher-content>
+  </ion-refresher>
+
+
+  <!--To refresh the page on pull down-->
+  
+     <!-- <ion-grid>
+        <ion-row>
+            <ion-col width="33">
+                <button (click)="prevTrack()" color="light" clear ion-button icon-only><ion-icon name="skip-backward-outline"></ion-icon></button>
+            </ion-col>
+ 
+            <ion-col width="33" *ngIf="currentTrack">
+                <button *ngIf="!currentTrack.playing" (click)="playTrack(currentTrack)" color="light" clear ion-button icon-only><ion-icon name="play-outline"></ion-icon></button>
+                <button *ngIf="currentTrack.playing" (click)="pauseTrack(currentTrack)" color="light" clear ion-button icon-only><ion-icon name="pause-outline"></ion-icon></button>
+            </ion-col>
+            <ion-col width="33">
+                <button (click)="nextTrack()" color="light" clear ion-button icon-only><ion-icon name="skip-forward-outline"></ion-icon></button>
+            </ion-col>
+        </ion-row>
+    </ion-grid> -->
+
+
+  <!-- <ion-list *ngIf="tracks">
+  <ion-item *ngFor="let audio of tracks">
+    <ion-avatar item-start (click)="playTrack(audio)">
+     <button ion-button color="light" clear>
+<img width="12px" src="assets/images/pause.png">
+</button>
+    </ion-avatar>
+    <h2>{{audio.track.name}}</h2>
+    <p>{{audio.track.artists[0].name}}</p>
+  </ion-item>
+</ion-list>  -->
+
+  <div id="photos">
+    <div *ngFor="let product of allProducts" (click)="productDetails(product?.Product?.id)" class="product_box">
+      <div class="img_outers"><img [src]="product?.Product?.image"> </div>
+      <div class="overlay"></div>
+      <div class="content_pro">
+        <div class="favpro_title">${{product?.Product?.price | number: '1.2-2'}}</div>
+      </div>
+      <div class="cart_sec">
+        <div class="cart_title">{{product?.Product?.name}}</div>
+        <button style="width: 20%; float: right;" ion-button color="dark" small clear icon-only>
+          <ion-icon style="padding:0 0.4em;" name="md-cart"></ion-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</ion-content>

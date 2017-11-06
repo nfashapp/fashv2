@@ -1,0 +1,297 @@
+page-payment {
+    .back-button{
+        display: none !important;
+    }
+
+    .radio-ios .radio-checked .radio-inner{
+        top: 1px !important;
+        width: 5px !important;
+       height: 9px !important;
+       left: 4px !important;
+    }
+    .radio-icon {
+    border: 1px solid #979797;
+    width: 15px !important;
+    height: 15px !important;
+}
+
+a{
+    color:#9f9fa3;
+    cursor: pointer;
+    }
+
+.toolbar-title{
+  text-transform: uppercase;
+  color: #878787 !important;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-family: futuraheavy !important;
+}
+
+
+.toolbar-title > p {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #878787 !important;
+    margin: 0;
+    text-transform: none;
+    font-family: futuraheavy !important;
+}
+
+.carttitle{
+    text-align:center;
+    color: #878787;
+    width: 100%;
+    float: left;
+    font-size: 13px;
+    font-family: futuraheavy;
+    text-transform: uppercase;
+    letter-spacing: 0.76px;
+}
+
+.list_cnt a {
+    position: absolute;
+    right: 9px;
+    color: #878787;
+    font-size: 12px;
+    font-family: futuraheavy;
+    margin: 0 !important;
+    top: 14px;
+}
+
+.list_cnt .item-inner {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+.list_cnt.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+    border-bottom: 0px;
+}
+
+.add{
+    text-align: center;
+    color: #9f9fa3;
+    width: 100%;
+    float: left;
+}
+
+.address_sec .item{
+    margin-bottom: 10px;
+    box-shadow: none;
+    border: none;
+}
+
+.address_sec .item-inner{
+    border: none !important;
+}
+
+.address_sec h5 {
+    font-size: 12px;
+    color: #878787;
+    letter-spacing: 0.5px;
+    font-family: futuraheavy;
+}
+.address_sec .item-inner {
+    background: #f1f1f1;
+    padding: 10px;
+    color: #878787 !important;
+    font-size: 12px;
+    border-radius: 3px;
+    margin-right: 12px;
+}
+.address_sec .item-inner .input-wrapper ion-label{
+    color: #878787 !important;
+    font-size: 12px;
+    font-family: futuramedium;
+}
+.address_sec .item-inner .input-wrapper ion-label p{
+    color: #878787 !important;
+    font-size: 12px;
+    font-family: futuramedium;
+}
+.address_sec .radio-inner{
+    border-color: #878787 !important;
+}
+.adddelivery{
+    font-size: 12px;
+    color: #878787;
+    letter-spacing: 0.5px;
+    font-family: futuraheavy;
+    text-decoration: underline;
+}
+
+.send{
+    width:100%;
+    float:left;
+    text-align: center;
+    color:#9f9fa3;
+    background: #fff;
+    position: fixed;
+    bottom: 50px;
+    padding: 24px 11px;
+}
+
+.send a{
+    background: #9f9fa3;
+    color: #fff;
+    box-shadow: none;
+    font-weight: normal;
+    height: 44px;
+    font-size: 15px;
+}
+
+
+.send .button-md.activated,.send .button-ios.activated{background: #9f9fa3;}
+
+
+
+.icn {
+    color: #9f9fa3;
+    text-align: center;
+    font-size: 12px;
+}
+
+.process ion-col{text-align: center;}
+
+.effect::before {
+    background: #9f9fa3;
+    content: "";
+    float: left;
+    height: 1px;
+    left: -47px;
+    position: absolute;
+    top: 6px;
+    width: 88%;
+}
+
+.effect::after {
+    background: #9f9fa3;
+    content: "";
+    float: left;
+    height: 1px;
+    right: -47px;
+    position: absolute;
+    top: 6px;
+    width: 88%;
+}
+
+.effect {
+    position: relative;
+}
+
+.text-input::-moz-placeholder {
+    color: #999;
+}
+
+
+.process input, .process .select {
+    height: 31px !important;
+    margin: 0;
+    min-height: 31px !important;
+    font-size: 12px !important;
+    padding: 5px 10px !important;
+    line-height: 16px;
+    border: 1px solid rgba(151,151,151,0.4);
+    border-radius: 2px;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.cvvinput .item-inner input {
+    border: 1px solid rgba(151,151,151,0.4);
+    border-radius: 2px;
+    height: 31px !important;
+    margin: 0;
+    min-height: 31px !important;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.cvvinput .item-inner{
+    background: none !important;
+}
+
+.process .item{
+    height: 31px;
+}
+.process .item-inner{
+    border: none !important;
+    height: 31px;
+}
+.process .item-block{
+    height: 31px;
+    min-height: 31px;
+    margin-bottom: 8px;
+}
+.custom_accordion .item {
+    border: none !important;
+}
+.custom_accordion .item-inner {
+    border: none !important;
+}
+
+.fields {
+    margin-bottom: 0;
+}
+
+
+// added later
+
+}
+
+
+.process, .process .col {
+    padding: 0;
+    font-size: 12px;
+    color: #878787;
+    letter-spacing: 0.5px;
+    font-family: futuramedium;
+}
+
+
+.address_sec .item .item-inner {
+    padding-right: 40px;
+    position: relative;
+}
+.cvvinput .item-inner {
+    padding-left: 40px !important;
+    padding-right: 0 !important;
+    position: relative;
+}
+.editlabel {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+}
+
+.tog .label {
+    font-size: 12px;
+    color: rgba(155,155,155,0.7);
+    letter-spacing: 0.5px;
+    font-family: futuramedium;
+}
+
+.address p{
+    font-size: 12px;
+    color: rgba(155,155,155,0.7);
+    letter-spacing: 0.5px;
+    font-family: futuraheavy;
+}
+.address .input-wrapper {
+    border-top: 1px solid rgba(151,151,151,0.17);
+}
+
+.toggle-ios.toggle-checked .toggle-icon{
+    background-color: #fae4de;
+}
+
+.paymethod {
+    padding: 0;
+    font-size: 12px;
+    color: #878787;
+    letter-spacing: 0.5px;
+    font-family: futuraheavy;
+    padding-bottom: 5px !important;
+    margin-bottom: 0;
+}

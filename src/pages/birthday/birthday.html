@@ -1,0 +1,22 @@
+<ion-header hidden>
+  <ion-navbar color="header-color">
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding style="background:#ffc3b2; background-size:cover;">
+
+<div class="skipbtn" (click)='skip()'><ion-icon ios="ios-close" md="md-close"></ion-icon></div>
+<div class="gender_outer">
+
+<h5>And your birthday is on...</h5>
+<!-- <ion-input type="date" name='date' placeholder="date" [(ngModel)]="data1.myDate"></ion-input> -->
+<div class="date_time" style="float:left;">
+  <ion-datetime placeholder="Jan 01 2017" displayFormat="MMM DD YYYY" pickerFormat="MMM DD YYYY" [(ngModel)]="data1.myDate"></ion-datetime>
+</div>
+</div>
+
+</ion-content>
+<ion-footer>
+  <button class="nextbtn" (click)='updateAge(data1.myDate)'> NEXT </button>
+</ion-footer>

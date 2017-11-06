@@ -1,0 +1,163 @@
+<ion-header>
+   <!-- <ion-navbar color="header-color" *ngIf="currentTrack == null">
+        <ion-title class="" style="font-weight: bold;">FASH</ion-title>
+      </ion-navbar> -->
+
+
+  <ion-navbar color="header-color" *ngIf="currentTrack">
+    <ion-title class="title1">{{currentTrack.musicname}}
+      <p *ngIf="currentTrack.artist">{{currentTrack.artist}}</p>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button color="light" clear (click)="prevTrack()">
+      <img width="18px" src="assets/images/fast-forward.png">
+      </button>
+      <button *ngIf="bit == false" ion-button color="light" clear (click)="playTrack(currentTrack)">
+      <img width="18px" src="assets/images/play.png">
+      </button>
+      <button *ngIf="bit == true" ion-button color="light" clear (click)="pausetyTrack(currentTrack)">
+      <img width="12px" src="assets/images/pause.png">
+      </button>
+
+      <button ion-button color="light" clear (click)="nextTrack()">
+      <img width="18px" src="assets/images/fast-forwardr.png">
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf='showDetails != 1' padding>
+
+    <div class="slider" *ngIf='showImages' style="height:68vh;">
+      <button class="arrow_left" color="dark" (click)='ChangeSlide("prev")' ion-button clear outline small>
+          <ion-icon name="ios-arrow-back"></ion-icon>
+       </button>
+       <button class="arrow_right" color="dark" (click)='ChangeSlide("next")' ion-button clear outline small>
+         <ion-icon name="ios-arrow-forward"></ion-icon>
+       </button>
+      <ion-slides>
+        
+        <ion-slide style="background-color:#fff;">
+          <div class="slide_box">
+            <img [src]="showDetails?.image">
+          </div>
+        </ion-slide>
+
+        <ion-slide *ngFor="let img of showImages" style="background-color:#fff;">
+          <div class="slide_box">
+            <img [src]="img?.images">
+          </div>
+        </ion-slide>
+
+        <!-- <ion-slide style="background-color: red">
+        <div class="slide_box">
+        <img src="assets/images/unnamed8.jpg">
+        </div>
+      </ion-slide>-->
+
+      </ion-slides>
+    </div>
+
+    <div style="display:none;" class="procard_view">
+      <img [src]="res">
+      <button class="arrow_right" color="light" ion-button clear outline small>
+      <ion-icon name="ios-arrow-forward"></ion-icon>
+    </button>
+    </div>
+
+    <ion-grid style="padding:10px 0 0 0;">
+      <ion-row>
+        <ion-col col-5>
+          <div class="product_title">
+            <h4>{{showDetails?.name}}</h4>
+            <!--<h5 class="product_subtitle">{{showDetails?.name}}</h5>-->
+          </div>
+        </ion-col>
+
+
+        <ion-col col-7>
+
+
+
+          <button style="margin-top:0; float:right;" ion-button color="dark" small clear icon-only (click)="share(showDetails?.id)">
+          <ion-icon style="padding:0;"><img width="20px" src="assets/images/hanger.png"></ion-icon>
+        </button>
+
+          <button (click)="myFavs()" style="margin-top:0; float:right; color:#878787;" ion-button color="dark" small clear icon-only>
+          <ion-icon style="padding:0 0.4em;"  name="md-heart-outline"></ion-icon>
+          <!--[ngClass]="{'heart': (fav == 1)}"-->
+        </button>
+
+          <button (click)="cartmodelModal(showDetails?.id,showDetails?.price,showDetails?.name,showDetails?.retailer)" style="margin-top:0;float:right; font-family: futuraheavy; border-color: #979797; color:#fff; padding: 5px; font-size: 13px; background:#979797;"
+            color="" ion-button small><ion-icon style="margin-right:5px;" name="md-cart"></ion-icon><span  style="font-family: futuraheavy;">${{showDetails?.price | number : '1.2-2'}}</span> </button>
+          <!--<button style="margin-top:0;width:30px;" ion-button color="dark" small clear icon-only >
+           <ion-icon name="share-alt"></ion-icon>  
+        </button>-->
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-item class="select_item" style="padding:0;">
+      <!--<ion-label>Color</ion-label>-->
+      <!--<ion-select class="select_btn" [(ngModel)]='sizemodal' (ionChange)="getSize(sizemodal)" name="sizemodal">
+      <ion-option *ngFor="let color of allsizes"  [value]="color">{{color.sizes}}</ion-option>
+    </ion-select>
+
+    <ion-select class="select_btn" [(ngModel)]='colorModal' (ionChange)="getColor(colorModal)" name="colorModal">
+      <ion-option *ngFor="let color of allColors"  [value]="color">{{color}}</ion-option>
+    </ion-select>-->
+      <ion-select class="select_btn" [(ngModel)]='sizemodal' (ionChange)="getSize(sizemodal)" name="sizemodal">
+        <ion-option *ngFor="let size of allsizes" [value]="size">{{size}}</ion-option>
+      </ion-select>
+
+      <ion-select class="select_btn" [(ngModel)]='colorModal' (ionChange)="getColor(colorModal)" name="colorModal">
+        <ion-option *ngFor="let color of allColors" [value]="color">{{color.colors}}</ion-option>
+      </ion-select>
+
+
+
+    </ion-item>
+    <!--<ion-item>
+    <ion-label>Size</ion-label>
+    
+ </ion-item>-->
+  </div>
+  <ion-list *ngIf='showDetails != 1' class="custom_accordion">
+    <ion-item *ngFor="let d of diseases; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
+      <h3>
+        {{d.title}}
+        <ion-icon style="float:right; margin: 0;" color="success" item-right [name]="isGroupShown(i) ? 'ios-arrow-up' : 'ios-arrow-down'"></ion-icon>
+      </h3>
+      <div class="acco_sec" *ngIf="isGroupShown(i)">
+        <p [innerHTML]='d.description'></p>
+      </div>
+    </ion-item>
+    <ion-item text-wrap>
+      <h3 (click)="customersupport()">
+        <img style="padding-top: 1px; float: left; margin-right: 4px;" width="15px" src="assets/images/que.png"> We're here
+        to help! Chat to us now
+        <ion-icon style="float:right;" name="arrow-forward"></ion-icon>
+      </h3>
+      <!--<div class="acco_sec" *ngIf="isGroupShown(i)"><p>{{d.description}}</p></div>-->
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf='showDetails == 1'>
+    <ion-grid style="padding:10px 0 0 0;">
+      <ion-row>
+        <p> Sorry, No details available right now. </p>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+
+  <ion-list no-lines>
+      <button ion-item *ngFor="let item of alltrack" (click)="playTrack(item)">
+          {{item.musicname}} -> {{item.artist}}
+      </button> 
+    </ion-list>
+
+
+
+
+</ion-content>

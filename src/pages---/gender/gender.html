@@ -1,0 +1,34 @@
+<ion-header hidden>
+  <ion-navbar color="header-color">
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding style="background:#ffc3b2; background-size:cover;">
+
+<div class="gender_outer">
+
+<h5>Are You...</h5>
+
+<ion-list class="malefe" radio-group>
+  <div class="center_sec">
+  <ion-item>
+    <ion-label>M</ion-label>
+    <ion-radio value="male" name="male" (click)="updateGender('male')"></ion-radio>
+  </ion-item>
+  <ion-item>
+    <ion-label>/</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>F</ion-label>
+    <ion-radio value="female" name="female" (click)="updateGender('female')" ></ion-radio>
+  </ion-item>
+  </div>
+
+  
+</ion-list>
+
+</div>
+
+
+</ion-content>

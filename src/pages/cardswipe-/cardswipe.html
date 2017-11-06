@@ -1,0 +1,84 @@
+<ion-header>
+    <ion-navbar color="header-color" *ngIf="!currentTrack">
+        <ion-title class="title">FASH</ion-title>
+      </ion-navbar>
+
+
+  <ion-navbar color="header-color" *ngIf="currentTrack">
+     <ion-title class="title1">{{currentTrack.musicname}}<p *ngIf="currentTrack.artist">{{currentTrack.artist}}</p></ion-title>
+<button style="height:28px;" start ion-button clear>
+<img width="11px" src="assets/images/back_btn.svg" (click)="back()">
+</button>
+<ion-buttons end>
+      <button ion-button color="light" clear (click)="prevTrack()">
+      <img width="18px" src="assets/images/fast-forward.png">
+      </button>
+      <button *ngIf="bit == false" ion-button color="light" clear (click)="playTrack(currentTrack)">
+      <img width="18px" src="assets/images/play.png">
+      </button> 
+      <button *ngIf="bit == true" ion-button color="light" clear (click)="pausetyTrack(currentTrack)">
+      <img width="12px" src="assets/images/pause.png">
+      </button>
+      <button ion-button color="light" clear (click)="nextTrack()">
+      <img width="18px" src="assets/images/fast-forwardr.png">
+      </button>
+    </ion-buttons>   
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+  <div class="procard_box" *ngIf="allcards">
+    <div class="procard"></div>
+    <div class="procard_inn"></div>
+    <div class="procard_img slider">
+
+      <ion-slides (ionSlideDidChange)="ondrag()">
+
+        <ion-slide *ngFor="let res of allcards" style="background-color:#fff;">
+          <div *ngIf='res?.Lookbook' class="overlay"></div>
+          <div class="slide_box" (click)="InAppPurchage(res?.Product?.link)">
+            <img *ngIf='res?.Product?.image' [src]="res?.Product?.image">
+            <img *ngIf='res?.Lookbook?.image && res?.Product?.non_products != 1' [src]="res?.Lookbook?.image">
+          </div>
+           <ion-grid *ngIf='res?.Product?.image' style="position: absolute; padding:0 5px !important; z-index: 999; bottom: 0px; background:#fff; padding: 5px;">
+            <!-- <ion-row>
+              <button style="margin: 0 auto;text-align: center;" ion-button color="dark" small clear icon-only (click)="InAppPurchage()">
+                <ion-icon ios="ios-search" md="md-search"></ion-icon>
+              </button>
+            </ion-row> -->
+            
+            
+            <ion-row *ngIf="res?.Product?.name">
+              <ion-col col-6 *ngIf='res?.Product?.non_products != 1'>
+                <div class="product_title" (click)="InAppPurchage(res?.Product?.link)">
+                  <h4 style="text-transform:uppercase;margin:0;text-align:left;">{{res?.Product?.brandedName}}</h4>
+                  <p *ngIf="res?.Product?.name" class="product_subtitle">{{res?.Product?.name}}</p>
+                </div>
+              </ion-col>
+              <ion-col col-6 *ngIf='res?.Product?.non_products != 1'>
+                <button style="float:right; width: 17px;" ion-button color="dark" small clear icon-only (click)="share(res?.Product?.id)">
+                <ion-icon style="padding:0;"><img style="width:15px !important; min-height: auto; height: auto;" src="assets/images/hanger.png"></ion-icon>
+              </button>
+                <button style="float:right; color: #878787;" ion-button color="dark" small clear icon-only (click)="myFavs(res.Product.id,res[0].favs,res.Product.link )">
+                <ion-icon style="padding: 4px;" name="md-heart-outline"></ion-icon>
+              </button>
+                <button (click)="InAppPurchage(res?.Product?.link)" style="margin-top:6px;float:right; font-family: futuraheavy; border-color: #979797;color:#878787; padding: 5px; font-size: 13px;"
+                   color="" ion-button outline small><span style="font-family: futuraheavy;">${{ res?.Product?.price | number:'1.2-2'}} </span></button>
+              </ion-col>
+            </ion-row>
+          </ion-grid> 
+          <ion-grid *ngIf='res?.Lookbook?.image'>
+            <div class="content_pro">
+              <h4 *ngIf="res?.Lookbook?.name">{{res?.Lookbook?.name}}</h4>
+              <h5 style="text-transform:uppercase;">{{res?.Product?.brandedName}}</h5>
+              <p *ngIf="res?.Lookbook?.text">{{res?.Lookbook?.text}}</p>
+            </div>
+          </ion-grid>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </div>
+
+</ion-content>

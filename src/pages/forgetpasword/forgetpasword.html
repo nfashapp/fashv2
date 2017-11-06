@@ -1,0 +1,36 @@
+<ion-header hidden>
+
+
+  <ion-navbar color="primary" style="background:none;">
+    <ion-title hidden>Forgot Password</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background:#ffc3b2;">
+
+  <div class="skipbtn" (click)='skip()'><ion-icon ios="ios-close" md="md-close"></ion-icon></div>
+<div class="forgot_outer">
+<form  #heroForm="ngForm" novalidate>
+<div class="form_outer">
+  <div class="logo"><div class="logoin"><img width="96px" src="assets/images/logo.png"></div></div>
+ 
+
+<ion-list class="input_outer">
+  <ion-item>
+    <ion-input type="text" [(ngModel)]="data.email"  name="email" type="email" id="email" placeholder="Enter your registered email" required pattern='^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$' #email="ngModel"></ion-input>
+		  </ion-item>
+    <div *ngIf="email.errors && (email.dirty || email.touched)" >
+       <div [hidden]="!email.errors.required" >
+         Email is required
+        </div>
+     </div>
+
+<button (click)="forgotPwd(heroForm);" type="submit" class="button-block border_radius" ion-button style="background:rgba(155,155,155,0.8); letter-spacing: 0.76px;"[disabled]="!heroForm.form.valid">
+   Submit
+</button> 
+<div class="forgot_pass"  (click)="signupPage()">I do not have an account? <span>Sign up</span></div> 
+</ion-list>
+</div>
+</form>
+</div>
+</ion-content>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="com.timflapper.spotify" version="0.1.0">
+  <name>Spotify Cordova Plugin</name>
+  <description>This plugin provides a JavaScript API for Spotify's iOS SDK.</description>
+  <author>Tim Flapper</author>
+  <license>MIT</license>
+  <keywords>spotify</keywords>
+  <repo>https://github.com/timflapper/cordova-spotify-plugin</repo>
+  <issue>https://github.com/timflapper/cordova-spotify-plugin/issues</issue>
+
+  <engines>
+    <engine name="cordova" version=">=3.7.0" />
+  </engines>
+
+  <js-module name="auth" src="www/spotify/auth.js">
+    <merges target="spotify" />
+  </js-module>
+  <js-module name="request" src="www/spotify/request.js">
+    <merges target="spotify" />
+  </js-module>
+  <js-module name="audio-player" src="www/spotify/audio-player.js">
+    <merges target="spotify" />
+  </js-module>
+
+  <js-module name="remote" src="www/lib/remote.js">
+  </js-module>
+  <js-module name="utils" src="www/lib/utils.js">
+  </js-module>
+  <js-module name="event-dispatcher" src="www/lib/event-dispatcher.js">
+  </js-module>
+
+  <js-module name="vendors/reqwest" src="www/vendors/reqwest/reqwest.min.js">
+  </js-module>
+
+  <platform name="ios">
+    <hook type="before_plugin_install" src="install.sh" />
+
+    <config-file target="config.xml" parent="/*">
+      <feature name="SpotifyPlugin">
+        <param name="ios-package" value="SpotifyPlugin"/>
+      </feature>
+    </config-file>
+
+    <config-file target="*-Info.plist" parent="CFBundleURLTypes">
+      <array>
+        <dict>
+          <key>CFBundleTypeRole</key>
+          <string>Editor</string>
+          <key>CFBundleURLName</key>
+          <string>Spotify Auth</string>
+          <key>CFBundleURLSchemes</key>
+          <array>
+            <string>{{URL_SCHEME}}</string>
+          </array>
+        </dict>
+      </array>
+    </config-file>
+
+    <header-file src="src/ios/SpotifyPlugin.h" />
+    <source-file src="src/ios/SpotifyPlugin.m" />
+    <header-file src="src/ios/SpotifyAudioPlayer.h" />
+    <source-file src="src/ios/SpotifyAudioPlayer.m" />
+
+    <framework src="src/ios/Spotify.framework" custom="true" />
+    <framework src="AVFoundation.framework" />
+  </platform>
+</plugin>

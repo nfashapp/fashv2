@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar color="header-color">
+    <ion-title class="title1">BAD LIAR<p>Selena Gomez</p></ion-title>
+    <ion-buttons end>
+      <button ion-button color="light" clear>
+      <img width="18px" src="assets/images/fast-forward.png">
+      </button>
+      <button ion-button color="light" clear>
+      <img width="12px" src="assets/images/pause.png">
+      </button>
+      <button ion-button color="light" clear>
+      <img width="18px" src="assets/images/fast-forwardr.png">
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <!--<button  text-center small full ion-button color="dark" clear>Edit</button>-->
+<div class="profile_sec">
+  <div class="user_pic" (click)="CameraAction()">
+    <img [src]="srcImage">
+  </div>
+  <h3>{{profile?.first_name}} {{profile?.last_name}}</h3>
+<h4>{{profile?.email}}</h4>
+<h4><ion-icon name="md-pin"></ion-icon> {{city}}, {{country}} </h4>
+
+<button (click)="socailsharing()" class="button-block" style="margin:24px 0; height:49px; background:rgba(155,155,155,0.7); font-family: futuraheavy; font-size:14px; border-radius:5px; 
+float:left; width:100%; color:#fff; letter-spacing: 0.5px; border: 1px solid rgba(151,151,151,0.4); ">
+    INVITE FRIENDS
+</button> 
+
+<ion-list class="profile_list">
+  <ion-item (click)="orderhistoryPage()">
+      ORDER HISTORY
+    <ion-icon name="ios-arrow-forward-outline" item-end></ion-icon>
+  </ion-item>
+  <ion-item (click)="editprofilePage()">
+      EDIT PROFILE
+    <ion-icon name="ios-arrow-forward-outline" item-end></ion-icon>
+  </ion-item>
+  <ion-item (click)="changepasswordPage()" *ngIf="this.fbstats != 1" >
+      CHANGE PASSWORD
+    <ion-icon name="ios-arrow-forward-outline" item-end></ion-icon>
+  </ion-item>
+  <ion-item (click)="settingPage()">
+      SETTINGS
+    <ion-icon name="ios-arrow-forward-outline" item-end></ion-icon>
+  </ion-item>
+  <ion-item (click)="logout()">
+      LOG OUT
+    <ion-icon name="ios-arrow-forward-outline" item-end></ion-icon>
+  </ion-item>
+</ion-list>
+
+</div>
+</ion-content>

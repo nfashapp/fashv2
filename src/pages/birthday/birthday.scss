@@ -1,0 +1,60 @@
+page-birthday {
+    .gender_outer {
+        padding-top: 35vh;
+        text-align: center;
+    }
+    .gender_outer .datetime{
+    font-family: futuraheavy;
+    font-size: 37px;
+    color: #fff !important;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    font-weight: 600;
+    text-align: center;
+    width: 100vw;
+    float: left;
+}
+ .gender_outer h5{
+        font-family: futuraheavy;
+        font-size: 15px;
+        color: #fff;
+        text-shadow:0 2px 2px #ccc;
+        text-transform: uppercase;
+        letter-spacing: 3.6px;
+    }
+.nextbtn {
+    padding: 5px;
+    float: left;
+    width: 100%;
+    background: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.datetime-text{
+    color: #fff !important;
+}
+
+.datetime::-moz-placeholder {
+  color: #fff !important;
+}
+.datetime::-webkit-input-placeholder {
+    color: #fff !important;
+}
+
+.datetime:-ms-input-placeholder {
+    color: #fff !important;
+}
+
+.datetime::-moz-placeholder {
+    color: #fff !important;
+}
+
+.item-cover {
+    height: 64% !important;
+    bottom: 0 !important;
+    margin: auto !important;
+}
+
+
+}

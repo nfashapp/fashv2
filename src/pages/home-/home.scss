@@ -1,0 +1,433 @@
+page-home { 
+    #photos {
+  /* Prevent vertical gaps */
+  line-height: 0;
+   
+  -webkit-column-count: 5;
+  -webkit-column-gap:   0;
+  -moz-column-count:    5;
+  -moz-column-gap:      0;
+  column-count:         5;
+  column-gap:           0;  
+}
+
+#photos img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+}
+.profile_user img {
+    width: 32px;
+    height: 32px;
+}
+
+@media (max-width: 1200px) {
+  #photos {
+  -moz-column-count:    4;
+  -webkit-column-count: 4;
+  column-count:         4;
+  }
+}
+@media (max-width: 1000px) {
+  #photos {
+  -moz-column-count:    3;
+  -webkit-column-count: 3;
+  column-count:         3;
+  }
+}
+@media (max-width: 800px) {
+  #photos {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+  }
+}
+@media (max-width: 400px) {
+  #photos {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+  }
+}
+@media (max-width: 320px) {
+  #photos {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+  }
+
+}
+.product_box {
+    border-radius: 0;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.5);
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    float: left;
+    height: 215px;
+    width: 100%;
+}
+
+//   .product_box img {
+//       position: absolute;
+//       top: 0;
+//       margin: auto;
+//       left: 0;
+//       bottom: 0;
+//       right: 0;
+//       min-width: auto;
+//       width: auto;
+//       max-width: 100%;
+//   }
+.product_box img {
+    position: absolute;
+   top: 0;
+   margin: auto;
+   left: -50%;
+   bottom: 0;
+   right: -50%;
+   min-width: 100%;
+   max-width: inherit;
+   min-height: 100%;
+   max-height: 100%;
+}
+
+.padding_outer {
+    padding:7px;
+}
+
+.overlay {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.34+100 */
+// background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%); /* FF3.6-15 */
+// background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+// background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#57000000',GradientType=0 ); /* IE6-9 */
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    opacity: 0.5;
+}
+.overlay2{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,0.6+100 */
+background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.6) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.6) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#99ffffff',GradientType=0 ); /* IE6-9 */
+height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.content_pro {
+    bottom: 0;
+    color: #fff;
+    letter-spacing: 0;
+    padding: 10px;
+    position: absolute;
+    text-align: center;
+        width: 100%;
+}
+.content_problack{
+    bottom: 0;
+    color: #000;
+    letter-spacing: 0;
+    padding: 10px;
+    position: absolute;
+    text-align: center;
+}
+.content_problack h4{
+  font-family: 'Playfair Display', serif;
+   font-size: 19px;
+    margin: 0 0 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.content_problack h5 {
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin: 0 0 3px;
+    text-transform: uppercase;
+}
+.content_problack p {
+    font-size: 9px;
+    line-height: normal;
+    margin: 0;
+}
+.content_pro h4 {
+    font-size: 13px;
+    margin: 0 0 3px;
+    text-transform: uppercase;
+    font-family: futuraheavy;
+}
+.content_pro h5 {
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin: 0 0 3px;
+    text-transform: uppercase;
+    font-family: futuraheavy;
+}
+.content_pro p {
+    font-size: 8px;
+    line-height: normal;
+    margin: 0;
+    font-family: futuraheavy;
+}
+.toolbar-title{
+  text-transform: uppercase;
+  color: #6c6c6c !important;
+  letter-spacing: 8px !important;
+  font-family: futuraheavy !important;
+  font-size: 17px !important;
+  font-weight: inherit;
+}
+
+.profile_user {
+    border-radius: 50%;
+    float: right;
+    height: 32px;
+    margin-right: 5px;
+    overflow: hidden;
+    width: 32px;
+}
+
+}
+
+.back-button-icon {
+    color: #878787;
+}
+.back-button-text {
+    color: #878787;
+}
+.toolbar-background {
+    border-color: #e9e4e4 !important;
+}
+/*.ion-ios-icon-new-home-outline {
+    background: url('../assets/images/hanger2.png');
+    background-size:30px;
+    background-repeat: no-repeat; 
+    padding-top: 18px;
+}*/
+.tabs-ios .tab-button-text {
+    margin-top: 0;
+    margin-bottom: 1px;
+    min-height: 10px !important;
+    font-family: futuraheavy;
+}
+.item:last-child{
+    border: none !important;
+}
+.back-button-text{
+    display: none;
+}
+.back-button-text{
+    display: none;
+}
+.back-button-icon {
+    font-size: 2.4rem !important;
+}
+.fonthavy{
+    font-family: futuraheavy;
+}
+
+.tab-badge {
+    background: #d0021b;
+    color: #d0021b;
+    width: 10px !important;
+    height: 10px;
+    font-size: 0px !important;
+    top: 10px;
+    right: 11vw !important;
+    line-height: 0 !important;
+    padding: 0;
+}
+.toast-message {
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    padding: 21px 0;
+    margin: 0px auto !important;
+    position: absolute !important;
+    width: 90% !important;
+    background: #878787 !important;
+    left: 0 !important;
+    right: 0 !important;
+    border-radius: 5px  !important;
+
+}
+
+
+.tabs-ios {
+  a[aria-selected=false] {
+    .tab-button-icon[ng-reflect-name=icon-new-home], .tab-button-icon[aria-label="icon-new-home outline"] {
+      background-image: url(../assets/images/speechn.png);
+      color:#6c6c6c !important;
+      }
+  }
+  a[aria-selected=true] {
+    .tab-button-icon[ng-reflect-name=icon-new-home], .tab-button-icon[aria-label=icon-new-home] {
+      background-image: url(../assets/images/speechv.png);
+      color:#6c6c6c !important;
+      }
+  }
+}
+
+.tabs-md  {
+  a[aria-selected=false] {
+    .tab-button-icon[ng-reflect-name=icon-new-home], .tab-button-icon[aria-label="icon-new-home outline"] {
+      background-image: url(../assets/images/speechn.png);
+      color:#6c6c6c !important;
+      }
+  }
+  a[aria-selected=true] {
+    .tab-button-icon[ng-reflect-name=icon-new-home], .tab-button-icon[aria-label=icon-new-home] {
+      background-image: url(../assets/images/speechv.png);
+      color:#6c6c6c !important;
+      }
+  }
+}
+
+.tabs-wp {
+  a[aria-selected=false] {
+    .tab-button-icon[ng-reflect-name=icon-new-home], .tab-button-icon[aria-label="icon-new-home outline"] {
+      background-image: url(../assets/images/speechn.png);
+      color:#6c6c6c !important;
+      }
+  }
+  a[aria-selected=true] {
+    .tab-button-icon[ng-reflect-name=icon-new-home], .tab-button-icon[aria-label=icon-new-home] {
+      background-image: url(../assets/images/speechv.png);
+      color:#6c6c6c !important;
+      }
+  }
+}
+
+.tabs-ios-footer-color .tab-button[aria-selected=true], .tabs-ios-footer-color .tab-button[aria-selected=true] .tab-button-icon {
+    color:#6c6c6c !important;
+}
+
+.tabbar, .tabs-ios, .tabs-md {
+    .tab-button-icon {
+        background-repeat:no-repeat;
+        background-position:center;
+       background-size: 32px;
+    }
+}
+.tabs-ios-footer-color .tab-button, .tabs-ios-footer-color .tab-button-icon, .tabs-ios-footer-color .tab-button:hover:not(.disable-hover), .tabs-ios-footer-color .tab-button:hover:not(.disable-hover) .tab-button-icon {
+    color:#878787 !important;
+}
+
+.tabs-ios-footer-color .tabbar {
+    border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.text-input{
+    color: #878787 !important;
+    font-family: futuraheavy;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+.select-text{
+    color: #878787 !important;
+    font-family: futuraheavy !important;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.show-page{
+    background: none !important;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Knewave');
+
+
+
+.bar-buttons{
+    margin-right: 5vw;
+}
+.back-button.show-back-button {
+    margin-left: 5vw;
+}
+.button-inner{
+    font-family: futuraheavy !important;
+}
+.skipbtn {
+    position: absolute;
+    top: 50px;
+    right: 8vw;
+    font-size: 26px;
+    color: #fff;
+}
+
+
+
+
+.alert {
+    padding-left: 0;
+    color: #ff0000;
+    padding-bottom: 4px !important;
+    font-size: 11px;
+    width: 100%;
+    text-align: left;
+}
+
+.leftpadding{
+    padding-left: 16px;
+}
+
+.logoin{
+  position: relative;
+  display: inline-block;
+}
+.logoin::after {
+    position: absolute;
+    content: "";
+    width: 100vw;
+    height: 85px;
+    background: #858585;
+    -webkit-transform: rotate(18deg);
+    transform: rotate(40deg);
+    top: 105px;
+    left: 4px;
+    z-index: -1;
+}
+
+@media screen and (min-height : 1024px) and (max-height : 1366px) {
+    .product_box{height: 325px !important;}
+}
+@media screen and (min-height : 768px) and (max-height : 1024px) {
+    .product_box{height: 325px !important;}
+}
+
+@media screen and (min-height : 321px) and (max-height : 767px) {
+    .product_box{height: 34vh !important;}
+}
+
+@media screen and (max-height : 320px){
+    .product_box{height: 42vh !important;}
+}
+
+
+
+@media screen and (min-height : 600px) and (max-height : 700px) {
+    .logoin::after { top: 126px; position: absolute;}
+}
+@media screen and (min-height : 701px) and (max-height : 800px) {
+    .logoin::after { top: 144px; position: absolute;}
+}
+
+
+.refresher-refreshing .spinner-bubbles circle, .refresher-refreshing .spinner-circles circle, .refresher-refreshing .spinner-dots circle{
+    fill: #878787 !important;
+}
+.refresher-pulling-text, .refresher-refreshing-text {
+    text-align: center;
+    font-size: 12px !important;
+    color: #878787 !important;
+    font-family: futuraheavy !important;
+    letter-spacing: 0.5px;
+}

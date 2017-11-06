@@ -1,0 +1,45 @@
+page-tutorialfav {
+  .tuto_out{
+    color: #fff;
+  }
+  
+
+.bottomfav_icon {
+    position: absolute;
+    bottom: 16vh;
+    width: 100%;
+    left: 0;
+}
+
+.favarrow {
+    width: 60px;
+    margin: 35px 0 10px 12vh;
+    float: left;
+}
+
+.favarrowr {
+    width: 45px;
+    margin: 0 5.2vh 10px 0;
+    float: right;
+}
+
+.favarrow img {
+    float: left;
+}
+
+.txtfavs {
+    font-family: Knewave;
+    font-size: 38px;
+    width: 72%;
+    margin: 0px auto;
+    -webkit-transform: rotate(6deg);
+    transform: rotate(6deg);
+    color: #fff;
+    padding-bottom: 6vh;
+}
+.txtfavs span {
+    font-family: Knewave;
+    font-size: 38px;
+    color: #ff00d4;
+}
+}

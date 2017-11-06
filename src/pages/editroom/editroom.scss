@@ -1,0 +1,72 @@
+page-editroom {
+
+a{
+    color:#9f9fa3;
+    cursor: pointer;
+    }
+
+
+.toolbar-title{
+  text-transform: uppercase;
+  color: #6c6c6c !important;
+  letter-spacing: 2px;
+  font-weight: 600 !important;
+  font-size: 11px;
+}
+
+
+.toolbar-title > p {
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin: 0;
+    text-transform: none;
+}
+
+.searchbar-md {
+    min-height: 44px;
+    padding: 0px 8px;
+    border-top: 0.55px solid transparent;
+    border-bottom: 0.55px solid rgba(0, 0, 0, 0.05);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.searchbar-md .searchbar-input {
+    padding:0px 28px;
+    border-radius: 5px;
+}
+
+.searchbar-md .searchbar-search-icon {
+    left: 7px;
+    top: 7px;
+    margin-left: 0px;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-repeat: no-repeat;
+    background-size: 18px;
+}
+
+.list_cnt .item-md {
+    border-bottom: 2px solid #ccc;
+}
+
+ion-note.note.note-ios,ion-note.note.note-md{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    font-size: 14px;
+}
+
+.label-md,.label-ios {
+    white-space: normal;
+}
+
+.invite .button-inner{text-transform: capitalize;}
+
+.acpt{float:right;}
+
+.acpt .button-md{box-shadow: none;
+    border: 1px solid #ccc;
+    }
+
+}

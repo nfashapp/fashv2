@@ -1,0 +1,98 @@
+<ion-header hidden>
+  <ion-navbar color="header-color">
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background:#ffc3b2; background-size:cover;">
+ <form #signupForm="ngForm"novalidate>
+<div class="form_outer">
+  <div class="logo"><div class="logoin"><img width="96px" src="assets/images/logo.png"></div></div>
+  <div class="fbbtn">
+<button class="border_radius" (click)="fbLogin1()"  icon-left style="background:#507cc0; width:247px; height:52px; color:#fff; font-size:14px; font-family: futuraheavy;">
+      <ion-icon style="padding-right:15px;" name=""><i class="fa fa-facebook" aria-hidden="true"></i></ion-icon>
+      Continue with Facebook
+    </button>
+
+  </div>
+  <div class="or">or</div>
+<div class="skipbtn" (click)='skip()'><ion-icon ios="ios-close" md="md-close"></ion-icon></div>
+
+<ion-list class="input_outer">
+  <ion-item>
+    <ion-input type="text" [(ngModel)]="data.first_name" required pattern='[a-zA-Z]+'  placeholder="First name" name='first_name' #first_name="ngModel"></ion-input>
+  </ion-item>
+  <ion-label class="alert alert-danger" color="danger">
+     <div *ngIf="first_name.errors && (first_name.dirty || first_name.touched)" >
+       <div [hidden]="!first_name.errors.required" >
+         First name is required
+        </div>
+        <div [hidden]="!first_name.errors.pattern" >
+         Invalid first name
+        </div>
+     </div>
+    </ion-label>
+    <ion-item>
+    <ion-input type="text" [(ngModel)]="data.last_name" required pattern='[a-zA-Z]+'  placeholder="Last name" name='last_name' #last_name="ngModel"></ion-input>
+  </ion-item>
+  <ion-label class="alert alert-danger" color="danger">
+     <div *ngIf="last_name.errors && (last_name.dirty || last_name.touched)" >
+       <div [hidden]="!last_name.errors.required" >
+         Last name is required
+        </div>
+        <div [hidden]="!last_name.errors.pattern" >
+         Invalid last name
+        </div>
+     </div>
+    </ion-label>
+  <ion-item>
+    <ion-input type="email" [(ngModel)]="data.email" required pattern='^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$'  placeholder="E-mail" name='email' #email="ngModel"></ion-input>
+  </ion-item>
+  <ion-label class="alert alert-danger" color="danger">
+     <div *ngIf="email.errors && (email.dirty || email.touched)" >
+       <div [hidden]="!email.errors.required" >
+         Email is required
+        </div>
+        <div [hidden]="!email.errors.pattern" >
+         Invalid email
+        </div>
+     </div>
+    </ion-label>
+ <ion-item>
+    <ion-input type="password" [(ngModel)]="data.password" minlength="6"  placeholder="Password" name='password' required #password="ngModel"></ion-input>
+  </ion-item>
+    <ion-label class="alert alert-danger" color="danger">
+ <div *ngIf="password.errors && (password.dirty || password.touched)">
+       <div [hidden]="!password.errors.required" >
+         Password is required
+        </div>
+    </div>
+     <div *ngIf="password.errors && (password.dirty || password.touched)" >
+       <div [hidden]="!password.errors.minlength" >
+          Minimum length 6 characters
+        </div>
+    </div>
+   </ion-label>
+   <ion-item>
+    <ion-input type="password" [(ngModel)]="data.cpassword" placeholder="Confirm password" minlength="6" name='cpassword' #cpassword="ngModel" required></ion-input>
+      </ion-item>
+      <ion-label class="alert alert-danger" color="danger">
+  <div *ngIf="cpassword.errors && (cpassword.dirty || cpassword.touched)" >
+       <div [hidden]="!cpassword.errors.required" >
+         Confirm password is required
+        </div>
+    </div>
+    </ion-label>
+
+<button  class="border_radius fonthavy" type="submit" (click)="register(signupForm)" [disabled]="!signupForm.valid" ion-button style="background:rgba(155,155,155,0.7); color:#fff; width: 247px; height:42px; margin:0; font-family: futuraheavy; font-size: 14px;">
+      
+     SIGN UP
+</button> 
+
+
+<div class="forgot_pass">By signing up, you agree to our <span (click)="terms()">terms of service</span> and <span (click)="privacy()">privacy policy.</span></div>
+<div (click)="signinPage()" class="forgot_pass">Already have an account? <span>Sign in</span></div> 
+</ion-list>
+</div>
+</form>
+</ion-content>

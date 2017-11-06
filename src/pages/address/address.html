@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="header-color">
+    <ion-title class="title1">YOU DON'T KNOW ME<p>Jax Jones feat. RAYE</p></ion-title>
+
+    <ion-buttons end>
+<button ion-button color="light" clear>
+<img width="18px" src="assets/images/fast-forward.png">
+</button>
+<button ion-button color="light" clear>
+<img width="12px" src="assets/images/pause.png">
+</button>
+<button ion-button color="light" clear>
+<img width="18px" src="assets/images/fast-forwardr.png">
+</button>
+</ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+   <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content style="color:#878787;" pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing..."></ion-refresher-content>
+  </ion-refresher>
+  <ion-list style="margin-bottom:0px;" class="list_cnt">
+    <ion-item>
+      <span class="addresstitle">MY ADDRESS</span>
+    </ion-item>
+  </ion-list>
+  <div padding style="padding-top:0;">
+    <!-- <h5 class="maintitle">Default delivery address</h5> -->
+    <div class="addresscard" *ngFor="let item of addressList">
+      <div class="titleaddress">Shipping Address     <a item-end class="link" (click)='editAddress(item.Address.id)'>Change</a> </div>
+      <p>
+      {{ item.Address.address }}, {{item.Address.apt}}<br>
+      {{ item.Address.city }}, {{ item.Address.state }} {{ item.Address.zipcode }}
+    </p>
+    </div>
+  
+<a item-end class="addlink" (click)="addaddressPage()" > <ion-icon name="add"></ion-icon> Add delivery address</a>
+
+  </div>
+
+</ion-content>

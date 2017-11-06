@@ -1,0 +1,70 @@
+<ion-header>
+    <ion-navbar color="header-color" *ngIf="!currentTrack">
+        <ion-title class="title">FASH</ion-title>
+      </ion-navbar>
+    
+    <ion-navbar color="header-color" *ngIf="currentTrack">
+     <ion-title class="title1">{{currentTrack?.musicname}}<p *ngIf="currentTrack.artist">{{currentTrack?.artist}}</p></ion-title>
+    
+    <ion-buttons end>
+      <button ion-button color="light" clear (click)="prevTrack()">
+      <img width="18px" src="assets/images/fast-forward.png">
+      </button>
+      <button *ngIf="bit == false" ion-button color="light" clear (click)="playTrack(currentTrack)">
+      <img width="18px" src="assets/images/play.png">
+      </button> 
+      <button *ngIf="bit == true" ion-button color="light" clear (click)="pausetyTrack(currentTrack)">
+      <img width="12px" src="assets/images/pause.png">
+      </button>
+      <button ion-button color="light" clear (click)="nextTrack()">
+      <img width="18px" src="assets/images/fast-forwardr.png">
+      </button>
+    </ion-buttons>   
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list style="margin-bottom:0px;" class="list_cnt">
+    <ion-item>
+       <!-- <a class="chat_ico" (click)="chat()">Chat</a>  -->
+
+      <span class="add">ADD FRIEND(S)</span>
+      <a item-end *ngIf="checkedid !=null" (click)="sendInvitation()">Add</a>
+    </ion-item>
+  </ion-list>
+
+  <ion-searchbar [(ngModel)]="data" (ngModelChange)="SearchPage($event, points)"></ion-searchbar>
+  <ion-list *ngIf="searchlist != null" radio-group [(ngModel)]="data1">
+    <ion-item item-left *ngFor="let userlist of searchlist">
+      <ion-label>
+        <h5 class="inv_title">{{userlist.User.complete_name}}</h5>
+        <p class="loc_title">Send a fitting room invitation</p>
+      </ion-label>
+      <ion-radio color="dark" item-left name='data1' [value]="userlist.User.id" (click)="getID(userlist.User.id)" ngDefaultControl></ion-radio>
+
+      <ion-avatar item-start>
+        <img *ngIf="userlist.User.image != null" src="{{userlist.User.image}}">
+        <img *ngIf="userlist.User.image == null" src="assets/images/noimage.jpg">
+        
+
+      </ion-avatar>
+    </ion-item>
+  </ion-list>
+
+  
+
+  <div padding class="send">
+    <p>Your friends are not on FASH yet?</p>
+    <button (click)="socialshares()" class="button-block" style="margin:10px 0 0; height:49px; background:rgba(155,155,155,0.7); font-family: futuraheavy; font-size:14px; border-radius:5px; 
+float:left; width:100%; color:#fff; letter-spacing: 0.5px; border: 1px solid rgba(151,151,151,0.4); ">SEND AN INVITE</button>
+    
+  </div>
+
+
+      <div class="chatbubble" *ngIf="searchlist == null" >
+        <img width="89px" src="assets/images/speech-bubbles.png">
+     <h3 class="chatbubble_txt">In Fitting Rooms,<br>you can share and vote on <br> your favourite items and <br> chat with your besties.<br>Add your friends now!</h3>
+    </div>
+
+</ion-content>

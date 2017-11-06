@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-navbar color="header-color">
+    <ion-title class="" style="font-weight: bold;">FASH</ion-title>
+    <ion-avatar item-start item-end>
+      <div (click)="profilePage()" class="profile_user">
+      <img *ngIf='profileimage != null' [src]="profileimage">
+      <img *ngIf='profileimage == null' src="assets/images/noprofile.png">
+    </div>
+    </ion-avatar>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <span style="padding:0;text-align:center;position:absolute;height:20px;left:0;right:0;bottom:0;top:0;margin:auto;
+ color:#878787;" class="emptycart" *ngIf='length == 0'>
+       No lookbook available yet.
+      </span>
+      <ion-refresher (ionRefresh)="doRefresh($event)">
+     <ion-refresher-content style="color:#878787;" pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing..."></ion-refresher-content>
+   </ion-refresher>
+ 
+   <!-- <ion-list>
+    <ion-item *ngFor="let item of items">
+      
+      <img src="{{item.Lookbook.image}}">
+      </ion-item>
+  </ion-list>
+ 
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content>
+  loadingSpinner="bubbles"
+       loadingText="Loading more data...">
+ 
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 *ngFor="let item of items" (click)="cardswipePage(item.Lookbook.id)">
+       <div class="product_box">
+       <img src="{{item.Lookbook.image}}">
+    <div class="overlay"></div>
+    <div class="content_pro">
+      <h4 *ngIf="item.Lookbook.name">{{item.Lookbook.name}}</h4>
+      <h5 *ngIf="item.Lookbook.brandlink == 0">{{item.Lookbook.brand}}</h5>
+      <img *ngIf="item.Lookbook.brandlink == 1" style="width:30px !important; height: auto; border:none;" class="brandimage" src="{{item.Lookbook.brand}}">
+      <p *ngIf="item.Lookbook.text">{{item.Lookbook.text}}</p>
+    </div>
+      </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+ <ion-grid>
+   <ion-row>
+     <ion-col col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 *ngFor="let home of response" (click)="cardswipePage(home.Lookbook.id)">
+      <div class="product_box">
+      <img src="{{home.Lookbook.image}}">
+   <div class="overlay"></div>
+   <div class="content_pro">
+     <h4 *ngIf="home.Lookbook.name">{{home.Lookbook.name}}</h4>
+     <h5 *ngIf="home.Lookbook.brandlink == 0">{{home.Lookbook.brand}}</h5>
+     <img *ngIf="home.Lookbook.brandlink == 1" style="width:30px !important; height: auto; border:none;" class="brandimage" src="{{home.Lookbook.brand}}">
+     <p *ngIf="home.Lookbook.text">{{home.Lookbook.text}}</p>
+   </div>
+     </div>
+     </ion-col>
+   </ion-row>
+ </ion-grid>
+ 
+ 
+ 
+ 
+ </ion-content>

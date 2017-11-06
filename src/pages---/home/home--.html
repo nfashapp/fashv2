@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="header-color">
+    <ion-title class="">FASH</ion-title>
+    <ion-avatar item-start item-end>
+      <div (click)="profilePage()" class="profile_user">
+      <img [src]="srcImage">
+    </div>
+    </ion-avatar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+     <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing..."></ion-refresher-content>
+  </ion-refresher>
+  <div id="photos" >
+    <div class="product_box" *ngFor="let home of response" (click)="cardswipePage(home.Lookbook.id)">
+  <img src="{{home.Lookbook.image}}">
+  <div class="overlay"></div>
+  <div class="content_pro">
+    <h4>{{home.Lookbook.name}}</h4>
+    <h5>{{home.Lookbook.brand}}</h5>
+    <p>{{home.Lookbook.text}}</p>
+  </div>
+    </div>
+
+</div>
+</ion-content>

@@ -1,0 +1,102 @@
+<ion-header>
+    <ion-navbar color="header-color" *ngIf="!currentTrack">
+        <ion-title class="title">FASH</ion-title>
+      </ion-navbar>
+    
+    <ion-navbar color="header-color" *ngIf="currentTrack">
+     <ion-title class="title1">{{currentTrack?.musicname}}<p *ngIf="currentTrack.artist">{{currentTrack?.artist}}</p></ion-title>
+
+    <ion-buttons end>
+      <button ion-button color="light" clear (click)="prevTrack()">
+      <img width="18px" src="assets/images/fast-forward.png">
+      </button>
+      <button *ngIf="bit == false" ion-button color="light" clear (click)="playTrack(currentTrack)">
+      <img width="18px" src="assets/images/play.png">
+      </button> 
+      <button *ngIf="bit == true" ion-button color="light" clear (click)="pausetyTrack(currentTrack)">
+      <img width="12px" src="assets/images/pause.png">
+      </button>
+      <button ion-button color="light" clear (click)="nextTrack()">
+      <img width="18px" src="assets/images/fast-forwardr.png">
+      </button>
+    </ion-buttons>   
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+<ion-list style="margin-bottom:0px;" class="list_cnt">
+  <ion-item style="border:none;">
+    <span class="add">NEW GROUP</span>
+    <a class="finish_btn" *ngIf="groupname && selecteduser.length >0" item-end (click)="addgroup()">Finish</a>
+  </ion-item>
+</ion-list>
+
+<div class="camera_box">
+  <div *ngIf="image == null" class="camera_outer" (click)="presentActionSheet()">
+  <img style="margin-top:15px;" width="35px" src="assets/images/photo-camera.png">
+  </div>
+  <div class="camera_outer" (click)="presentActionSheet()" *ngIf="image != null">
+  <img style="border-radius:50%;" width="65px" height="65px" [src]="image">
+  </div>
+
+     <ion-input type="text" placeholder="Create group name" name="groupname" [(ngModel)]="groupname" (ionChange)="groupnm(groupname)"></ion-input>
+
+    </div>
+<ion-list style="margin-bottom:0px;">
+  <ion-item style="border:none;" class="participants">
+    <h3>Add participants</h3>
+  </ion-item>
+</ion-list>
+
+<ion-searchbar [(ngModel)]="data" (ngModelChange)="SearchPage($event, points)"></ion-searchbar>
+
+<ion-list class="invite">
+   <ion-item *ngFor="let userlist of userimage">
+        <ion-avatar item-start>
+          <img *ngIf="userlist.User.image != null" [src]="userlist.User.image">
+           <img *ngIf="userlist.User.image == null" src="assets/images/noimage.jpg">
+        </ion-avatar>
+     
+        <h3 class="username_txt">{{userlist.User.complete_name}}</h3>
+        <!--<p>Send you a fitting room invitation</p>-->
+      
+      <ion-icon class="addbtns" name="ios-add-circle" item-end (click)="addgroupmember(userlist.User)"></ion-icon>
+  </ion-item>
+
+
+</ion-list>
+
+
+<!--*********** after seleting the participants *************-->
+
+<ion-list no-lines style="border-top:1px solid rgba(151,151,151,0.2);" class="invite">
+ <ion-item style="border:none;"> <div class="participants"> Participants: {{selecteduser.length}} </div></ion-item>
+  <ion-item *ngFor="let user of selecteduser">
+    <ion-avatar item-start>
+      <img *ngIf="user.image != null" [src]="user.image">
+        <img *ngIf="user.image == null" src="assets/images/noimage.jpg">
+    </ion-avatar>
+    <h3 class="username_txt">{{user.complete_name}}</h3>
+<ion-icon class="removbtns" name="remove-circle" item-end (click)="removemember(user.id)"></ion-icon>
+  </ion-item>
+
+</ion-list>
+
+</ion-content>
+<style>
+::-webkit-input-placeholder { 
+  color: grey !important;
+}
+::-moz-placeholder { 
+  color: grey !important;
+}
+:-ms-input-placeholder { 
+  color: grey !important;
+}
+:-moz-placeholder {
+  color: grey !important;
+}
+
+</style>

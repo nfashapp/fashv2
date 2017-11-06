@@ -1,0 +1,31 @@
+page-productview {
+   .toolbar-title{
+  text-transform: uppercase;
+  color: #6c6c6c !important;
+  letter-spacing: 2px;
+  font-weight: 600 !important;
+  font-size: 11px;
+}
+
+
+.toolbar-title > p {
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin: 0;
+    text-transform: none;
+}
+
+.product_title > h4 {
+    color: #878787;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0;
+}
+.product_subtitle {
+    color: #878787;
+    font-size: 11px;
+    margin: 0;
+}
+
+
+}

@@ -1,0 +1,83 @@
+page-card {
+a{
+    color:#9f9fa3;
+    cursor: pointer;
+    }
+
+
+.toolbar-title{
+  text-transform: uppercase;
+  color: #878787 !important;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-family: futuraheavy !important;
+}
+
+
+.toolbar-title > p {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #878787 !important;
+    margin: 0;
+    text-transform: none;
+    font-family: futuraheavy !important;
+}
+
+.addresstitle{
+    text-align:center;
+    color: #878787;
+    width: 100%;
+    float: left;
+    font-size: 13px;
+    font-family: futuraheavy;
+    text-transform: uppercase;
+    letter-spacing: 0.76px;
+}
+
+.addresscard {
+    background: #f1f1f1;
+    font-size: 12px;
+    color: #878787;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    font-family: futuramedium;
+}
+
+.maintitle{
+    font-size: 12px;
+    color: #878787;
+    letter-spacing: 0.5px;
+    padding: 10px 0 3px;
+    font-family: futuramedium;
+}
+
+.titleaddress {
+    padding: 10px;
+    border-bottom: 1px solid rgba(151,151,151,0.17);
+    position: relative;
+    font-family: futuramedium;
+}
+
+.titleaddress a {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-family: futuramedium;
+    text-decoration: underline;
+}
+
+.addresscard p {
+    margin: 0;
+    padding: 10px;
+    font-family: futuramedium;
+}
+
+.addlink {
+    font-family: futuramedium;
+    text-decoration: underline;
+    font-size: 12px;
+    color: #878787;
+    letter-spacing: 0.5px;
+}
+
+}

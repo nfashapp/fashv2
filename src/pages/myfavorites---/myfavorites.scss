@@ -1,0 +1,230 @@
+page-myfavorites {
+    .title1 > .toolbar-title{
+  text-transform: uppercase;
+    font-size: 12px;
+    color: #878787;
+    font-family: futuraheavy;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+ 
+}
+
+#photos {
+  /* Prevent vertical gaps */
+  line-height: 0;
+   
+  -webkit-column-count: 5;
+  -webkit-column-gap:   13px;
+  -moz-column-count:    5;
+  -moz-column-gap:      13px;
+  column-count:         5;
+  column-gap:           13px;  
+}
+
+#photos img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+}
+
+
+@media (max-width: 1200px) {
+  #photos {
+  -moz-column-count:    4;
+  -webkit-column-count: 4;
+  column-count:         4;
+  }
+}
+@media (max-width: 1000px) {
+  #photos {
+  -moz-column-count:    3;
+  -webkit-column-count: 3;
+  column-count:         3;
+  }
+}
+@media (max-width: 800px) {
+  #photos {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+  }
+}
+@media (max-width: 400px) {
+  #photos {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+  }
+}
+.product_box {
+  border-radius: 0;
+  margin-bottom: 35px;
+  position: relative;
+  box-shadow: 2px 2px 7px rgba(0,0,0,0.5) !important;
+  display: inline-block;
+}
+
+.img_outers {
+    max-height: 190px;
+    overflow: hidden;
+}
+
+
+
+.overlay {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.34+100 */
+background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.34) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.34) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.34) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#57000000',GradientType=0 ); /* IE6-9 */
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.overlay2{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,0.6+100 */
+background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.6) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.6) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#99ffffff',GradientType=0 ); /* IE6-9 */
+height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.content_pro {
+    bottom: 4px;
+    color: #fff;
+    letter-spacing: 0;
+    padding: 10px;
+    position: absolute;
+    text-align: right;
+    width: 100%;
+    right: -5px;
+}
+
+.favpro_title{
+font-size: 10px !important;
+font-family: futuraheavy !important;
+float: right !important;
+color: #fff !important;
+letter-spacing: 0.83px;
+}
+.content_problack{
+    bottom: 0;
+    color: #000;
+    letter-spacing: 0;
+    padding: 10px;
+    position: absolute;
+    text-align: center;
+}
+.content_problack h4{
+  font-family: 'Playfair Display', serif;
+   font-size: 19px;
+    margin: 0 0 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.content_problack h5 {
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin: 0 0 3px;
+    text-transform: uppercase;
+}
+.content_problack p {
+    font-size: 9px;
+    line-height: normal;
+    margin: 0;
+}
+.content_pro h4 {
+    font-size: 11px;
+    margin: 0 0 3px;
+    text-transform: uppercase;
+}
+.content_pro h5 {
+    font-size: 9px;
+    letter-spacing: 1px;
+    margin: 0 0 3px;
+    text-transform: uppercase;
+}
+.content_pro p {
+    font-size: 9px;
+    line-height: normal;
+    margin: 0;
+}
+
+.cart_sec {
+    bottom: -34px;
+    color: #878787;
+    font-size: 10px;
+    position: absolute;
+    width: 100%;
+    font-family: myfuturabold !important;
+}
+
+// .cart_title {
+//     margin-top: 0;
+//     padding-top: 0;
+//     position: absolute;
+//     top: 12px;
+//     width: 80%;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     height: 16px;
+//     line-height: 9px;
+//     text-overflow: ellipsis;
+//     font-family: futuraheavy;
+//     color: #878787;
+//     font-size: 10px;
+//     letter-spacing: 0.83px;
+// }
+
+.cart_title {
+    margin-top: 0;
+    padding-top: 0;
+    position: absolute;
+    top: 7px;
+    width: 80%;
+    overflow: hidden;
+    height: 19px;
+    line-height: 9px;
+    font-family: futuraheavy;
+    color: #878787;
+    font-size: 10px;
+    letter-spacing: 0.83px;
+}
+
+
+.button-inner .ion-md-heart-outline::before{
+    font-size: 1.5em;
+    padding: 0;
+    margin: 0;
+    color: #878787;
+}
+.button-small-ios[icon-only] ion-icon{
+  padding: 0;
+}
+.card{
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.50) !important;
+}
+.ion-md-cart::before {
+    color: #878787;
+    font-size: 21px;
+}
+
+.toolbar-title > p {
+    font-size: 10px !important;
+    letter-spacing: 1px !important;
+    margin: 0 !important;
+    text-transform: none !important;
+    font-family: futuraheavy !important;
+}
+ion-header ion-icon {
+    color: #878787;
+}
+
+}

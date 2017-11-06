@@ -1,0 +1,152 @@
+<ion-header>
+  <ion-navbar color="header-color">
+    <ion-title class="title1"><p>BAD LIAR<p>Selena Gomez</p></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form  #editForm="ngForm" (ngSubmit)="editprofile(editForm)">
+
+<div class="edit_profile">
+  <h4>MY PROFILE</h4>
+
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>First Name</ion-label>
+      <ion-input type="text" [(ngModel)]="data1.fname" name='fname' #fname="ngModel"  pattern="[a-zA-Z ]*" ></ion-input>
+    </ion-item>
+     <ion-label class="alert alert-danger" color="danger">
+  <div *ngIf="fname.errors && (fname.dirty || fname.touched)" >
+       <div [hidden]="!fname.errors.required" >
+         Field is required
+        </div>
+        <div [hidden]="!fname.errors.pattern" >
+        Use only alphabets
+        </div>
+    </div>
+    </ion-label>
+
+    <ion-item>
+      <ion-label stacked>Last Name</ion-label>
+      <ion-input type="text" [(ngModel)]="data1.lname" name='lname' #lname="ngModel" pattern="[a-zA-Z ]*"></ion-input>
+    </ion-item>
+   <ion-label class="alert alert-danger" color="danger">
+  <div *ngIf="lname.errors && (lname.dirty || lname.touched)" >
+       <div [hidden]="!lname.errors.required" >
+         Field is required
+        </div>
+    <div [hidden]="!fname.errors.pattern" >
+        Use only alphabets
+      </div>
+    </div>
+    </ion-label>
+
+
+
+
+    <ion-item>
+      <ion-label stacked>E-mail</ion-label>
+      <ion-input type="email" [(ngModel)]="data1.email" name='email' #email="ngModel" required readonly='true'></ion-input>
+    </ion-item>
+ <ion-label class="alert alert-danger" color="danger">
+  <div *ngIf="email.errors && (email.dirty || email.touched)" >
+       <div [hidden]="!email.errors.required" >
+        Email required
+        </div>
+    </div>
+    </ion-label>
+
+
+
+
+
+    <ion-item>
+      <ion-label stacked>Phone</ion-label>
+      <ion-input type="number"  [(ngModel)]="data1.number" name='number' #number="ngModel" maxlength="10" ></ion-input>
+    </ion-item>
+
+ <ion-label class="alert alert-danger" color="danger">
+  <div *ngIf="number.errors && (number.dirty || number.touched)" >
+       <div [hidden]="!number.errors.required" >
+        Field required
+        </div>
+        <div [hidden]="!number.errors.maxlength" >
+          Maximum 10 numbers allowed
+        </div>
+    </div>
+   
+    </ion-label>
+
+
+
+
+    <ion-item>
+    <ion-label>Gender</ion-label>
+    <ion-select [(ngModel)]="data1.gender" name='gender' #gender="ngModel" required>
+      <ion-option value="male"  >Male</ion-option>
+      <ion-option value="female" >Female</ion-option>
+    </ion-select>
+  </ion-item>
+
+ <ion-label class="alert alert-danger" color="danger">
+  <div *ngIf="gender.errors && (gender.dirty || gender.touched)" >
+       <div [hidden]="!gender.errors.required" >
+        Field required
+        </div>
+    </div>
+    </ion-label>
+
+
+
+
+
+  <ion-item>
+  <ion-label>Date of Birth</ion-label>
+  <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="data1.myDate" name="myDate" #myDate="ngModel"></ion-datetime>
+</ion-item>
+ <ion-label class="alert alert-danger" color="danger">
+  <div *ngIf="myDate.errors && (myDate.dirty || myDate.touched)" >
+       <div [hidden]="!myDate.errors.required" >
+        Field required
+        </div>
+    </div>
+    </ion-label>
+
+
+
+<ion-item>
+    <ion-label>Shop in </ion-label>
+    <ion-select [(ngModel)]="data1.shop" name='shop' #shop="ngModel" required>
+      <ion-option  *ngFor="let list of country" value="{{list.Country.name}}"  >{{list.Country.name}}</ion-option>
+     
+    </ion-select>
+  </ion-item>
+ <ion-label class="alert alert-danger" color="danger">
+  <div *ngIf="shop.errors && (shop.dirty || shop.touched)" >
+       <div [hidden]="!shop.errors.required" >
+        Field required
+        </div>
+    </div>
+    </ion-label>
+
+
+
+
+
+
+  <ion-item (click)="address()">
+      Addresses
+    <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+  </ion-item>
+  <ion-item (click)="card()">
+      Cards
+    <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+  </ion-item>
+<button  type="submit" class="button-block border_radius" ion-button style="background:rgba(155,155,155,0.8); font-weight:300;">
+   Save
+</button> 
+
+  </ion-list>
+</div>
+</form>
+</ion-content>

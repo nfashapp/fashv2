@@ -1,0 +1,121 @@
+page-profile {
+.profile_sec {
+    width: 247px;
+    margin: 0px auto;
+}
+.title > .toolbar-title{
+    text-transform: uppercase;
+    color: #6c6c6c !important;
+    letter-spacing: 8px !important;
+    font-family: futuraheavy !important;
+    font-size: 17px !important;
+    font-weight: bold;
+    }
+
+.title1 > .toolbar-title{
+    text-transform: uppercase;
+    color: #6c6c6c !important;
+    letter-spacing: 1px !important;
+    font-weight: 600 !important;
+    font-size: 12px !important;
+    font-family: futuraheavy;
+    }
+
+   
+    
+.title1 > .toolbar-title > p {
+     font-size: 10px;
+    letter-spacing: 1px;
+    margin: 0;
+    text-transform: none;
+    font-family: futuraheavy;
+}
+
+.user_pic {
+    border-radius: 50%;
+    height: 150px;
+    overflow: hidden;
+    width: 150px;
+    position: relative;
+    margin: 0px auto;
+    margin-top: 38px;
+    margin-bottom: 23px;
+}
+.profile_sec > h3 {
+    color: #878787;
+    font-size: 17px;
+    text-align: center;
+    font-family: futuraheavy;
+    width: 100%;
+    float: left;
+    margin: 0px;
+    text-transform: capitalize;
+}
+.profile_sec > h4 {
+    color: #878787;
+    font-size: 13px;
+    margin: 3px 0;
+    text-align: center;
+    font-family: futuraheavy;
+    width: 100%;
+    float: left;
+}
+
+
+.profile_list .item ion-item {
+    padding: 0;
+}
+.profile_list .item {
+    color: #878787;
+    font-size: 14px;
+    padding: 0;
+}
+.profile_list .item-inner {
+    padding: 0;
+}
+.profile_list .item:first-child {
+    border: medium none;
+}
+.user_pic img 
+    {
+    border-radius: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    max-width: 100%;
+    width: 150px;
+    height: 150px;
+
+}
+.profile_list .label{
+    color: #878787;
+    font-size: 13px;
+    margin: 3px 0;
+    font-family: futuraheavy;
+    letter-spacing: 0.76px;
+}
+.profile_list .item-inner {
+    border-color: rgba(155,155,155,0.5) !important;
+    padding-right: 0px !important;
+}
+.profile_list .icon {
+    margin-right: 0px !important;
+}
+.profile_list .item-inner ion-icon {
+    min-height: 1.8rem !important;
+    font-size: 1.8rem !important;
+    line-height: 1;
+}
+.questions {
+    width: 20px;
+    height: auto;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+}
+  

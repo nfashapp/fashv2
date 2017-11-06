@@ -1,0 +1,78 @@
+page-cartmodel {
+  .cart_modelsec {
+  background: #fff;
+  border-radius: 9px;
+  margin: auto;
+  padding: 50px 5px 5px;
+  position: relative;
+  top: 20vh;
+  width: 85%;
+}
+.roundtic {
+    background: #fae4de;
+    border-radius: 50%;
+    height: 100px;
+    left: 0;
+    margin: auto;
+    padding: 13%;
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 100px;
+}
+.roundtic img {
+    width: 100%;
+}
+.cart_modelsec > h3 {
+    color: #878787;
+    font-size: 16px;
+    text-align: center;
+    font-family: futuraheavy !important;
+}
+.cart_pro {
+    box-shadow: 3px 3px 2px #909090;
+    height: 100px;
+    min-height: 100px;
+    overflow: hidden;
+    width: 100%;
+}
+
+
+.cart_txt {
+    color: #878787;
+    float: left;
+    width: 100%;
+}
+.cart_txt h4 {
+    font-size: 12px;
+    margin: 0 0 10px 0;
+    color: #878787;
+    letter-spacing: 0.5px;
+    font-family: futuraheavy;
+   // text-transform: uppercase;
+}
+.cart_txt > h5 {
+    font-size: 12px;
+    margin: 0 0 10px;
+}
+.cart_txt > p {
+    font-size: 12px;
+    margin: 0;
+    color: #878787;
+    letter-spacing: 0.5px;
+    font-family: futuraheavy;
+}
+.cart_txt > p span{
+    font-family: futuramedium;
+}
+
+.button_outersec {
+  padding: 15px 5px 5px;
+}
+.button_outersec button {
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+}
+  

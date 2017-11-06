@@ -1,0 +1,126 @@
+page-fittingroom {
+
+.back-button{
+    display: none !important;
+}
+
+.chtname{
+    font-size: 0.813em;
+    font-family: futura;
+    font-weight: 600;
+    color: #8e8e93;
+}
+.chttxt{
+    font-size: 0.813em;
+    font-family: futura;
+    color: #8e8e93;
+}
+ion-header ion-icon {
+    color: #878787;
+}
+a{
+color: #8e8e93;
+cursor: pointer;
+font-size: 14px;
+font-family: futuramedium;
+
+
+}
+.toolbar-title{
+    text-transform: uppercase;
+    color: #878787 !important;
+    letter-spacing: 2px;
+    font-weight: 600 !important;
+    font-size: 17px;
+  }
+  .title1 > .toolbar-title{
+      text-transform: uppercase;
+      color: #878787 !important;
+      letter-spacing: 1px !important;
+      font-size: 12px;
+      font-family: futuraheavy !important;
+    }
+  
+  .toolbar-title > p {
+      font-size: 10px;
+      letter-spacing: 1px;
+      margin: 0;
+      text-transform: none;
+  }
+.group_txt span{
+    color: #8e8e93;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: futuramedium;
+    padding-left: 8px;
+}
+
+
+
+
+.list_cnt .item-md {
+    border-bottom: 2px solid #ccc;
+}
+ion-note.note.note-ios,ion-note.note.note-md{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    font-size: 0.813em;
+    color: #8e8e93;
+    font-weight: 500;
+}
+.label-md,.label-ios {
+    white-space: normal;
+}
+.invite .button-inner{text-transform: capitalize;}
+.acpt{float:right;}
+.acpt .button{
+    box-shadow: none;
+    border: 1px solid rgba(151,151,151,0.40);
+    font-size: 12px;
+
+    letter-spacing: 0.5px;
+    color: #9b9b9b;
+ background-color: rgba(250,228,222,0.70);
+
+}
+.button-md-light:hover:not(.disable-hover) {
+    background-color: rgba(155,155,155,0.80);
+    color:#f2f2f2;
+}
+.acpt .btn{
+    background-color: rgba(155,155,155,0.70);
+     color: #fff;
+}
+.inv_title{
+    margin: 0px;
+    font-size: 13px;
+    font-family: futuramedium;
+    color: #8e8e93;
+    letter-spacing: 0.14px;
+    text-transform: capitalize;
+}
+.loc_title{
+    margin: 0px;
+    font-size: 11px;
+    font-family: futuramedium;
+    color: #8e8e93;
+    letter-spacing: 0.14px;
+}
+
+.accept_btn{
+    height:22px; 
+    width:81px; 
+    border:1px solid rgba(151,151,151,0.4); 
+    font-family: futuraheavy; 
+    font-size:12px; 
+    color:#9b9b9b;
+}
+.accept_btn span{
+    font-family: futuraheavy; 
+}
+
+}
+
+
+.title1 .toolbar-title{font-family: futura; letter-spacing: 0.8px !important;}

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="header-color">
+    <ion-title class="title1">YOU DON'T KNOW ME<p>Jax Jones feat. RAYE</p></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+
+<ion-list style="margin-bottom:0px;" class="list_cnt">
+  <ion-item>
+    
+      <a>Done</a>
+     <a (click)="searchPage()" item-end><ion-icon name="add"></ion-icon></a>
+  </ion-item>
+</ion-list>
+
+<ion-list class="invite">
+  <ion-item *ngFor="let friends of friendslist" (click)="chatPage(friends.id)">
+    <ion-icon name="remove-circle" item-start></ion-icon>
+    <ion-avatar item-start>
+      <img *ngIf="friends.image != null" [src]="friends.image">
+      <img *ngIf="friends.image == null" src="assets/images/noimage.jpg">
+    </ion-avatar>
+    <h3>{{friends.first_name}}</h3>
+    <!-- <p>Send you a fitting room invitation</p> -->
+    <ion-note class="time" item-end="" class="note note-ios">{{friends.time}}</ion-note>
+      <!-- <div class="acpt">
+        <button ion-button color="header-color" small>Accept</button>
+        <button ion-button color="light" small>Decline</button>
+      </div> -->
+  </ion-item>
+  
+
+</ion-list>
+
+</ion-content>

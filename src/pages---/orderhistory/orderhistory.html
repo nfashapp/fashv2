@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-navbar color="header-color">
+    <ion-title class="title1">BAD LIAR
+      <p>Selena Gomez</p>
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button color="light" clear>
+  <img width="18px" src="assets/images/fast-forward.png">
+  </button>
+      <button ion-button color="light" clear>
+  <img width="12px" src="assets/images/pause.png">
+  </button>
+      <button ion-button color="light" clear>
+  <img width="18px" src="assets/images/fast-forwardr.png">
+  </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list style="margin-bottom:0px;" class="list_cnt">
+    <ion-item>
+      <span class="carttitle">Order History</span>
+    </ion-item>
+  </ion-list>
+  <span style="padding:0;text-align:center;position:absolute;height:20px;left:0;right:0;bottom:0;top:0;margin:auto;
+color:#878787;" class="emptycart" *ngIf='length == 0'>
+      You haven’t placed any orders yet.
+     </span>
+  <div class="order_history">
+    <ion-list *ngIf="History">
+      <ion-item style="padding: 0;" text-wrap *ngFor="let orderhistory of History">
+        <ion-grid style="padding:0;">
+          <ion-row>
+            <ion-col col-5 style="padding: 10px 0 10px 4px;">
+              <div (click)="historydetailsPage(orderhistory.Order.id)" class="cart">
+                <img [src]="orderhistory.OrderItem[0].image">
+                <div *ngIf="orderhistory.Order.orderlog_status == 0" class="priceremove"> PENDING </div>
+                <div *ngIf="orderhistory.Order.orderlog_status == 1" class="priceremove"> CONFIRMED</div>
+                <!-- <div *ngIf="orderhistory.OrderItem.soldout != 0 && orderhistory.OrderItem.trackingid == null" class="priceremove"> Canceled </div> -->
+
+              </div>
+
+            </ion-col>
+            <ion-col col-7 style="padding: 10px;">
+
+
+              <div class="carttxt_right">
+                <h3><span>Order number:</span> #{{orderhistory.Order.id}}</h3>
+                <h3><span>Order placed:</span> {{orderhistory.Order.created}}</h3>
+                <h3><span>Total:</span> {{orderhistory.Order.subtotal | currency:'USD':true:'1.2-2'}}</h3>
+                <p (click)="historydetailsPage(orderhistory.Order.id)" style="margin-top:5vh; text-align:right;">
+                  <ion-icon style="float: right; margin-left: 8px;" name="arrow-forward"></ion-icon><span style="float: right;">Details</span> </p>
+              </div>
+            </ion-col>
+          </ion-row>
+
+        </ion-grid>
+      </ion-item>
+
+    </ion-list>
+
+  </div>
+</ion-content>
+
+<ion-footer class="send" style="height:97px;">
+  <button class="btn_globle" style="height: 49px; width: 90%; margin: 0px auto; float:none;" ion-button full (click)="chatPage()">CUSTOMER SUPPORT</button>
+</ion-footer>
