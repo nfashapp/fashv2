@@ -35,12 +35,11 @@
     <div class="procard_img slider">
 
       <ion-slides (ionSlideDidChange)="ondrag()">
-
         <ion-slide *ngFor="let res of allcards" style="background-color:#fff;">
           <div *ngIf='res?.Lookbook' class="overlay"></div>
           <div class="slide_box" (click)="InAppPurchage(res?.Product?.link)">
             <img *ngIf='res?.Product?.image' [src]="res?.Product?.image">
-            <img *ngIf='res?.Lookbook?.image && res?.Product?.non_products != 1' [src]="res?.Lookbook?.image">
+            <!-- <img *ngIf='res?.Lookbook?.image && res?.Product?.non_products != 1' [src]="res?.Lookbook?.image"> -->
           </div>
            <ion-grid *ngIf='res?.Product?.image' style="position: absolute; padding:0 5px !important; z-index: 999; bottom: 0px; background:#fff; padding: 5px;">
             <!-- <ion-row>

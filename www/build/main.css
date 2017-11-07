@@ -33009,6 +33009,26 @@ page-groupchat .scrollcard .scroll-content {
   margin-top: 282px !important;
 }
 
+page-groupchat [contenteditable=true]:empty:before {
+  content: attr(placeholder);
+  display: block;
+  color: #ccc;
+}
+
+page-groupchat div[contenteditable=true] {
+  width: 100%;
+  max-height: 250px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  padding: 4px 9px;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+page-groupchat .abc:focus {
+  outline: none;
+}
+
 page-historydetails .toolbar-title {
   text-transform: uppercase;
   color: #878787 !important;

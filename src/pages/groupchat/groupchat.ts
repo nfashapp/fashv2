@@ -24,7 +24,7 @@ export class GroupchatPage {
   });
   chat_id; editedmsg; editedmsgid; scrollcard;
   moment: any;
-  data; userchat; listImages; time; loggeduser: any; groupdata; username: any;
+  data:any=''; userchat; listImages; time; loggeduser: any; groupdata; username: any;
   /*********** variables for music player */
   index;
   bit: boolean = true;

@@ -192,26 +192,26 @@ export class CardswipePage {
             })
         });
       }else {
-        
-        this.allLookbookIDs.forEach(function (value, $index) {
-          console.log('index:'+$index);
-          if (value.Lookbook.id == currentLookbook_id) {
-            var next_lookbook_INDEX = $index + 1;
-            console.log('currentLookbook_id', currentLookbook_id);
-            if (data[next_lookbook_INDEX].Lookbook != undefined) {
-              aa.checkall = 0;
-              aa.nextLookbook_id = data[next_lookbook_INDEX].Lookbook.id;
-              localStorage.setItem('lookbookaffid',data[next_lookbook_INDEX].Lookbook.affiliates);
+        aa.showToast("End of lookbook, let's shop the next one from our homepage!")
+        // this.allLookbookIDs.forEach(function (value, $index) {
+        //   console.log('index:'+$index);
+        //   if (value.Lookbook.id == currentLookbook_id) {
+        //     var next_lookbook_INDEX = $index + 1;
+        //     console.log('currentLookbook_id', currentLookbook_id);
+        //     if (data[next_lookbook_INDEX].Lookbook != undefined) {
+        //       aa.checkall = 0;
+        //       aa.nextLookbook_id = data[next_lookbook_INDEX].Lookbook.id;
+        //       localStorage.setItem('lookbookaffid',data[next_lookbook_INDEX].Lookbook.affiliates);
               
-            } else {
-              aa.showToast("End of lookbook, let's shop the next one from our homepage!")
-            }
-          }
-        });
-        this.nextLookbook_id = aa.nextLookbook_id;
-        console.log('nextLookbook_id', this.nextLookbook_id);
-        localStorage.setItem('lookbookid',this.nextLookbook_id);
-        this.viewNextfrontPage(this.nextLookbook_id);
+        //     } else {
+        //       aa.showToast("End of lookbook, let's shop the next one from our homepage!")
+        //     }
+        //   }
+        // });
+        // this.nextLookbook_id = aa.nextLookbook_id;
+        // console.log('nextLookbook_id', this.nextLookbook_id);
+        // localStorage.setItem('lookbookid',this.nextLookbook_id);
+        // this.viewNextfrontPage(this.nextLookbook_id);
       }
     }
   }
@@ -241,7 +241,6 @@ export class CardswipePage {
         let allcards: any = this.allcards;
         console.log(data);
         data.data.forEach(function (value, key) {
-
           if (aa.appsetting.palycyrretn == 1) {
             if (value.Playlist.Music) {
               aa.appsetting.audio.stop();
@@ -267,6 +266,7 @@ export class CardswipePage {
               value.Lookbook.brandlink = 0;
             }
           }
+   
           allcards.push(value)
         })
         this.allcards = allcards;
@@ -368,6 +368,19 @@ export class CardswipePage {
           if (data.status == 0) {
             let allcards = this.allcards;
             data.data.forEach(function (value, key) {
+                 /*********************** */
+          if (value.Product.image != null) {
+            console.log(value.Product.image);
+            var search = value.Product.image.search('http://');
+            var searchhttps = value.Product.image.search('https://');
+            if (search >= 0 || searchhttps >= 0) {
+              //value.Lookbook.brandlink = 1;
+            } else {
+              value.Product.image = 'https:'+value.Product.image;
+            }
+          }
+
+          /*********************** */
               allcards.push(value);
             })
             this.allcards = allcards;
@@ -412,6 +425,7 @@ export class CardswipePage {
           console.log('old', this.allcards)
           let allcards = this.allcards
           data.data.forEach(function (value, key) {
+                
             allcards.push(value);
           });
           this.allcards = allcards;

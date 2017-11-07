@@ -171,5 +171,5 @@
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="loadUrlTimeoutValue" value="700000" />
-    <preference name="CodePushDeploymentKey" value="Xlgc2qsPe-4YyUj1kWcx0nIMKiJL762511f6-7b98-4519-befe-312bfb8c8dea │&#xA;" />
+    <preference name="CodePushDeploymentKey" value="gIjsqqmX_FJkY8ECMOs05WG8o2aD071c2502-f459-4397-9911-82bbbc7f1d15" />
 </widget>

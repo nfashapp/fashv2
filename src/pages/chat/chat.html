@@ -83,7 +83,7 @@
 <ion-footer class="footer_bg">
 <div class="chat_footer"> 
     <div class="input_send">
-      <p placeholder="Type a message" [(ngModel)]="data" ></p> 
+      <ion-textarea type="text" placeholder="Type a message" [(ngModel)]="data" ></ion-textarea> 
     <!-- <ion-input type="number" placeholder="Number Input with no label"></ion-input> -->
     
     <div class="icon_send" *ngIf="data && editedmsg == null">

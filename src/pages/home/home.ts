@@ -35,31 +35,31 @@ export class HomePage {
      public menu: MenuController
   
   ) {
-    this.platform.ready().then(() => {
+    // this.platform.ready().then(() => {
       
-      this.codePush.sync({}, (progress) => {
+    //   this.codePush.sync({}, (progress) => {
  
-      }).subscribe((status) => {
-        // if(status == SyncStatus.CHECKING_FOR_UPDATE)
-        //   alert("checking for update");
-        // if(status == SyncStatus.DOWNLOADING_PACKAGE)
-        //   alert("downloading package");
-        // if(status == SyncStatus.IN_PROGRESS)
-        //   alert("IN PROGRESS");
-        // if(status == SyncStatus.INSTALLING_UPDATE)
-        //   alert("installing update");
-        // if(status == SyncStatus.UP_TO_DATE)
-        //   alert("UP TO DATE");
-        // if(status == SyncStatus.UPDATE_INSTALLED)
-        //   alert("update installed");
-        // if(status == SyncStatus.ERROR)
-        //   alert("error");
+    //   }).subscribe((status) => {
+    //     if(status == SyncStatus.CHECKING_FOR_UPDATE)
+    //       alert("checking for update");
+    //     if(status == SyncStatus.DOWNLOADING_PACKAGE)
+    //       alert("downloading package");
+    //     if(status == SyncStatus.IN_PROGRESS)
+    //       alert("IN PROGRESS");
+    //     if(status == SyncStatus.INSTALLING_UPDATE)
+    //       alert("installing update");
+    //     if(status == SyncStatus.UP_TO_DATE)
+    //       alert("UP TO DATE");
+    //     if(status == SyncStatus.UPDATE_INSTALLED)
+    //       alert("update installed");
+    //     if(status == SyncStatus.ERROR)
+    //       alert("error");
  
  
  
-      })
+    //   })
        
-     })
+    //  })
 
 
 
