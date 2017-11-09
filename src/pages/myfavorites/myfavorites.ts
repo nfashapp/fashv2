@@ -23,7 +23,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 })
 @Injectable()
 export class MyfavoritesPage {
-  allProducts; 
+  allProducts:any = []; 
   /*********** variables for music player */
   index;
   bit: boolean = true;
@@ -65,6 +65,7 @@ export class MyfavoritesPage {
 
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
+    this.allProducts = [];
     this.myFavs();
     setTimeout(() => {
       console.log('Async operation has ended');
@@ -73,6 +74,7 @@ export class MyfavoritesPage {
   }
 
   myFavs() {
+    var aa = this;
     clearInterval(this.appsetting.interval);
     let headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
@@ -96,9 +98,18 @@ export class MyfavoritesPage {
           Loading.dismiss();
           console.log(data);
           if (data.status == 0) {
-            this.allProducts = data.data;
+           // this.allProducts = data.data;
+            data.data.forEach(function(value,key){
+              console.log(value);
+              if(value.Product.image == null || value.Product.name == null){
+                aa.allProducts.push(value.ShopScrap)
+              }else{
+                aa.allProducts.push(value.Product)
+              }
+              console.log(aa.allProducts);
+            });
           } else {
-            this.allProducts = null;
+            this.allProducts = [];
             this.showToast('No products added to My Favorites yet');
           }
           this.events.publish('haveSeen', 'yes');
@@ -160,7 +171,6 @@ export class MyfavoritesPage {
       this.currentTrack = track;
       const file: MediaObject = this.media.create(this.currentTrack.music);
       localStorage.setItem('currenttrack',JSON.stringify(this.currentTrack));
-      this.currentTrack = JSON.parse(localStorage.getItem('currenttrack'));
       this.appsetting.audio = file;
       this.appsetting.audio.play();
     }
@@ -212,7 +222,7 @@ prevTrack() {
 }
 /*************** In App purchase for brands *********************/
 InAppPurchage(link){
-  if(link != null && link != ''){
+  if(link != null && link != ""){
      var target = '_blank';
   var options = 'location=no';
   var brandsite = this.inappBrowser.create(link, target, options);
@@ -229,9 +239,14 @@ InAppPurchage(link){
 
   brandsite.on('exit').subscribe((e) => {
   })
-  }else{
-    
-  }
+}else{
+   let toast = this.toastCtrl.create({
+        message: 'Target url empty.',
+        duration: 3000,
+        position: 'top'
+      });
+      toast.present();
+}
 }
   serializeObj(obj) {
     var result = [];

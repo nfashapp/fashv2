@@ -11,23 +11,27 @@ import { ProductdetailsPage } from '../productdetails/productdetails';
 import { DatePipe } from '@angular/common';
 import * as moment from 'moment';
 import { Media, MediaObject } from '@ionic-native/media';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @Component({
   selector: 'page-chat',
   templateUrl: 'chat.html'
 })
 export class ChatPage {
+  data:any;
   newindex: number;
   lasindex: any;
   isDisabled = false; scrollcard;
    public scrollAmount = 44;
+   length;
   @ViewChild(Content) content: Content;
   public Loading = this.loadingCtrl.create({
     content: 'Please wait...'
   });
   chat_id; editedmsg; editedmsgid; username; typingdata; chatname;scrollbottom;
   moment: any;
-  data; userchat; listImages; time; loggeduser: any;
+
+   userchat; listImages; time; loggeduser: any;
 
     /*********** variables for music player */
     index;
@@ -50,7 +54,9 @@ export class ChatPage {
     public toastCtrl: ToastController,
     public zone: NgZone,
     public media: Media,
+    public inappBrowser: InAppBrowser
   ) {
+    
     if(localStorage.getItem('currenttrack')){
       this.currentTrack = JSON.parse(localStorage.getItem('currenttrack'));
       console.log(this.currentTrack);
@@ -160,13 +166,17 @@ this.appsetting.interval = setInterval(() => {
     })
   }
 
-
-  public onetoone(message) {
+  public onetoone() {
+    var message = document.getElementById('message').innerHTML;
+    console.log(document.getElementById('message').innerHTML);
+    console.log(message.length);
+    this.length = message.length;
+   // return false;
     let headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
     let options = new RequestOptions({ headers: headers });
     var user_id = localStorage.getItem("USERID");
-    //var url: string = 'http://rakesh.crystalbiltech.com/fash/api/lookbooks/onetoonechat'; 
+    if(message.length>0){
     var postdata = {
       friendid: this.chat_id,
       message: message,
@@ -181,8 +191,11 @@ this.appsetting.interval = setInterval(() => {
       this.Loading.dismiss();
       console.log(data)
       this.chatshow()
-      this.data = '';
+      document.getElementById('message').innerHTML = '';
     })
+  }else{
+
+  }
   }
 
 
@@ -303,7 +316,8 @@ this.appsetting.interval = setInterval(() => {
               console.log(msg);
               this.editedmsg = msg;
               this.editedmsgid = msgid;
-              this.data = this.editedmsg;
+              //this.data = this.editedmsg;
+              document.getElementById('message').innerHTML = this.editedmsg;
 
             }
           }
@@ -314,10 +328,10 @@ this.appsetting.interval = setInterval(() => {
 
   }
 
-  editedchat(editedmsg) {
+  editedchat() {
     console.log(this.editedmsgid);
     console.log(editedmsg);
-
+    var editedmsg = document.getElementById('message').innerHTML;
     let headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
     let options = new RequestOptions({ headers: headers });
@@ -333,14 +347,14 @@ this.appsetting.interval = setInterval(() => {
       this.Loading.dismiss();
       console.log(data)
       if (data.status == 0) {
-        this.data = '';
+        document.getElementById('message').innerHTML = '';
         this.editedmsg = null;
         delete this.editedmsg;
         this.chatshow();
       } else {
         this.editedmsg = null;
         delete this.editedmsg;
-        this.data = '';
+        document.getElementById('message').innerHTML = '';
         let toast = this.toastCtrl.create({
           message: 'Error in edit message! try again',
           duration: 3000
@@ -368,14 +382,14 @@ this.appsetting.interval = setInterval(() => {
       this.Loading.dismiss();
       console.log(data)
       if (data.status == 0) {
-        this.data = '';
+        document.getElementById('message').innerHTML = '';
         this.editedmsg = null;
         delete this.editedmsg;
         this.chatshow();
       } else {
         this.editedmsg = null;
         delete this.editedmsg;
-        this.data = '';
+        document.getElementById('message').innerHTML = '';
         let toast = this.toastCtrl.create({
           message: 'Error in deleting message! try again',
           duration: 3000
@@ -430,9 +444,35 @@ this.appsetting.interval = setInterval(() => {
   }
 
 
-  productPage(id) {
-    this.navCtrl.push(ProductdetailsPage, { prod_id: id })
-  }
+/*************** In App purchase for brands *********************/
+InAppPurchage(link){
+  console.log('link here--->'+link);
+  if(link != null && link != ""){
+     var target = '_blank';
+  var options = 'location=no';
+  var brandsite = this.inappBrowser.create(link, target, options);
+  console.log(link);
+  console.log(target);
+  console.log(brandsite);
+  brandsite.on('loadstart').subscribe((e) => {
+    console.log(e);
+    let url = e.url;
+    console.log(url);
+  }, err => {
+    console.log("InAppBrowser loadstart Event Error: " + err);
+  });
+
+  brandsite.on('exit').subscribe((e) => {
+  })
+}else{
+  //  let toast = this.toastCtrl.create({
+  //       message: 'Target url empty.',
+  //       duration: 3000,
+  //       position: 'top'
+  //     });
+  //     toast.present();
+}
+}
 
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);

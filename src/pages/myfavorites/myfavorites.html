@@ -1,28 +1,27 @@
 <ion-header>
   <ion-navbar color="header-color" *ngIf="!currentTrack">
-      <ion-title class="title">FASH</ion-title>
-    </ion-navbar>
-
+    <ion-title class="title" style="font-weight: bold;font-size:17px;">FASH</ion-title>
+  </ion-navbar>
 
 <ion-navbar color="header-color" *ngIf="currentTrack">
-   <ion-title class="title1">{{currentTrack.musicname}}<p *ngIf="currentTrack.artist">{{currentTrack.artist}}</p></ion-title>
-<button style="height:28px;" start ion-button clear>
+ <ion-title class="title1">{{currentTrack.musicname}}<p *ngIf="currentTrack.artist">{{currentTrack.artist}}</p></ion-title>
+<button start ion-button clear>
 <img width="11px" src="assets/images/back_btn.svg" (click)="back()">
 </button>
 <ion-buttons end>
-    <button ion-button color="light" clear (click)="prevTrack()">
-    <img width="18px" src="assets/images/fast-forward.png">
-    </button>
-    <button *ngIf="bit == false" ion-button color="light" clear (click)="playTrack(currentTrack)">
-    <img width="18px" src="assets/images/play.png">
-    </button> 
-    <button *ngIf="bit == true" ion-button color="light" clear (click)="pausetyTrack(currentTrack)">
-    <img width="12px" src="assets/images/pause.png">
-    </button>
-    <button ion-button color="light" clear (click)="nextTrack()">
-    <img width="18px" src="assets/images/fast-forwardr.png">
-    </button>
-  </ion-buttons>   
+  <button ion-button color="light" clear (click)="prevTrack()">
+  <img width="18px" src="assets/images/fast-forward.png">
+  </button>
+  <button *ngIf="bit == false" ion-button color="light" clear (click)="playTrack(currentTrack)">
+  <img width="18px" src="assets/images/play.png">
+  </button> 
+  <button *ngIf="bit == true" ion-button color="light" clear (click)="pausetyTrack(currentTrack)">
+  <img width="12px" src="assets/images/pause.png">
+  </button>
+  <button ion-button color="light" clear (click)="nextTrack()">
+  <img width="18px" src="assets/images/fast-forwardr.png">
+  </button>
+</ion-buttons>   
 </ion-navbar>
 </ion-header>
 
@@ -32,18 +31,18 @@
   </ion-refresher>
 <ion-grid>
 <ion-row>
-  <ion-col col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 *ngFor="let product of allProducts" (click)="InAppPurchage(product.Product.link)">
+  <ion-col col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 *ngFor="let product of allProducts" (click)="InAppPurchage(product.link)">
      <div class="product_box">
       <div class="img_outers">
-        <img [src]="product?.Product?.image"> 
+        <img [src]="product?.image"> 
         <div class="overlay"></div>
       </div>
       
       <div class="content_pro">
-        <div class="favpro_title">${{product?.Product?.price | number: '1.2-2'}}</div>
+        <div class="favpro_title">${{product?.price | number: '1.2-2'}}</div>
       </div>
       <div class="cart_sec">
-        <div class="cart_title">{{product?.Product?.name}}</div>
+        <div class="cart_title">{{product?.name}}</div>
         <button style="width: 20%; float: right;" ion-button color="dark" small clear icon-only>
           <ion-icon style="padding:0 0.4em;" name="md-cart"></ion-icon>
         </button>

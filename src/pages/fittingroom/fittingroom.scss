@@ -106,6 +106,9 @@ ion-note.note.note-ios,ion-note.note.note-md{
     font-family: futuramedium;
     color: #8e8e93;
     letter-spacing: 0.14px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .accept_btn{

@@ -177,6 +177,19 @@ export class CardswipePage {
               if (data.status == 0) {
                 let allcards = this.allcards;
                 data.data.forEach(function (value, key) {
+                    /*********************** */
+          if (value.Product.image != null) {
+            console.log(value.Product.image);
+            var search = value.Product.image.search('http://');
+            var searchhttps = value.Product.image.search('https://');
+            if (search >= 0 || searchhttps >= 0) {
+              //value.Lookbook.brandlink = 1;
+            } else {
+              value.Product.image = 'https:'+value.Product.image;
+            }
+          }
+
+          /*********************** */
                   allcards.push(value);
                 })
                 this.allcards = allcards;
@@ -266,7 +279,7 @@ export class CardswipePage {
               value.Lookbook.brandlink = 0;
             }
           }
-   
+        
           allcards.push(value)
         })
         this.allcards = allcards;
@@ -487,6 +500,7 @@ export class CardswipePage {
 
   myFavs(id, fav, url) {
     var user_id = localStorage.getItem('USERID');
+    var aff = localStorage.getItem('lookbookaffid');
     if (user_id == null || undefined) {
       this.ConfirmUser();
     } else {
@@ -504,7 +518,8 @@ export class CardswipePage {
         productid: id,
         userid: user_id,
         status: status,
-        link: url
+        link: url,
+        affiliate: parseInt(aff)
       };
       console.log(postdata);
       var serialized = this.serializeObj(postdata);

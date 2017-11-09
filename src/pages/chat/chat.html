@@ -1,80 +1,102 @@
 <ion-header>
-    <ion-navbar color="header-color" *ngIf="!currentTrack">
-        
-            <button style="height:28px;" start ion-button clear>
-                <img width="11px" src="assets/images/back_btn.svg" (click)="back()">
-                </button>
-        <ion-title class="title">FASH</ion-title>
+  <ion-navbar color="header-color" *ngIf="!currentTrack">
+      <ion-toolbar color="header-color">
+      <ion-title class="title" style="font-weight: bold;">FASH</ion-title>
+      </ion-toolbar>
+ 
+    </ion-navbar>
 
-        
-   
-      </ion-navbar>
-        <ion-toolbar *ngIf="currentTrack" color="header-color">
-        <ion-title class="title1">{{currentTrack?.musicname}}<p *ngIf="currentTrack.artist">{{currentTrack?.artist}}</p></ion-title>
-       <button style="height:28px;" start ion-button clear>
-       <img width="11px" src="assets/images/back_btn.svg" (click)="back()">
+
+      <ion-toolbar *ngIf="currentTrack" color="header-color">
+      <ion-title class="title1">{{currentTrack.musicname}}<p *ngIf="currentTrack.artist">{{currentTrack.artist}}</p></ion-title>
+     <button style="height:28px;" start ion-button clear>
+     <img width="11px" src="assets/images/back_btn.svg" (click)="back()">
+     </button>
+     <ion-buttons end>
+       <button ion-button color="light" clear (click)="prevTrack()">
+       <img width="18px" src="assets/images/fast-forward.png">
        </button>
-       <ion-buttons end>
-         <button ion-button color="light" clear (click)="prevTrack()">
-         <img width="18px" src="assets/images/fast-forward.png">
-         </button>
-         <button *ngIf="bit == false" ion-button color="light" clear (click)="playTrack(currentTrack)">
-         <img width="18px" src="assets/images/play.png">
-         </button> 
-         <button *ngIf="bit == true" ion-button color="light" clear (click)="pausetyTrack(currentTrack)">
-         <img width="12px" src="assets/images/pause.png">
-         </button>
-         <button ion-button color="light" clear (click)="nextTrack()">
-         <img width="18px" src="assets/images/fast-forwardr.png">
-         </button>
-       </ion-buttons>
-       </ion-toolbar>
+       <button *ngIf="bit == false" ion-button color="light" clear (click)="playTrack(currentTrack)">
+       <img width="18px" src="assets/images/play.png">
+       </button> 
+       <button *ngIf="bit == true" ion-button color="light" clear (click)="pausetyTrack(currentTrack)">
+       <img width="12px" src="assets/images/pause.png">
+       </button>
+       <button ion-button color="light" clear (click)="nextTrack()">
+       <img width="18px" src="assets/images/fast-forwardr.png">
+       </button>
+     </ion-buttons>
+     </ion-toolbar>
 
- <ion-toolbar style="padding:0; min-height: 27px;" >
-   <div class="chat_protitle">Fitting room - <span style="font-family: futuraheavy;">{{chatname}}</span> </div>
- </ion-toolbar>
+
+
+
+
+
+<!-- <ion-toolbar color="header-color">
+  <ion-title class="title1">YOU DON'T KNOW ME<p>Jax Jones feat. RAYE</p></ion-title>
+   <button start ion-button clear (click)="back()">
+<img width="11px" src="assets/images/back_btn.svg">
+</button>
+  <ion-buttons end>
+    <button ion-button color="light" clear>
+    <img width="18px" src="assets/images/fast-forward.png">
+    </button>
+    <button ion-button color="light" clear>
+    <img width="12px" src="assets/images/pause.png">
+    </button>
+    <button ion-button color="light" clear>
+    <img width="18px" src="assets/images/fast-forwardr.png">
+    </button>
+  </ion-buttons>
+</ion-toolbar> -->
+
+<ion-toolbar style="padding:0; min-height: 27px;" >
+ <div class="chat_protitle">Fitting room - <span style="font-family: futuraheavy;">{{chatname}}</span> </div>
+</ion-toolbar>
 
 <ion-toolbar *ngIf="listImages">
 <div style="padding:0;">
-    <ion-scroll padding scrollX="true">
-  <div class="product_car" *ngFor="let img of listImages">
-       <div class="imagepro_inn"> 
-         <div class="overly"></div>
-         <img (click)='productPage(img[0]?.prodid)' [src]="img[0]?.prodimage"/>
-         <div class="likecomm">
-           <div class="liken" (click)="likeDislikeProduct(img.Chat.id,1)"> <ion-icon *ngIf="img.Chat.productlike != null" name="thumbs-up" class="liked"><span class="count_no"> {{img.Chat.productlike}} </span></ion-icon><ion-icon  *ngIf="img.Chat.productlike == null" name="thumbs-up"></ion-icon> </div>
-           <div end class="disslike" (click)="likeDislikeProduct(img.Chat.id,0)"> <ion-icon *ngIf="img.Chat.productdislike != null" name="thumbs-down" class="disliked"><span class="count_no"> {{img.Chat.productdislike}} </span></ion-icon> <ion-icon *ngIf="img.Chat.productdislike == null" name="thumbs-down"></ion-icon></div>
-         </div>
+  <ion-scroll padding scrollX="true">
+<div class="product_car" *ngFor="let img of listImages">
+     <div class="imagepro_inn"> 
+
+       <div (click)='InAppPurchage(img[0]?.prodlink)' class="overly"></div>
+       <img [src]="img[0]?.prodimage"/>
+       <div class="likecomm">
+         <div class="liken" (click)="likeDislikeProduct(img.Chat.id,1)"> <ion-icon *ngIf="img.Chat.productlike != null" name="thumbs-up" class="liked"><span class="count_no">  </span></ion-icon><ion-icon  *ngIf="img.Chat.productlike == null" name="thumbs-up"></ion-icon> </div>
+         <div end class="disslike" (click)="likeDislikeProduct(img.Chat.id,0)"> <ion-icon *ngIf="img.Chat.productdislike != null" name="thumbs-down" class="disliked"></ion-icon> <ion-icon *ngIf="img.Chat.productdislike == null" name="thumbs-down"></ion-icon></div>
        </div>
-        <div class="chtpro_title"><div class="protitle_n">{{img[0]?.prodname}}</div>
-        <div style="float:right; font-family: futuraheavy !important;">${{img[0]?.prodprice | number : '1.2-2'}}</div>
-      </div>
-  </div>
+     </div>
+      <div class="chtpro_title"><div class="protitle_n">{{img[0]?.prodname}}</div>
+      <div style="float:right; font-family: futuraheavy !important;">${{img[0]?.prodprice | number : '1.2-2'}}</div>
+    </div>
+</div>
 </ion-scroll>
 </div>
 </ion-toolbar>
 </ion-header>
 
 <ion-content id="scroll" class="{{scrollcard}}" style="background:#fff;" (ionScroll)="scrollHandler($event)" position="bottom">
-  <ion-refresher (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh"
-      refreshingSpinner="bubbles"
-      refreshingText="Refreshing...">
-    </ion-refresher-content>
-  </ion-refresher>
+<ion-refresher (ionRefresh)="doRefresh($event)">
+  <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh"
+    refreshingSpinner="bubbles"
+    refreshingText="Refreshing...">
+  </ion-refresher-content>
+</ion-refresher>
 
 
 <div class="padding">
 <div class="chatlist">
 <div  *ngFor="let msg of userchat">
-  <div (click)="presentActionSheet(msg.Chat.id,msg.Chat.message,msg.Chat.userid)" class="boxchat" [ngClass]="(msg.Chat.userid == loggeduser) ? 'chat-bubble right' : 'chat-bubble left'">
-  <div class="chat-users" style="position:relative;"> 
-    <!-- <div class="chatusername">Username</div> -->
-    <p> {{msg.Chat.message}}</p>
-    <span class="time">{{msg.Chat.time}}</span>
-  </div>
-  </div>
-  </div>
+<div (click)="presentActionSheet(msg.Chat.id,msg.Chat.message,msg.Chat.userid)" class="boxchat" [ngClass]="(msg.Chat.userid == loggeduser) ? 'chat-bubble right' : 'chat-bubble left'">
+<div class="chat-users" style="position:relative;"> 
+  <!-- <div class="chatusername">Username</div> -->
+  <p> {{msg.Chat.message}}</p>
+  <span class="time">{{msg.Chat.time}}</span>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -82,18 +104,19 @@
 </ion-content>
 <ion-footer class="footer_bg">
 <div class="chat_footer"> 
-    <div class="input_send">
-      <ion-textarea type="text" placeholder="Type a message" [(ngModel)]="data" ></ion-textarea> 
-    <!-- <ion-input type="number" placeholder="Number Input with no label"></ion-input> -->
-    
-    <div class="icon_send" *ngIf="data && editedmsg == null">
-     <ion-icon  ios="ios-send" md="md-send" (click)="onetoone(data)"></ion-icon>
-    </div>
+  <div class="input_send">
+      <div class="abc" id="message" contenteditable="true" placeholder="Type a message"></div>
+    <!-- <ion-textarea type="text" placeholder="Type a message" [(ngModel)]="data" ></ion-textarea>  -->
+  <!-- <ion-input type="number" placeholder="Number Input with no label"></ion-input> -->
+  
+  <div class="icon_send" *ngIf="editedmsg == null">
+   <ion-icon  ios="ios-send" md="md-send" (click)="onetoone(data)"></ion-icon>
+  </div>
 
-    <div class="icon_send" *ngIf="data && editedmsg != null">
-     <ion-icon ios="ios-send" md="md-send" (click)="editedchat(data)"></ion-icon>
-    </div>
+  <div class="icon_send" *ngIf="editedmsg != null">
+   <ion-icon ios="ios-send" md="md-send" (click)="editedchat(data)"></ion-icon>
+  </div>
 
-    </div>
+  </div>
 </div>
 </ion-footer>

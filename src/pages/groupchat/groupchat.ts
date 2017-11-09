@@ -8,6 +8,7 @@ import { Appsetting } from '../../providers/appsetting';
 import { FittingroomPage } from '../fittingroom/fittingroom';
 import { ProductdetailsPage } from '../productdetails/productdetails';
 
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Media, MediaObject } from '@ionic-native/media';
 import * as moment from 'moment';
 
@@ -17,6 +18,7 @@ import * as moment from 'moment';
   templateUrl: 'groupchat.html'
 })
 export class GroupchatPage {
+  length: number;
   @ViewChild(Content) content: Content;
 
   public Loading = this.loadingCtrl.create({
@@ -45,6 +47,7 @@ export class GroupchatPage {
     public actionSheetCtrl: ActionSheetController,
     public toastCtrl: ToastController,
     public media: Media,
+    public inappBrowser: InAppBrowser
   ) {
     if (localStorage.getItem('currenttrack')) {
       this.currentTrack = JSON.parse(localStorage.getItem('currenttrack'));
@@ -94,7 +97,6 @@ export class GroupchatPage {
       this.shareImage(share_id);
 
     }
-
     this.editedmsg = null;
   }
 
@@ -142,13 +144,17 @@ export class GroupchatPage {
   }
 
 
-  public onetoone(message) {
-
+  public onetoone() {
+    var message = document.getElementById('message').innerHTML;
+    console.log(document.getElementById('message').innerHTML);
+    console.log(message.length);
+    this.length = message.length;
+   // return false;
     let headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
     let options = new RequestOptions({ headers: headers });
     var user_id = localStorage.getItem("USERID");
-
+    if(message.length>0){
     var postdata = {
       friendid: this.chat_id,
       message: message,
@@ -163,8 +169,11 @@ export class GroupchatPage {
       this.Loading.dismiss();
       console.log(data)
       this.chatshow()
-      this.data = '';
+      document.getElementById('message').innerHTML = '';
     })
+  }else{
+
+  }
   }
 
 
@@ -286,7 +295,7 @@ export class GroupchatPage {
               console.log(msg);
               this.editedmsg = msg;
               this.editedmsgid = msgid;
-              this.data = this.editedmsg;
+              document.getElementById('message').innerHTML = this.editedmsg;
 
             }
           }
@@ -297,15 +306,14 @@ export class GroupchatPage {
 
   }
 
-  editedchat(editedmsg) {
+  editedchat() {
     console.log(this.editedmsgid);
     console.log(editedmsg);
-
+    var editedmsg = document.getElementById('message').innerHTML;
     let headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
     let options = new RequestOptions({ headers: headers });
-
-    var user_id = localStorage.getItem("USERID")
+    var user_id = localStorage.getItem("USERID");
     var postdata = {
       id: this.editedmsgid,
       message: editedmsg
@@ -317,14 +325,14 @@ export class GroupchatPage {
       this.Loading.dismiss();
       console.log(data)
       if (data.status == 0) {
-        this.data = '';
+        document.getElementById('message').innerHTML = '';
         this.editedmsg = null;
         delete this.editedmsg;
         this.chatshow();
       } else {
         this.editedmsg = null;
         delete this.editedmsg;
-        this.data = '';
+        document.getElementById('message').innerHTML = '';
         let toast = this.toastCtrl.create({
           message: 'Error in edit message! try again',
           duration: 3000
@@ -359,14 +367,14 @@ export class GroupchatPage {
       this.Loading.dismiss();
       console.log(data)
       if (data.status == 0) {
-        this.data = '';
+        document.getElementById('message').innerHTML = '';
         this.editedmsg = null;
         delete this.editedmsg;
         this.chatshow();
       } else {
         this.editedmsg = null;
         delete this.editedmsg;
-        this.data = '';
+        document.getElementById('message').innerHTML = '';
         let toast = this.toastCtrl.create({
           message: 'Error in deleting message! try again',
           duration: 3000
@@ -386,7 +394,6 @@ export class GroupchatPage {
 
   /********************************************************/
   Groupdata() {
-
     let headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
     let options = new RequestOptions({ headers: headers });
@@ -547,5 +554,33 @@ export class GroupchatPage {
     }
 
   }
+/*************** In App purchase for brands *********************/
+InAppPurchage(link){
+  console.log('link here--->'+link);
+  if(link != null && link != ""){
+     var target = '_blank';
+  var options = 'location=no';
+  var brandsite = this.inappBrowser.create(link, target, options);
+  console.log(link);
+  console.log(target);
+  console.log(brandsite);
+  brandsite.on('loadstart').subscribe((e) => {
+    console.log(e);
+    let url = e.url;
+    console.log(url);
+  }, err => {
+    console.log("InAppBrowser loadstart Event Error: " + err);
+  });
 
+  brandsite.on('exit').subscribe((e) => {
+  })
+}else{
+  //  let toast = this.toastCtrl.create({
+  //       message: 'Target url empty.',
+  //       duration: 3000,
+  //       position: 'top'
+  //     });
+  //     toast.present();
+}
+}
 }

@@ -31240,7 +31240,7 @@ page-chat .icon_send {
   float: right;
   position: absolute;
   right: 0;
-  top: 0;
+  bottom: 0;
   font-size: 20px;
   text-align: center;
   background: rgba(250, 228, 222, 0.7);
@@ -31262,6 +31262,42 @@ page-chat .icon_send .icon {
 
 page-chat .input_send textarea {
   width: 100%;
+}
+
+page-chat [contenteditable=true]:empty:before {
+  content: attr(placeholder);
+  display: block;
+  color: #878787;
+  font-family: futuraheavy;
+}
+
+page-chat div[contenteditable=true] {
+  width: 100%;
+  max-height: 120px;
+  border: 1px solid #ccc;
+  padding: 5px 9px;
+  border-radius: 15px;
+  background-color: #fff;
+  color: #878787;
+  letter-spacing: 0.5px;
+  overflow: auto;
+}
+
+page-chat .abc:focus {
+  outline: none;
+}
+
+page-chat .abc, page-chat [contenteditable] {
+  -wekit-user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+page-chat .footer_bg {
+  background: #fff;
+  border-top: none;
 }
 
 page-confirmation a {
@@ -32527,6 +32563,9 @@ page-fittingroom .loc_title {
   font-family: futuramedium;
   color: #8e8e93;
   letter-spacing: 0.14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 page-fittingroom .accept_btn {
@@ -32981,7 +33020,7 @@ page-groupchat .icon_send {
   float: right;
   position: absolute;
   right: 0;
-  top: 0;
+  bottom: 0;
   font-size: 20px;
   text-align: center;
   background: rgba(250, 228, 222, 0.7);
@@ -33012,21 +33051,37 @@ page-groupchat .scrollcard .scroll-content {
 page-groupchat [contenteditable=true]:empty:before {
   content: attr(placeholder);
   display: block;
-  color: #ccc;
+  color: #878787;
+  font-family: futuraheavy;
 }
 
 page-groupchat div[contenteditable=true] {
   width: 100%;
-  max-height: 250px;
-  overflow: hidden;
+  max-height: 120px;
   border: 1px solid #ccc;
-  padding: 4px 9px;
-  border-radius: 3px;
+  padding: 5px 9px;
+  border-radius: 15px;
   background-color: #fff;
+  color: #878787;
+  letter-spacing: 0.5px;
+  overflow: auto;
 }
 
 page-groupchat .abc:focus {
   outline: none;
+}
+
+page-groupchat .abc, page-groupchat [contenteditable] {
+  -wekit-user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+page-groupchat .footer_bg {
+  background: #fff;
+  border-top: none;
 }
 
 page-historydetails .toolbar-title {

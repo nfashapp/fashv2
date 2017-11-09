@@ -1,6 +1,6 @@
 {
   "name": "fash",
-  "app_id": "",
+  "app_id": "035c4c6d",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

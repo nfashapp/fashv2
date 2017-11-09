@@ -255,9 +255,9 @@ export class ProfilePage {
 	login() {
 		this.nav.popToRoot();
 	}
-
+	
 	socailsharing() {
-		this.socialSharing.share("Are you not on Fash yet? Get it now!", null, null, "https://itunes.apple.com/us/app/apple-store/id1294432276?mt=8")
+		this.socialSharing.share("Are you not on Fash yet? Get it now!", null, null, "https://itunes.apple.com/us/app/apple-store/id1294432276?mt=8" + "Download android app from google play store: "+"https://play.google.com/store/apps/details?id=io.fash&hl=en")
 			.then(() => {
 				//alert("success");
 			},
